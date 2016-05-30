@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE eagle SYSTEM "eagle.dtd">
-<eagle version="7.5.0">
+<eagle version="7.6.0">
 <drawing>
 <settings>
 <setting alwaysvectorfont="no"/>
@@ -23543,153 +23543,40 @@ EAGLE CAD Libraries on element14&lt;/a&gt;</description>
 </class>
 </classes>
 <parts>
-<part name="U1" library="BTN8982TA" deviceset="BTN8982TA" device="">
-<attribute name="MF" value="INFINEON"/>
-<attribute name="MPN" value="BTN8982TA"/>
-<attribute name="OC_FARNELL" value="2470127"/>
-</part>
-<part name="P+1" library="supply1" deviceset="+18V" device=""/>
-<part name="R1" library="resistor" deviceset="R-EU_" device="R0805" value="10k">
-<attribute name="MF" value="WELWYN"/>
-<attribute name="MPN" value="WCR0805-10KFI"/>
-<attribute name="OC_FARNELL" value="1099807"/>
-</part>
-<part name="R2" library="resistor" deviceset="R-EU_" device="R0805" value="10k">
-<attribute name="MF" value="WELWYN"/>
-<attribute name="MPN" value="WCR0805-10KFI"/>
-<attribute name="OC_FARNELL" value="1099807"/>
-</part>
-<part name="R3" library="resistor" deviceset="R-EU_" device="R0805" value="750R">
-<attribute name="MF" value="VISHAY"/>
-<attribute name="MPN" value="CRCW0805750RFKEA"/>
-<attribute name="OC_FARNELL" value="1469956"/>
-</part>
-<part name="C1" library="rcl" deviceset="C-EU" device="C0805" value="0.1uf 40v">
-<attribute name="MF" value="KEMET"/>
-<attribute name="MPN" value="C0805C104J5RACTU"/>
-<attribute name="OC_FARNELL" value="1414663"/>
-</part>
-<part name="C2" library="rcl" deviceset="C-EU" device="C0805" value="0.1uf ">
-<attribute name="MF" value="KEMET"/>
-<attribute name="MPN" value="C0805C104J5RACTU"/>
-<attribute name="OC_FARNELL" value="1414663"/>
-</part>
-<part name="P+2" library="supply1" deviceset="VCC" device=""/>
-<part name="GND2" library="supply1" deviceset="GND" device=""/>
-<part name="GND3" library="supply1" deviceset="GND" device=""/>
-<part name="PAD1" library="wirepad" deviceset="WIREPAD" device="4,16O1,6">
-<attribute name="MF" value=""/>
-<attribute name="MPN" value=""/>
-<attribute name="OC_FARNELL" value="unknown"/>
-</part>
-<part name="R5" library="resistor" deviceset="R-EU_" device="R0805" value="100R">
-<attribute name="MF" value="WELWYN"/>
-<attribute name="MPN" value="WCR0805-100RFI"/>
-<attribute name="OC_FARNELL" value="1099793"/>
-</part>
-<part name="GND1" library="supply1" deviceset="GND" device=""/>
-<part name="GND4" library="supply1" deviceset="GND" device=""/>
-<part name="R6" library="resistor" deviceset="R-EU_" device="R0805" value="30k">
-<attribute name="MF" value="VISHAY"/>
-<attribute name="MPN" value="CRCW080530K0FKEA"/>
-<attribute name="OC_FARNELL" value="1469914"/>
-</part>
-<part name="R7" library="resistor" deviceset="R-EU_" device="R0805" value="1k">
-<attribute name="MF" value="VISHAY"/>
-<attribute name="MPN" value="CRCW08051K00FKEA"/>
-<attribute name="OC_FARNELL" value="1469847"/>
-</part>
-<part name="GND5" library="supply1" deviceset="GND" device=""/>
-<part name="GND6" library="supply1" deviceset="GND" device=""/>
-<part name="P+3" library="supply1" deviceset="+18V" device=""/>
-<part name="GND7" library="supply1" deviceset="GND" device=""/>
-<part name="C3" library="rcl" deviceset="CPOL-EU" device="UD-10X10" value="1000uF 40V">
-<attribute name="MF" value="KEMET"/>
-<attribute name="MPN" value="T491A105K016AT"/>
-<attribute name="OC_FARNELL" value="1457406"/>
-</part>
-<part name="P+5" library="supply1" deviceset="+18V" device=""/>
-<part name="C4" library="rcl" deviceset="C-EU" device="C0805" value="0.1uf 40v">
-<attribute name="MF" value="KEMET"/>
-<attribute name="MPN" value="C0805C104J5RACTU"/>
-<attribute name="OC_FARNELL" value="1414663"/>
-</part>
-<part name="GND8" library="supply1" deviceset="GND" device=""/>
-<part name="P+6" library="supply1" deviceset="+18V" device=""/>
-<part name="C5" library="rcl" deviceset="C-EU" device="C0805" value="0.1uf 40v">
-<attribute name="MF" value="KEMET"/>
-<attribute name="MPN" value="C0805C104J5RACTU"/>
-<attribute name="OC_FARNELL" value="1414663"/>
-</part>
-<part name="GND9" library="supply1" deviceset="GND" device=""/>
-<part name="P+7" library="supply1" deviceset="+18V" device=""/>
-<part name="U2" library="BTN8982TA" deviceset="BTN8982TA" device="">
-<attribute name="MF" value="INFINEON"/>
-<attribute name="MPN" value="BTN8982TA"/>
-<attribute name="OC_FARNELL" value="2470127"/>
-</part>
-<part name="P+8" library="supply1" deviceset="+18V" device=""/>
-<part name="R8" library="resistor" deviceset="R-EU_" device="R0805" value="10k">
-<attribute name="MF" value="WELWYN"/>
-<attribute name="MPN" value="WCR0805-10KFI"/>
-<attribute name="OC_FARNELL" value="1099807"/>
-</part>
-<part name="R9" library="resistor" deviceset="R-EU_" device="R0805" value="10k">
-<attribute name="MF" value="WELWYN"/>
-<attribute name="MPN" value="WCR0805-10KFI"/>
-<attribute name="OC_FARNELL" value="1099807"/>
-</part>
-<part name="R10" library="resistor" deviceset="R-EU_" device="R0805" value="750R">
-<attribute name="MF" value="VISHAY"/>
-<attribute name="MPN" value="CRCW0805750RFKEA"/>
-<attribute name="OC_FARNELL" value="1469956"/>
-</part>
-<part name="GND10" library="supply1" deviceset="GND" device=""/>
-<part name="PAD2" library="wirepad" deviceset="WIREPAD" device="4,16O1,6">
-<attribute name="MF" value=""/>
-<attribute name="MPN" value=""/>
-<attribute name="OC_FARNELL" value="unknown"/>
-</part>
-<part name="R11" library="resistor" deviceset="R-EU_" device="R0805" value="100R">
-<attribute name="MF" value="WELWYN"/>
-<attribute name="MPN" value="WCR0805-100RFI"/>
-<attribute name="OC_FARNELL" value="1099793"/>
-</part>
-<part name="GND11" library="supply1" deviceset="GND" device=""/>
-<part name="GND12" library="supply1" deviceset="GND" device=""/>
-<part name="R12" library="resistor" deviceset="R-EU_" device="R0805" value="30k">
-<attribute name="MF" value="VISHAY"/>
-<attribute name="MPN" value="CRCW080530K0FKEA"/>
-<attribute name="OC_FARNELL" value="1469914"/>
-</part>
-<part name="R13" library="resistor" deviceset="R-EU_" device="R0805" value="1k">
-<attribute name="MF" value="VISHAY"/>
-<attribute name="MPN" value="CRCW08051K00FKEA"/>
-<attribute name="OC_FARNELL" value="1469847"/>
-</part>
-<part name="GND13" library="supply1" deviceset="GND" device=""/>
 <part name="U3" library="BTN8982TA" deviceset="BTN8982TA" device="">
 <attribute name="MF" value="INFINEON"/>
 <attribute name="MPN" value="BTN8982TA"/>
 <attribute name="OC_FARNELL" value="2470127"/>
 </part>
-<part name="P+9" library="supply1" deviceset="+18V" device=""/>
-<part name="R14" library="resistor" deviceset="R-EU_" device="R0805" value="10k">
+<part name="P+13" library="supply1" deviceset="+18V" device=""/>
+<part name="R7" library="resistor" deviceset="R-EU_" device="R0805" value="10k">
 <attribute name="MF" value="WELWYN"/>
 <attribute name="MPN" value="WCR0805-10KFI"/>
 <attribute name="OC_FARNELL" value="1099807"/>
 </part>
-<part name="R15" library="resistor" deviceset="R-EU_" device="R0805" value="10k">
+<part name="R6" library="resistor" deviceset="R-EU_" device="R0805" value="10k">
 <attribute name="MF" value="WELWYN"/>
 <attribute name="MPN" value="WCR0805-10KFI"/>
 <attribute name="OC_FARNELL" value="1099807"/>
 </part>
-<part name="R16" library="resistor" deviceset="R-EU_" device="R0805" value="750R">
+<part name="R14" library="resistor" deviceset="R-EU_" device="R0805" value="750R">
 <attribute name="MF" value="VISHAY"/>
 <attribute name="MPN" value="CRCW0805750RFKEA"/>
 <attribute name="OC_FARNELL" value="1469956"/>
 </part>
-<part name="GND14" library="supply1" deviceset="GND" device=""/>
+<part name="C10" library="rcl" deviceset="C-EU" device="C0805" value="0.1uf 40v">
+<attribute name="MF" value="KEMET"/>
+<attribute name="MPN" value="C0805C104J5RACTU"/>
+<attribute name="OC_FARNELL" value="1414663"/>
+</part>
+<part name="C4" library="rcl" deviceset="C-EU" device="C0805" value="0.1uf ">
+<attribute name="MF" value="KEMET"/>
+<attribute name="MPN" value="C0805C104J5RACTU"/>
+<attribute name="OC_FARNELL" value="1414663"/>
+</part>
+<part name="P+5" library="supply1" deviceset="VCC" device=""/>
+<part name="GND21" library="supply1" deviceset="GND" device=""/>
+<part name="GND5" library="supply1" deviceset="GND" device=""/>
 <part name="PAD3" library="wirepad" deviceset="WIREPAD" device="4,16O1,6">
 <attribute name="MF" value=""/>
 <attribute name="MPN" value=""/>
@@ -23700,20 +23587,133 @@ EAGLE CAD Libraries on element14&lt;/a&gt;</description>
 <attribute name="MPN" value="WCR0805-100RFI"/>
 <attribute name="OC_FARNELL" value="1099793"/>
 </part>
+<part name="GND18" library="supply1" deviceset="GND" device=""/>
 <part name="GND15" library="supply1" deviceset="GND" device=""/>
-<part name="GND16" library="supply1" deviceset="GND" device=""/>
-<part name="R18" library="resistor" deviceset="R-EU_" device="R0805" value="30k">
+<part name="R20" library="resistor" deviceset="R-EU_" device="R0805" value="30k">
 <attribute name="MF" value="VISHAY"/>
 <attribute name="MPN" value="CRCW080530K0FKEA"/>
 <attribute name="OC_FARNELL" value="1469914"/>
 </part>
-<part name="R19" library="resistor" deviceset="R-EU_" device="R0805" value="1k">
+<part name="R21" library="resistor" deviceset="R-EU_" device="R0805" value="1k">
 <attribute name="MF" value="VISHAY"/>
 <attribute name="MPN" value="CRCW08051K00FKEA"/>
 <attribute name="OC_FARNELL" value="1469847"/>
 </part>
+<part name="GND28" library="supply1" deviceset="GND" device=""/>
+<part name="GND25" library="supply1" deviceset="GND" device=""/>
+<part name="P+19" library="supply1" deviceset="+18V" device=""/>
+<part name="GND31" library="supply1" deviceset="GND" device=""/>
+<part name="C13" library="rcl" deviceset="CPOL-EU" device="UD-10X10" value="1000uF 50V">
+<attribute name="MF" value="KEMET"/>
+<attribute name="MPN" value="T491A105K016AT"/>
+<attribute name="OC_FARNELL" value="1457406"/>
+</part>
+<part name="P+16" library="supply1" deviceset="+18V" device=""/>
+<part name="C11" library="rcl" deviceset="C-EU" device="C0805" value="0.1uf 40v">
+<attribute name="MF" value="KEMET"/>
+<attribute name="MPN" value="C0805C104J5RACTU"/>
+<attribute name="OC_FARNELL" value="1414663"/>
+</part>
+<part name="GND29" library="supply1" deviceset="GND" device=""/>
+<part name="P+17" library="supply1" deviceset="+18V" device=""/>
+<part name="C12" library="rcl" deviceset="C-EU" device="C0805" value="0.1uf 40v">
+<attribute name="MF" value="KEMET"/>
+<attribute name="MPN" value="C0805C104J5RACTU"/>
+<attribute name="OC_FARNELL" value="1414663"/>
+</part>
+<part name="GND30" library="supply1" deviceset="GND" device=""/>
+<part name="P+18" library="supply1" deviceset="+18V" device=""/>
+<part name="U4" library="BTN8982TA" deviceset="BTN8982TA" device="">
+<attribute name="MF" value="INFINEON"/>
+<attribute name="MPN" value="BTN8982TA"/>
+<attribute name="OC_FARNELL" value="2470127"/>
+</part>
+<part name="P+14" library="supply1" deviceset="+18V" device=""/>
+<part name="R9" library="resistor" deviceset="R-EU_" device="R0805" value="10k">
+<attribute name="MF" value="WELWYN"/>
+<attribute name="MPN" value="WCR0805-10KFI"/>
+<attribute name="OC_FARNELL" value="1099807"/>
+</part>
+<part name="R8" library="resistor" deviceset="R-EU_" device="R0805" value="10k">
+<attribute name="MF" value="WELWYN"/>
+<attribute name="MPN" value="WCR0805-10KFI"/>
+<attribute name="OC_FARNELL" value="1099807"/>
+</part>
+<part name="R15" library="resistor" deviceset="R-EU_" device="R0805" value="750R">
+<attribute name="MF" value="VISHAY"/>
+<attribute name="MPN" value="CRCW0805750RFKEA"/>
+<attribute name="OC_FARNELL" value="1469956"/>
+</part>
+<part name="GND22" library="supply1" deviceset="GND" device=""/>
+<part name="PAD4" library="wirepad" deviceset="WIREPAD" device="4,16O1,6">
+<attribute name="MF" value=""/>
+<attribute name="MPN" value=""/>
+<attribute name="OC_FARNELL" value="unknown"/>
+</part>
+<part name="R18" library="resistor" deviceset="R-EU_" device="R0805" value="100R">
+<attribute name="MF" value="WELWYN"/>
+<attribute name="MPN" value="WCR0805-100RFI"/>
+<attribute name="OC_FARNELL" value="1099793"/>
+</part>
+<part name="GND20" library="supply1" deviceset="GND" device=""/>
+<part name="GND16" library="supply1" deviceset="GND" device=""/>
+<part name="R23" library="resistor" deviceset="R-EU_" device="R0805" value="30k">
+<attribute name="MF" value="VISHAY"/>
+<attribute name="MPN" value="CRCW080530K0FKEA"/>
+<attribute name="OC_FARNELL" value="1469914"/>
+</part>
+<part name="R24" library="resistor" deviceset="R-EU_" device="R0805" value="1k">
+<attribute name="MF" value="VISHAY"/>
+<attribute name="MPN" value="CRCW08051K00FKEA"/>
+<attribute name="OC_FARNELL" value="1469847"/>
+</part>
+<part name="GND26" library="supply1" deviceset="GND" device=""/>
+<part name="U5" library="BTN8982TA" deviceset="BTN8982TA" device="">
+<attribute name="MF" value="INFINEON"/>
+<attribute name="MPN" value="BTN8982TA"/>
+<attribute name="OC_FARNELL" value="2470127"/>
+</part>
+<part name="P+15" library="supply1" deviceset="+18V" device=""/>
+<part name="R12" library="resistor" deviceset="R-EU_" device="R0805" value="10k">
+<attribute name="MF" value="WELWYN"/>
+<attribute name="MPN" value="WCR0805-10KFI"/>
+<attribute name="OC_FARNELL" value="1099807"/>
+</part>
+<part name="R11" library="resistor" deviceset="R-EU_" device="R0805" value="10k">
+<attribute name="MF" value="WELWYN"/>
+<attribute name="MPN" value="WCR0805-10KFI"/>
+<attribute name="OC_FARNELL" value="1099807"/>
+</part>
+<part name="R16" library="resistor" deviceset="R-EU_" device="R0805" value="750R">
+<attribute name="MF" value="VISHAY"/>
+<attribute name="MPN" value="CRCW0805750RFKEA"/>
+<attribute name="OC_FARNELL" value="1469956"/>
+</part>
+<part name="GND23" library="supply1" deviceset="GND" device=""/>
+<part name="PAD5" library="wirepad" deviceset="WIREPAD" device="4,16O1,6">
+<attribute name="MF" value=""/>
+<attribute name="MPN" value=""/>
+<attribute name="OC_FARNELL" value="unknown"/>
+</part>
+<part name="R19" library="resistor" deviceset="R-EU_" device="R0805" value="100R">
+<attribute name="MF" value="WELWYN"/>
+<attribute name="MPN" value="WCR0805-100RFI"/>
+<attribute name="OC_FARNELL" value="1099793"/>
+</part>
+<part name="GND19" library="supply1" deviceset="GND" device=""/>
 <part name="GND17" library="supply1" deviceset="GND" device=""/>
-<part name="IC2" library="linear" deviceset="LP2950" device="">
+<part name="R25" library="resistor" deviceset="R-EU_" device="R0805" value="30k">
+<attribute name="MF" value="VISHAY"/>
+<attribute name="MPN" value="CRCW080530K0FKEA"/>
+<attribute name="OC_FARNELL" value="1469914"/>
+</part>
+<part name="R26" library="resistor" deviceset="R-EU_" device="R0805" value="1k">
+<attribute name="MF" value="VISHAY"/>
+<attribute name="MPN" value="CRCW08051K00FKEA"/>
+<attribute name="OC_FARNELL" value="1469847"/>
+</part>
+<part name="GND27" library="supply1" deviceset="GND" device=""/>
+<part name="IC1" library="linear" deviceset="LP2950" device="">
 <attribute name="MF" value="ON SEMICONDUCTOR"/>
 <attribute name="MPN" value="LP2950CDT-5.0G"/>
 <attribute name="OC_FARNELL" value="1468707"/>
@@ -23723,145 +23723,145 @@ EAGLE CAD Libraries on element14&lt;/a&gt;</description>
 <attribute name="MPN" value="GF1A"/>
 <attribute name="OC_FARNELL" value="1467476"/>
 </part>
-<part name="GND18" library="supply1" deviceset="GND" device=""/>
-<part name="C6" library="rcl" deviceset="C-EU" device="C0805" value="10uf 35V">
+<part name="GND3" library="supply1" deviceset="GND" device=""/>
+<part name="C2" library="rcl" deviceset="C-EU" device="C0805" value="10uf 35V">
 <attribute name="MF" value="MURATA"/>
 <attribute name="MPN" value="GRM32ER7YA106KA12L"/>
 <attribute name="OC_FARNELL" value="1735537"/>
 </part>
-<part name="C7" library="rcl" deviceset="C-EU" device="C0805" value="2.2uf 10V">
+<part name="C6" library="rcl" deviceset="C-EU" device="C0805" value="2.2uf 10V">
 <attribute name="MF" value="KEMET"/>
 <attribute name="MPN" value="C0805C225K8RACAUTO"/>
 <attribute name="OC_FARNELL" value="2478259"/>
 </part>
-<part name="P+10" library="supply1" deviceset="VCC" device=""/>
-<part name="IC3" library="atmel" deviceset="MEGA8" device="-AI">
+<part name="P+7" library="supply1" deviceset="VCC" device=""/>
+<part name="IC2" library="atmel" deviceset="MEGA8" device="-AI">
 <attribute name="MF" value="ATMEL"/>
 </part>
-<part name="P+12" library="supply1" deviceset="VCC" device=""/>
-<part name="GND20" library="supply1" deviceset="GND" device=""/>
-<part name="R21" library="resistor" deviceset="R-EU_" device="R0805" value="10k">
+<part name="P+8" library="supply1" deviceset="VCC" device=""/>
+<part name="GND12" library="supply1" deviceset="GND" device=""/>
+<part name="R3" library="resistor" deviceset="R-EU_" device="R0805" value="10k">
 <attribute name="MF" value="WELWYN"/>
 <attribute name="MPN" value="WCR0805-10KFI"/>
 <attribute name="OC_FARNELL" value="1099807"/>
 </part>
-<part name="P+13" library="supply1" deviceset="VCC" device=""/>
-<part name="GND22" library="supply1" deviceset="GND" device=""/>
-<part name="P+14" library="supply1" deviceset="VCC" device=""/>
+<part name="P+4" library="supply1" deviceset="VCC" device=""/>
+<part name="GND9" library="supply1" deviceset="GND" device=""/>
+<part name="P+6" library="supply1" deviceset="VCC" device=""/>
 <part name="Q1" library="crystal" deviceset="CRYSTAL" device="HC49S" value="20MHz">
 <attribute name="MF" value="MULTICOMP"/>
 <attribute name="MPN" value="HC49SM-3.6864-30-50-60-16-ATF"/>
+</part>
+<part name="C7" library="rcl" deviceset="C-EU" device="C0805" value="18pf">
+<attribute name="MF" value="WALSIN"/>
+<attribute name="MPN" value="0805N180J500CT"/>
+<attribute name="OC_FARNELL" value="2497020"/>
 </part>
 <part name="C8" library="rcl" deviceset="C-EU" device="C0805" value="18pf">
 <attribute name="MF" value="WALSIN"/>
 <attribute name="MPN" value="0805N180J500CT"/>
 <attribute name="OC_FARNELL" value="2497020"/>
 </part>
-<part name="C9" library="rcl" deviceset="C-EU" device="C0805" value="18pf">
-<attribute name="MF" value="WALSIN"/>
-<attribute name="MPN" value="0805N180J500CT"/>
-<attribute name="OC_FARNELL" value="2497020"/>
-</part>
-<part name="GND19" library="supply1" deviceset="GND" device=""/>
-<part name="R4" library="resistor" deviceset="R-EU_" device="R0805" value="10k">
+<part name="GND7" library="supply1" deviceset="GND" device=""/>
+<part name="R13" library="resistor" deviceset="R-EU_" device="R0805" value="10k">
 <attribute name="MF" value="WELWYN"/>
 <attribute name="MPN" value="WCR0805-10KFI"/>
 <attribute name="OC_FARNELL" value="1099807"/>
 </part>
-<part name="R20" library="resistor" deviceset="R-EU_" device="R0805" value="10k">
+<part name="R5" library="resistor" deviceset="R-EU_" device="R0805" value="10k">
 <attribute name="MF" value="WELWYN"/>
 <attribute name="MPN" value="WCR0805-10KFI"/>
 <attribute name="OC_FARNELL" value="1099807"/>
 </part>
-<part name="R23" library="resistor" deviceset="R-EU_" device="R0805" value="10k">
+<part name="R10" library="resistor" deviceset="R-EU_" device="R0805" value="10k">
 <attribute name="MF" value="WELWYN"/>
 <attribute name="MPN" value="WCR0805-10KFI"/>
 <attribute name="OC_FARNELL" value="1099807"/>
 </part>
-<part name="C10" library="rcl" deviceset="C-EU" device="C0805" value="0.1uf">
+<part name="C3" library="rcl" deviceset="C-EU" device="C0805" value="0.1uf">
 <attribute name="MF" value="WALSIN"/>
 <attribute name="MPN" value="0805B104K500CT"/>
 <attribute name="OC_FARNELL" value="2496944"/>
 </part>
-<part name="GND23" library="supply1" deviceset="GND" device=""/>
-<part name="L1" library="resistor" deviceset="R-EU_" device="R0805" value="10uH">
+<part name="GND4" library="supply1" deviceset="GND" device=""/>
+<part name="R2" library="resistor" deviceset="R-EU_" device="R0805" value="10uH">
 <attribute name="MF" value="TAIYO YUDEN"/>
 <attribute name="MPN" value="LB2012T100KR"/>
 <attribute name="OC_FARNELL" value="1463501"/>
 </part>
-<part name="GND24" library="supply1" deviceset="GND" device=""/>
-<part name="SV1" library="con-lstb" deviceset="MA06-1" device=""/>
-<part name="P+11" library="supply1" deviceset="VCC" device=""/>
-<part name="GND25" library="supply1" deviceset="GND" device=""/>
-<part name="P+15" library="supply1" deviceset="VCC" device=""/>
-<part name="GND26" library="supply1" deviceset="GND" device=""/>
-<part name="U4" library="temp-tc77-5v" deviceset="TC77-5.0MCTTR" device="">
+<part name="GND8" library="supply1" deviceset="GND" device=""/>
+<part name="SV3" library="con-lstb" deviceset="MA06-1" device=""/>
+<part name="P+9" library="supply1" deviceset="VCC" device=""/>
+<part name="GND11" library="supply1" deviceset="GND" device=""/>
+<part name="P+10" library="supply1" deviceset="VCC" device=""/>
+<part name="GND13" library="supply1" deviceset="GND" device=""/>
+<part name="U1" library="temp-tc77-5v" deviceset="TC77-5.0MCTTR" device="">
 <attribute name="MF" value="MICROCHIP"/>
 </part>
-<part name="P+16" library="supply1" deviceset="VCC" device=""/>
-<part name="GND29" library="supply1" deviceset="GND" device=""/>
-<part name="C12" library="rcl" deviceset="C-EU" device="C0805" value="0.1uf ">
+<part name="P+3" library="supply1" deviceset="VCC" device=""/>
+<part name="GND2" library="supply1" deviceset="GND" device=""/>
+<part name="C1" library="rcl" deviceset="C-EU" device="C0805" value="0.1uf ">
 <attribute name="MF" value="KEMET"/>
 <attribute name="MPN" value="C0805C104J5RACTU"/>
 <attribute name="OC_FARNELL" value="1414663"/>
 </part>
-<part name="P+17" library="supply1" deviceset="VCC" device=""/>
-<part name="GND30" library="supply1" deviceset="GND" device=""/>
-<part name="R27" library="resistor" deviceset="R-EU_" device="R0805" value="10k">
+<part name="P+1" library="supply1" deviceset="VCC" device=""/>
+<part name="GND1" library="supply1" deviceset="GND" device=""/>
+<part name="R1" library="resistor" deviceset="R-EU_" device="R0805" value="10k">
 <attribute name="MF" value="WELWYN"/>
 <attribute name="MPN" value="WCR0805-10KFI"/>
 <attribute name="OC_FARNELL" value="1099807"/>
 </part>
-<part name="P+18" library="supply1" deviceset="VCC" device=""/>
+<part name="P+2" library="supply1" deviceset="VCC" device=""/>
 <part name="D2" library="diode" deviceset="DIODE-" device="DO214AA" value="5.6V Zenner">
 <attribute name="MF" value="ON SEMICONDUCTOR"/>
 <attribute name="MPN" value="1SMB5919BT3G"/>
 <attribute name="OC_FARNELL" value="1431162"/>
 </part>
-<part name="PAD4" library="wirepad" deviceset="WIREPAD" device="4,16O1,6">
+<part name="PAD1" library="wirepad" deviceset="WIREPAD" device="4,16O1,6">
 <attribute name="MF" value=""/>
 <attribute name="MPN" value=""/>
 <attribute name="OC_FARNELL" value="unknown"/>
 </part>
-<part name="P+19" library="supply1" deviceset="+18V" device=""/>
-<part name="PAD5" library="wirepad" deviceset="WIREPAD" device="4,16O1,6">
+<part name="P+12" library="supply1" deviceset="+18V" device=""/>
+<part name="PAD2" library="wirepad" deviceset="WIREPAD" device="4,16O1,6">
 <attribute name="MF" value=""/>
 <attribute name="MPN" value=""/>
 <attribute name="OC_FARNELL" value="unknown"/>
 </part>
-<part name="GND32" library="supply1" deviceset="GND" device=""/>
-<part name="C13" library="rcl" deviceset="C-EU" device="C0805" value="0.1uf ">
+<part name="GND24" library="supply1" deviceset="GND" device=""/>
+<part name="C9" library="rcl" deviceset="C-EU" device="C0805" value="0.1uf ">
 <attribute name="MF" value="KEMET"/>
 <attribute name="MPN" value="C0805C104J5RACTU"/>
 <attribute name="OC_FARNELL" value="1414663"/>
 </part>
-<part name="P+20" library="supply1" deviceset="VCC" device=""/>
-<part name="GND35" library="supply1" deviceset="GND" device=""/>
-<part name="C14" library="rcl" deviceset="C-EU" device="C0805" value="0.1uf">
+<part name="P+11" library="supply1" deviceset="VCC" device=""/>
+<part name="GND14" library="supply1" deviceset="GND" device=""/>
+<part name="C5" library="rcl" deviceset="C-EU" device="C0805" value="0.1uf">
 <attribute name="MF" value="WALSIN"/>
 <attribute name="MPN" value="0805B104K500CT"/>
 <attribute name="OC_FARNELL" value="2496944"/>
 </part>
-<part name="GND36" library="supply1" deviceset="GND" device=""/>
-<part name="R29" library="resistor" deviceset="R-EU_" device="R0805" value="10k">
+<part name="GND6" library="supply1" deviceset="GND" device=""/>
+<part name="R22" library="resistor" deviceset="R-EU_" device="R0805" value="10k">
 <attribute name="MF" value="WELWYN"/>
 <attribute name="MPN" value="WCR0805-10KFI"/>
 <attribute name="OC_FARNELL" value="1099807"/>
 </part>
 <part name="SUPPLY1" library="supply2" deviceset="+7V" device=""/>
 <part name="SUPPLY2" library="supply2" deviceset="+7V" device=""/>
-<part name="U5" library="Microchip-MCP2561-E_SN" deviceset="MCP2561-E/SN" device=""/>
-<part name="GND21" library="supply1" deviceset="GND" device=""/>
-<part name="R22" library="resistor" deviceset="R-EU_" device="R0805" value="120R">
+<part name="U2" library="Microchip-MCP2561-E_SN" deviceset="MCP2561-E/SN" device=""/>
+<part name="GND10" library="supply1" deviceset="GND" device=""/>
+<part name="R4" library="resistor" deviceset="R-EU_" device="R0805" value="120R">
 <attribute name="MF" value="VISHAY"/>
 <attribute name="MPN" value="CRCW0805750RFKEA"/>
 <attribute name="OC_FARNELL" value="1469956"/>
 </part>
-<part name="SV2" library="con-lstb" deviceset="MA04-1" device=""/>
-<part name="SV3" library="con-lstb" deviceset="MA03-2" device=""/>
-<part name="C11" library="resistor" deviceset="CPOL-EU" device="E5-10.5"/>
-<part name="GND27" library="supply1" deviceset="GND" device=""/>
-<part name="P+4" library="supply1" deviceset="+18V" device=""/>
+<part name="SV1" library="con-lstb" deviceset="MA04-1" device=""/>
+<part name="SV2" library="con-lstb" deviceset="MA03-2" device=""/>
+<part name="C14" library="resistor" deviceset="CPOL-EU" device="E5-10.5" value="1000uf 50V"/>
+<part name="GND32" library="supply1" deviceset="GND" device=""/>
+<part name="P+20" library="supply1" deviceset="+18V" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -23874,143 +23874,143 @@ EAGLE CAD Libraries on element14&lt;/a&gt;</description>
 <text x="-175.26" y="53.34" size="1.778" layer="91">ADC, High current 5V Full range.</text>
 </plain>
 <instances>
-<instance part="U1" gate="G$1" x="43.18" y="101.6">
+<instance part="U3" gate="G$1" x="43.18" y="101.6">
 <attribute name="OC_FARNELL" x="43.18" y="101.6" size="1.778" layer="96" display="off"/>
 <attribute name="MF" x="43.18" y="101.6" size="1.778" layer="96" display="off"/>
 <attribute name="MPN" x="43.18" y="101.6" size="1.778" layer="96" display="off"/>
 </instance>
-<instance part="P+1" gate="1" x="66.04" y="106.68"/>
-<instance part="R1" gate="G$1" x="25.4" y="88.9">
+<instance part="P+13" gate="1" x="66.04" y="106.68"/>
+<instance part="R7" gate="G$1" x="25.4" y="88.9">
 <attribute name="OC_FARNELL" x="25.4" y="88.9" size="1.778" layer="96" display="off"/>
 <attribute name="MF" x="25.4" y="88.9" size="1.778" layer="96" display="off"/>
 <attribute name="MPN" x="25.4" y="88.9" size="1.778" layer="96" display="off"/>
 </instance>
-<instance part="R2" gate="G$1" x="25.4" y="96.52">
+<instance part="R6" gate="G$1" x="25.4" y="96.52">
 <attribute name="OC_FARNELL" x="25.4" y="96.52" size="1.778" layer="96" display="off"/>
 <attribute name="MF" x="25.4" y="96.52" size="1.778" layer="96" display="off"/>
 <attribute name="MPN" x="25.4" y="96.52" size="1.778" layer="96" display="off"/>
 </instance>
-<instance part="R3" gate="G$1" x="33.02" y="106.68">
+<instance part="R14" gate="G$1" x="33.02" y="106.68">
 <attribute name="OC_FARNELL" x="33.02" y="106.68" size="1.778" layer="96" display="off"/>
 <attribute name="MF" x="33.02" y="106.68" size="1.778" layer="96" display="off"/>
 <attribute name="MPN" x="33.02" y="106.68" size="1.778" layer="96" display="off"/>
 </instance>
-<instance part="C1" gate="G$1" x="101.6" y="96.52">
+<instance part="C10" gate="G$1" x="101.6" y="96.52">
 <attribute name="OC_FARNELL" x="101.6" y="96.52" size="1.778" layer="96" display="off"/>
 <attribute name="MF" x="101.6" y="96.52" size="1.778" layer="96" display="off"/>
 <attribute name="MPN" x="101.6" y="96.52" size="1.778" layer="96" display="off"/>
 </instance>
-<instance part="C2" gate="G$1" x="-137.16" y="20.32">
+<instance part="C4" gate="G$1" x="-137.16" y="20.32">
 <attribute name="OC_FARNELL" x="-137.16" y="20.32" size="1.778" layer="96" display="off"/>
 <attribute name="MF" x="-137.16" y="20.32" size="1.778" layer="96" display="off"/>
 <attribute name="MPN" x="-137.16" y="20.32" size="1.778" layer="96" display="off"/>
 </instance>
-<instance part="P+2" gate="VCC" x="-137.16" y="30.48"/>
-<instance part="GND2" gate="1" x="66.04" y="73.66"/>
-<instance part="GND3" gate="1" x="-137.16" y="10.16"/>
-<instance part="PAD1" gate="G$1" x="86.36" y="91.44" rot="R180">
+<instance part="P+5" gate="VCC" x="-137.16" y="30.48"/>
+<instance part="GND21" gate="1" x="66.04" y="73.66"/>
+<instance part="GND5" gate="1" x="-137.16" y="10.16"/>
+<instance part="PAD3" gate="G$1" x="86.36" y="91.44" rot="R180">
 <attribute name="OC_FARNELL" x="86.36" y="91.44" size="1.778" layer="96" display="off"/>
 <attribute name="MF" x="86.36" y="91.44" size="1.778" layer="96" display="off"/>
 <attribute name="MPN" x="86.36" y="91.44" size="1.778" layer="96" display="off"/>
 </instance>
-<instance part="R5" gate="G$1" x="35.56" y="76.2" rot="R90">
+<instance part="R17" gate="G$1" x="35.56" y="76.2" rot="R90">
 <attribute name="OC_FARNELL" x="35.56" y="76.2" size="1.778" layer="96" display="off"/>
 <attribute name="MF" x="35.56" y="76.2" size="1.778" layer="96" display="off"/>
 <attribute name="MPN" x="35.56" y="76.2" size="1.778" layer="96" display="off"/>
 </instance>
-<instance part="GND1" gate="1" x="38.1" y="68.58"/>
-<instance part="GND4" gate="1" x="20.32" y="104.14"/>
-<instance part="R6" gate="G$1" x="76.2" y="86.36" rot="R90">
+<instance part="GND18" gate="1" x="38.1" y="68.58"/>
+<instance part="GND15" gate="1" x="20.32" y="104.14"/>
+<instance part="R20" gate="G$1" x="76.2" y="86.36" rot="R90">
 <attribute name="OC_FARNELL" x="76.2" y="86.36" size="1.778" layer="96" display="off"/>
 <attribute name="MF" x="76.2" y="86.36" size="1.778" layer="96" display="off"/>
 <attribute name="MPN" x="76.2" y="86.36" size="1.778" layer="96" display="off"/>
 </instance>
-<instance part="R7" gate="G$1" x="76.2" y="73.66" rot="R90">
+<instance part="R21" gate="G$1" x="76.2" y="73.66" rot="R90">
 <attribute name="OC_FARNELL" x="76.2" y="73.66" size="1.778" layer="96" display="off"/>
 <attribute name="MF" x="76.2" y="73.66" size="1.778" layer="96" display="off"/>
 <attribute name="MPN" x="76.2" y="73.66" size="1.778" layer="96" display="off"/>
 </instance>
-<instance part="GND5" gate="1" x="101.6" y="86.36"/>
-<instance part="GND6" gate="1" x="76.2" y="63.5"/>
-<instance part="P+3" gate="1" x="116.84" y="109.22"/>
-<instance part="GND7" gate="1" x="116.84" y="86.36"/>
-<instance part="C3" gate="G$1" x="116.84" y="96.52">
+<instance part="GND28" gate="1" x="101.6" y="86.36"/>
+<instance part="GND25" gate="1" x="76.2" y="63.5"/>
+<instance part="P+19" gate="1" x="116.84" y="109.22"/>
+<instance part="GND31" gate="1" x="116.84" y="86.36"/>
+<instance part="C13" gate="G$1" x="116.84" y="96.52">
 <attribute name="OC_FARNELL" x="116.84" y="96.52" size="1.778" layer="96" display="off"/>
 <attribute name="MF" x="116.84" y="96.52" size="1.778" layer="96" display="off"/>
 <attribute name="MPN" x="116.84" y="96.52" size="1.778" layer="96" display="off"/>
 </instance>
-<instance part="P+5" gate="1" x="101.6" y="109.22"/>
-<instance part="C4" gate="G$1" x="101.6" y="33.02">
+<instance part="P+16" gate="1" x="101.6" y="109.22"/>
+<instance part="C11" gate="G$1" x="101.6" y="33.02">
 <attribute name="OC_FARNELL" x="101.6" y="33.02" size="1.778" layer="96" display="off"/>
 <attribute name="MF" x="101.6" y="33.02" size="1.778" layer="96" display="off"/>
 <attribute name="MPN" x="101.6" y="33.02" size="1.778" layer="96" display="off"/>
 </instance>
-<instance part="GND8" gate="1" x="101.6" y="22.86"/>
-<instance part="P+6" gate="1" x="101.6" y="45.72"/>
-<instance part="C5" gate="G$1" x="101.6" y="-17.78">
+<instance part="GND29" gate="1" x="101.6" y="22.86"/>
+<instance part="P+17" gate="1" x="101.6" y="45.72"/>
+<instance part="C12" gate="G$1" x="101.6" y="-17.78">
 <attribute name="OC_FARNELL" x="101.6" y="-17.78" size="1.778" layer="96" display="off"/>
 <attribute name="MF" x="101.6" y="-17.78" size="1.778" layer="96" display="off"/>
 <attribute name="MPN" x="101.6" y="-17.78" size="1.778" layer="96" display="off"/>
 </instance>
-<instance part="GND9" gate="1" x="101.6" y="-27.94"/>
-<instance part="P+7" gate="1" x="101.6" y="-5.08"/>
-<instance part="U2" gate="G$1" x="43.18" y="48.26">
+<instance part="GND30" gate="1" x="101.6" y="-27.94"/>
+<instance part="P+18" gate="1" x="101.6" y="-5.08"/>
+<instance part="U4" gate="G$1" x="43.18" y="48.26">
 <attribute name="OC_FARNELL" x="43.18" y="48.26" size="1.778" layer="96" display="off"/>
 <attribute name="MF" x="43.18" y="48.26" size="1.778" layer="96" display="off"/>
 <attribute name="MPN" x="43.18" y="48.26" size="1.778" layer="96" display="off"/>
 </instance>
-<instance part="P+8" gate="1" x="66.04" y="53.34"/>
-<instance part="R8" gate="G$1" x="25.4" y="35.56">
+<instance part="P+14" gate="1" x="66.04" y="53.34"/>
+<instance part="R9" gate="G$1" x="25.4" y="35.56">
 <attribute name="OC_FARNELL" x="25.4" y="35.56" size="1.778" layer="96" display="off"/>
 <attribute name="MF" x="25.4" y="35.56" size="1.778" layer="96" display="off"/>
 <attribute name="MPN" x="25.4" y="35.56" size="1.778" layer="96" display="off"/>
 </instance>
-<instance part="R9" gate="G$1" x="25.4" y="43.18">
+<instance part="R8" gate="G$1" x="25.4" y="43.18">
 <attribute name="OC_FARNELL" x="25.4" y="43.18" size="1.778" layer="96" display="off"/>
 <attribute name="MF" x="25.4" y="43.18" size="1.778" layer="96" display="off"/>
 <attribute name="MPN" x="25.4" y="43.18" size="1.778" layer="96" display="off"/>
 </instance>
-<instance part="R10" gate="G$1" x="33.02" y="53.34">
+<instance part="R15" gate="G$1" x="33.02" y="53.34">
 <attribute name="OC_FARNELL" x="33.02" y="53.34" size="1.778" layer="96" display="off"/>
 <attribute name="MF" x="33.02" y="53.34" size="1.778" layer="96" display="off"/>
 <attribute name="MPN" x="33.02" y="53.34" size="1.778" layer="96" display="off"/>
 </instance>
-<instance part="GND10" gate="1" x="66.04" y="22.86"/>
-<instance part="PAD2" gate="G$1" x="86.36" y="38.1" rot="R180">
+<instance part="GND22" gate="1" x="66.04" y="22.86"/>
+<instance part="PAD4" gate="G$1" x="86.36" y="38.1" rot="R180">
 <attribute name="OC_FARNELL" x="86.36" y="38.1" size="1.778" layer="96" display="off"/>
 <attribute name="MF" x="86.36" y="38.1" size="1.778" layer="96" display="off"/>
 <attribute name="MPN" x="86.36" y="38.1" size="1.778" layer="96" display="off"/>
 </instance>
-<instance part="R11" gate="G$1" x="35.56" y="25.4" rot="R90">
+<instance part="R18" gate="G$1" x="35.56" y="25.4" rot="R90">
 <attribute name="OC_FARNELL" x="35.56" y="25.4" size="1.778" layer="96" display="off"/>
 <attribute name="MF" x="35.56" y="25.4" size="1.778" layer="96" display="off"/>
 <attribute name="MPN" x="35.56" y="25.4" size="1.778" layer="96" display="off"/>
 </instance>
-<instance part="GND11" gate="1" x="40.64" y="17.78"/>
-<instance part="GND12" gate="1" x="20.32" y="50.8"/>
-<instance part="R12" gate="G$1" x="76.2" y="33.02" rot="R90">
+<instance part="GND20" gate="1" x="40.64" y="17.78"/>
+<instance part="GND16" gate="1" x="20.32" y="50.8"/>
+<instance part="R23" gate="G$1" x="76.2" y="33.02" rot="R90">
 <attribute name="OC_FARNELL" x="76.2" y="33.02" size="1.778" layer="96" display="off"/>
 <attribute name="MF" x="76.2" y="33.02" size="1.778" layer="96" display="off"/>
 <attribute name="MPN" x="76.2" y="33.02" size="1.778" layer="96" display="off"/>
 </instance>
-<instance part="R13" gate="G$1" x="76.2" y="20.32" rot="R90">
+<instance part="R24" gate="G$1" x="76.2" y="20.32" rot="R90">
 <attribute name="OC_FARNELL" x="76.2" y="20.32" size="1.778" layer="96" display="off"/>
 <attribute name="MF" x="76.2" y="20.32" size="1.778" layer="96" display="off"/>
 <attribute name="MPN" x="76.2" y="20.32" size="1.778" layer="96" display="off"/>
 </instance>
-<instance part="GND13" gate="1" x="76.2" y="10.16"/>
-<instance part="U3" gate="G$1" x="43.18" y="-5.08">
+<instance part="GND26" gate="1" x="76.2" y="10.16"/>
+<instance part="U5" gate="G$1" x="43.18" y="-5.08">
 <attribute name="OC_FARNELL" x="43.18" y="-5.08" size="1.778" layer="96" display="off"/>
 <attribute name="MF" x="43.18" y="-5.08" size="1.778" layer="96" display="off"/>
 <attribute name="MPN" x="43.18" y="-5.08" size="1.778" layer="96" display="off"/>
 </instance>
-<instance part="P+9" gate="1" x="66.04" y="0"/>
-<instance part="R14" gate="G$1" x="25.4" y="-17.78">
+<instance part="P+15" gate="1" x="66.04" y="0"/>
+<instance part="R12" gate="G$1" x="25.4" y="-17.78">
 <attribute name="OC_FARNELL" x="25.4" y="-17.78" size="1.778" layer="96" display="off"/>
 <attribute name="MF" x="25.4" y="-17.78" size="1.778" layer="96" display="off"/>
 <attribute name="MPN" x="25.4" y="-17.78" size="1.778" layer="96" display="off"/>
 </instance>
-<instance part="R15" gate="G$1" x="25.4" y="-10.16">
+<instance part="R11" gate="G$1" x="25.4" y="-10.16">
 <attribute name="OC_FARNELL" x="25.4" y="-10.16" size="1.778" layer="96" display="off"/>
 <attribute name="MF" x="25.4" y="-10.16" size="1.778" layer="96" display="off"/>
 <attribute name="MPN" x="25.4" y="-10.16" size="1.778" layer="96" display="off"/>
@@ -24020,31 +24020,31 @@ EAGLE CAD Libraries on element14&lt;/a&gt;</description>
 <attribute name="MF" x="33.02" y="0" size="1.778" layer="96" display="off"/>
 <attribute name="MPN" x="33.02" y="0" size="1.778" layer="96" display="off"/>
 </instance>
-<instance part="GND14" gate="1" x="66.04" y="-33.02"/>
-<instance part="PAD3" gate="G$1" x="86.36" y="-15.24" rot="R180">
+<instance part="GND23" gate="1" x="66.04" y="-33.02"/>
+<instance part="PAD5" gate="G$1" x="86.36" y="-15.24" rot="R180">
 <attribute name="OC_FARNELL" x="86.36" y="-15.24" size="1.778" layer="96" display="off"/>
 <attribute name="MF" x="86.36" y="-15.24" size="1.778" layer="96" display="off"/>
 <attribute name="MPN" x="86.36" y="-15.24" size="1.778" layer="96" display="off"/>
 </instance>
-<instance part="R17" gate="G$1" x="35.56" y="-30.48" rot="R90">
+<instance part="R19" gate="G$1" x="35.56" y="-30.48" rot="R90">
 <attribute name="OC_FARNELL" x="35.56" y="-30.48" size="1.778" layer="96" display="off"/>
 <attribute name="MF" x="35.56" y="-30.48" size="1.778" layer="96" display="off"/>
 <attribute name="MPN" x="35.56" y="-30.48" size="1.778" layer="96" display="off"/>
 </instance>
-<instance part="GND15" gate="1" x="38.1" y="-38.1"/>
-<instance part="GND16" gate="1" x="20.32" y="-2.54"/>
-<instance part="R18" gate="G$1" x="76.2" y="-20.32" rot="R90">
+<instance part="GND19" gate="1" x="38.1" y="-38.1"/>
+<instance part="GND17" gate="1" x="20.32" y="-2.54"/>
+<instance part="R25" gate="G$1" x="76.2" y="-20.32" rot="R90">
 <attribute name="OC_FARNELL" x="76.2" y="-20.32" size="1.778" layer="96" display="off"/>
 <attribute name="MF" x="76.2" y="-20.32" size="1.778" layer="96" display="off"/>
 <attribute name="MPN" x="76.2" y="-20.32" size="1.778" layer="96" display="off"/>
 </instance>
-<instance part="R19" gate="G$1" x="76.2" y="-33.02" rot="R90">
+<instance part="R26" gate="G$1" x="76.2" y="-33.02" rot="R90">
 <attribute name="OC_FARNELL" x="76.2" y="-33.02" size="1.778" layer="96" display="off"/>
 <attribute name="MF" x="76.2" y="-33.02" size="1.778" layer="96" display="off"/>
 <attribute name="MPN" x="76.2" y="-33.02" size="1.778" layer="96" display="off"/>
 </instance>
-<instance part="GND17" gate="1" x="76.2" y="-43.18"/>
-<instance part="IC2" gate="G$1" x="-139.7" y="116.84">
+<instance part="GND27" gate="1" x="76.2" y="-43.18"/>
+<instance part="IC1" gate="G$1" x="-139.7" y="116.84">
 <attribute name="OC_FARNELL" x="-139.7" y="116.84" size="1.778" layer="96" display="off"/>
 <attribute name="MF" x="-139.7" y="116.84" size="1.778" layer="96" display="off"/>
 <attribute name="MPN" x="-139.7" y="116.84" size="1.778" layer="96" display="off"/>
@@ -24054,150 +24054,150 @@ EAGLE CAD Libraries on element14&lt;/a&gt;</description>
 <attribute name="MF" x="-162.56" y="119.38" size="1.778" layer="96" display="off"/>
 <attribute name="MPN" x="-162.56" y="119.38" size="1.778" layer="96" display="off"/>
 </instance>
-<instance part="GND18" gate="1" x="-139.7" y="96.52"/>
-<instance part="C6" gate="G$1" x="-154.94" y="111.76">
+<instance part="GND3" gate="1" x="-139.7" y="96.52"/>
+<instance part="C2" gate="G$1" x="-154.94" y="111.76">
 <attribute name="OC_FARNELL" x="-154.94" y="111.76" size="1.778" layer="96" display="off"/>
 <attribute name="MF" x="-154.94" y="111.76" size="1.778" layer="96" display="off"/>
 <attribute name="MPN" x="-154.94" y="111.76" size="1.778" layer="96" display="off"/>
 </instance>
-<instance part="C7" gate="G$1" x="-127" y="111.76">
+<instance part="C6" gate="G$1" x="-127" y="111.76">
 <attribute name="OC_FARNELL" x="-127" y="111.76" size="1.778" layer="96" display="off"/>
 <attribute name="MF" x="-127" y="111.76" size="1.778" layer="96" display="off"/>
 <attribute name="MPN" x="-127" y="111.76" size="1.778" layer="96" display="off"/>
 </instance>
-<instance part="P+10" gate="VCC" x="-101.6" y="119.38" rot="R270"/>
-<instance part="IC3" gate="G$1" x="-78.74" y="45.72"/>
-<instance part="P+12" gate="VCC" x="-58.42" y="-5.08"/>
-<instance part="GND20" gate="1" x="-58.42" y="-22.86"/>
-<instance part="R21" gate="G$1" x="-129.54" y="71.12">
+<instance part="P+7" gate="VCC" x="-101.6" y="119.38" rot="R270"/>
+<instance part="IC2" gate="G$1" x="-78.74" y="45.72"/>
+<instance part="P+8" gate="VCC" x="-58.42" y="-5.08"/>
+<instance part="GND12" gate="1" x="-58.42" y="-22.86"/>
+<instance part="R3" gate="G$1" x="-129.54" y="71.12">
 <attribute name="OC_FARNELL" x="-129.54" y="71.12" size="1.778" layer="96" display="off"/>
 <attribute name="MF" x="-129.54" y="71.12" size="1.778" layer="96" display="off"/>
 <attribute name="MPN" x="-129.54" y="71.12" size="1.778" layer="96" display="off"/>
 </instance>
-<instance part="P+13" gate="VCC" x="-137.16" y="78.74"/>
-<instance part="GND22" gate="1" x="-109.22" y="40.64"/>
-<instance part="P+14" gate="VCC" x="-109.22" y="30.48" rot="R90"/>
+<instance part="P+4" gate="VCC" x="-137.16" y="78.74"/>
+<instance part="GND9" gate="1" x="-109.22" y="40.64"/>
+<instance part="P+6" gate="VCC" x="-109.22" y="30.48" rot="R90"/>
 <instance part="Q1" gate="G$1" x="-106.68" y="50.8" rot="R90"/>
-<instance part="C8" gate="G$1" x="-116.84" y="55.88" rot="R90">
+<instance part="C7" gate="G$1" x="-116.84" y="55.88" rot="R90">
 <attribute name="OC_FARNELL" x="-116.84" y="55.88" size="1.778" layer="96" display="off"/>
 <attribute name="MF" x="-116.84" y="55.88" size="1.778" layer="96" display="off"/>
 <attribute name="MPN" x="-116.84" y="55.88" size="1.778" layer="96" display="off"/>
 </instance>
-<instance part="C9" gate="G$1" x="-116.84" y="45.72" rot="R90">
+<instance part="C8" gate="G$1" x="-116.84" y="45.72" rot="R90">
 <attribute name="OC_FARNELL" x="-116.84" y="45.72" size="1.778" layer="96" display="off"/>
 <attribute name="MF" x="-116.84" y="45.72" size="1.778" layer="96" display="off"/>
 <attribute name="MPN" x="-116.84" y="45.72" size="1.778" layer="96" display="off"/>
 </instance>
-<instance part="GND19" gate="1" x="-119.38" y="40.64"/>
-<instance part="R4" gate="G$1" x="30.48" y="114.3">
+<instance part="GND7" gate="1" x="-119.38" y="40.64"/>
+<instance part="R13" gate="G$1" x="30.48" y="114.3">
 <attribute name="OC_FARNELL" x="30.48" y="114.3" size="1.778" layer="96" display="off"/>
 <attribute name="MF" x="30.48" y="114.3" size="1.778" layer="96" display="off"/>
 <attribute name="MPN" x="30.48" y="114.3" size="1.778" layer="96" display="off"/>
 </instance>
-<instance part="R20" gate="G$1" x="22.86" y="58.42">
+<instance part="R5" gate="G$1" x="22.86" y="58.42">
 <attribute name="OC_FARNELL" x="22.86" y="58.42" size="1.778" layer="96" display="off"/>
 <attribute name="MF" x="22.86" y="58.42" size="1.778" layer="96" display="off"/>
 <attribute name="MPN" x="22.86" y="58.42" size="1.778" layer="96" display="off"/>
 </instance>
-<instance part="R23" gate="G$1" x="25.4" y="7.62">
+<instance part="R10" gate="G$1" x="25.4" y="7.62">
 <attribute name="OC_FARNELL" x="25.4" y="7.62" size="1.778" layer="96" display="off"/>
 <attribute name="MF" x="25.4" y="7.62" size="1.778" layer="96" display="off"/>
 <attribute name="MPN" x="25.4" y="7.62" size="1.778" layer="96" display="off"/>
 </instance>
-<instance part="C10" gate="G$1" x="-137.16" y="58.42">
+<instance part="C3" gate="G$1" x="-137.16" y="58.42">
 <attribute name="OC_FARNELL" x="-137.16" y="58.42" size="1.778" layer="96" display="off"/>
 <attribute name="MF" x="-137.16" y="58.42" size="1.778" layer="96" display="off"/>
 <attribute name="MPN" x="-137.16" y="58.42" size="1.778" layer="96" display="off"/>
 </instance>
-<instance part="GND23" gate="1" x="-137.16" y="48.26"/>
-<instance part="L1" gate="G$1" x="-137.16" y="66.04" rot="R90">
+<instance part="GND4" gate="1" x="-137.16" y="48.26"/>
+<instance part="R2" gate="G$1" x="-137.16" y="66.04" rot="R90">
 <attribute name="OC_FARNELL" x="-137.16" y="66.04" size="1.778" layer="96" display="off"/>
 <attribute name="MF" x="-137.16" y="66.04" size="1.778" layer="96" display="off"/>
 <attribute name="MPN" x="-137.16" y="66.04" size="1.778" layer="96" display="off"/>
 </instance>
-<instance part="GND24" gate="1" x="-111.76" y="66.04"/>
-<instance part="SV1" gate="1" x="-35.56" y="83.82" rot="R180"/>
-<instance part="P+11" gate="VCC" x="-48.26" y="96.52"/>
-<instance part="GND25" gate="1" x="-60.96" y="86.36"/>
-<instance part="P+15" gate="VCC" x="-20.32" y="134.62"/>
-<instance part="GND26" gate="1" x="-35.56" y="101.6"/>
-<instance part="U4" gate="A" x="-127" y="-33.02">
+<instance part="GND8" gate="1" x="-111.76" y="66.04"/>
+<instance part="SV3" gate="1" x="-35.56" y="83.82" rot="R180"/>
+<instance part="P+9" gate="VCC" x="-48.26" y="96.52"/>
+<instance part="GND11" gate="1" x="-60.96" y="86.36"/>
+<instance part="P+10" gate="VCC" x="-20.32" y="134.62"/>
+<instance part="GND13" gate="1" x="-35.56" y="101.6"/>
+<instance part="U1" gate="A" x="-127" y="-33.02">
 <attribute name="MF" x="-127" y="-33.02" size="1.778" layer="96" display="off"/>
 </instance>
-<instance part="P+16" gate="VCC" x="-144.78" y="-22.86"/>
-<instance part="GND29" gate="1" x="-149.86" y="-48.26"/>
-<instance part="C12" gate="G$1" x="-167.64" y="-30.48">
+<instance part="P+3" gate="VCC" x="-144.78" y="-22.86"/>
+<instance part="GND2" gate="1" x="-149.86" y="-48.26"/>
+<instance part="C1" gate="G$1" x="-167.64" y="-30.48">
 <attribute name="OC_FARNELL" x="-167.64" y="-30.48" size="1.778" layer="96" display="off"/>
 <attribute name="MF" x="-167.64" y="-30.48" size="1.778" layer="96" display="off"/>
 <attribute name="MPN" x="-167.64" y="-30.48" size="1.778" layer="96" display="off"/>
 </instance>
-<instance part="P+17" gate="VCC" x="-167.64" y="-20.32"/>
-<instance part="GND30" gate="1" x="-167.64" y="-40.64"/>
-<instance part="R27" gate="G$1" x="-149.86" y="-2.54" rot="R90">
+<instance part="P+1" gate="VCC" x="-167.64" y="-20.32"/>
+<instance part="GND1" gate="1" x="-167.64" y="-40.64"/>
+<instance part="R1" gate="G$1" x="-149.86" y="-2.54" rot="R90">
 <attribute name="OC_FARNELL" x="-149.86" y="-2.54" size="1.778" layer="96" display="off"/>
 <attribute name="MF" x="-149.86" y="-2.54" size="1.778" layer="96" display="off"/>
 <attribute name="MPN" x="-149.86" y="-2.54" size="1.778" layer="96" display="off"/>
 </instance>
-<instance part="P+18" gate="VCC" x="-149.86" y="7.62"/>
+<instance part="P+2" gate="VCC" x="-149.86" y="7.62"/>
 <instance part="D2" gate="G$1" x="-114.3" y="114.3" rot="R90">
 <attribute name="OC_FARNELL" x="-114.3" y="114.3" size="1.778" layer="96" display="off"/>
 <attribute name="MF" x="-114.3" y="114.3" size="1.778" layer="96" display="off"/>
 <attribute name="MPN" x="-114.3" y="114.3" size="1.778" layer="96" display="off"/>
 </instance>
-<instance part="PAD4" gate="G$1" x="83.82" y="119.38" rot="R180">
+<instance part="PAD1" gate="G$1" x="83.82" y="119.38" rot="R180">
 <attribute name="OC_FARNELL" x="83.82" y="119.38" size="1.778" layer="96" display="off"/>
 <attribute name="MF" x="83.82" y="119.38" size="1.778" layer="96" display="off"/>
 <attribute name="MPN" x="83.82" y="119.38" size="1.778" layer="96" display="off"/>
 </instance>
-<instance part="P+19" gate="1" x="58.42" y="121.92"/>
-<instance part="PAD5" gate="G$1" x="83.82" y="109.22" rot="R180">
+<instance part="P+12" gate="1" x="58.42" y="121.92"/>
+<instance part="PAD2" gate="G$1" x="83.82" y="109.22" rot="R180">
 <attribute name="OC_FARNELL" x="83.82" y="109.22" size="1.778" layer="96" display="off"/>
 <attribute name="MF" x="83.82" y="109.22" size="1.778" layer="96" display="off"/>
 <attribute name="MPN" x="83.82" y="109.22" size="1.778" layer="96" display="off"/>
 </instance>
-<instance part="GND32" gate="1" x="76.2" y="101.6"/>
-<instance part="C13" gate="G$1" x="-7.62" y="119.38">
+<instance part="GND24" gate="1" x="76.2" y="101.6"/>
+<instance part="C9" gate="G$1" x="-7.62" y="119.38">
 <attribute name="OC_FARNELL" x="-7.62" y="119.38" size="1.778" layer="96" display="off"/>
 <attribute name="MF" x="-7.62" y="119.38" size="1.778" layer="96" display="off"/>
 <attribute name="MPN" x="-7.62" y="119.38" size="1.778" layer="96" display="off"/>
 </instance>
-<instance part="P+20" gate="VCC" x="-7.62" y="129.54"/>
-<instance part="GND35" gate="1" x="-7.62" y="109.22"/>
-<instance part="C14" gate="G$1" x="-129.54" y="55.88">
+<instance part="P+11" gate="VCC" x="-7.62" y="129.54"/>
+<instance part="GND14" gate="1" x="-7.62" y="109.22"/>
+<instance part="C5" gate="G$1" x="-129.54" y="55.88">
 <attribute name="OC_FARNELL" x="-129.54" y="55.88" size="1.778" layer="96" display="off"/>
 <attribute name="MF" x="-129.54" y="55.88" size="1.778" layer="96" display="off"/>
 <attribute name="MPN" x="-129.54" y="55.88" size="1.778" layer="96" display="off"/>
 </instance>
-<instance part="GND36" gate="1" x="-129.54" y="45.72"/>
-<instance part="R29" gate="G$1" x="76.2" y="48.26" rot="R90">
+<instance part="GND6" gate="1" x="-129.54" y="45.72"/>
+<instance part="R22" gate="G$1" x="76.2" y="48.26" rot="R90">
 <attribute name="OC_FARNELL" x="76.2" y="48.26" size="1.778" layer="96" display="off"/>
 <attribute name="MF" x="76.2" y="48.26" size="1.778" layer="96" display="off"/>
 <attribute name="MPN" x="76.2" y="48.26" size="1.778" layer="96" display="off"/>
 </instance>
 <instance part="SUPPLY1" gate="G$1" x="-175.26" y="124.46"/>
 <instance part="SUPPLY2" gate="G$1" x="-71.12" y="88.9"/>
-<instance part="U5" gate="A" x="-55.88" y="114.3" rot="MR0"/>
-<instance part="GND21" gate="1" x="-83.82" y="99.06"/>
-<instance part="R22" gate="G$1" x="-88.9" y="124.46" rot="R90">
+<instance part="U2" gate="A" x="-55.88" y="114.3" rot="MR0"/>
+<instance part="GND10" gate="1" x="-83.82" y="99.06"/>
+<instance part="R4" gate="G$1" x="-88.9" y="124.46" rot="R90">
 <attribute name="OC_FARNELL" x="-88.9" y="124.46" size="1.778" layer="96" rot="R90" display="off"/>
 <attribute name="MF" x="-88.9" y="124.46" size="1.778" layer="96" rot="R90" display="off"/>
 <attribute name="MPN" x="-88.9" y="124.46" size="1.778" layer="96" rot="R90" display="off"/>
 </instance>
-<instance part="SV2" gate="1" x="-96.52" y="111.76"/>
-<instance part="SV3" gate="1" x="-71.12" y="-12.7" rot="R180"/>
-<instance part="C11" gate="G$1" x="116.84" y="68.58"/>
-<instance part="GND27" gate="1" x="116.84" y="58.42"/>
-<instance part="P+4" gate="1" x="116.84" y="76.2"/>
+<instance part="SV1" gate="1" x="-96.52" y="111.76"/>
+<instance part="SV2" gate="1" x="-71.12" y="-12.7" rot="R180"/>
+<instance part="C14" gate="G$1" x="116.84" y="68.58"/>
+<instance part="GND32" gate="1" x="116.84" y="58.42"/>
+<instance part="P+20" gate="1" x="116.84" y="76.2"/>
 </instances>
 <busses>
 </busses>
 <nets>
 <net name="N$2" class="2">
 <segment>
-<pinref part="R6" gate="G$1" pin="2"/>
-<pinref part="PAD1" gate="G$1" pin="P"/>
+<pinref part="R20" gate="G$1" pin="2"/>
+<pinref part="PAD3" gate="G$1" pin="P"/>
 <wire x1="76.2" y1="91.44" x2="83.82" y2="91.44" width="0.1524" layer="91"/>
-<pinref part="U1" gate="G$1" pin="OUT2"/>
+<pinref part="U3" gate="G$1" pin="OUT2"/>
 <wire x1="66.04" y1="88.9" x2="71.12" y2="88.9" width="0.1524" layer="91"/>
 <wire x1="71.12" y1="88.9" x2="71.12" y2="93.98" width="0.1524" layer="91"/>
 <wire x1="71.12" y1="93.98" x2="76.2" y2="93.98" width="0.1524" layer="91"/>
@@ -24207,147 +24207,147 @@ EAGLE CAD Libraries on element14&lt;/a&gt;</description>
 </net>
 <net name="18V" class="2">
 <segment>
-<pinref part="U1" gate="G$1" pin="VS"/>
-<pinref part="P+1" gate="1" pin="+18V"/>
+<pinref part="U3" gate="G$1" pin="VS"/>
+<pinref part="P+13" gate="1" pin="+18V"/>
 <wire x1="66.04" y1="99.06" x2="66.04" y2="104.14" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="P+3" gate="1" pin="+18V"/>
-<pinref part="C3" gate="G$1" pin="+"/>
+<pinref part="P+19" gate="1" pin="+18V"/>
+<pinref part="C13" gate="G$1" pin="+"/>
 <wire x1="116.84" y1="106.68" x2="116.84" y2="99.06" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="C1" gate="G$1" pin="1"/>
+<pinref part="C10" gate="G$1" pin="1"/>
 <wire x1="101.6" y1="106.68" x2="101.6" y2="99.06" width="0.1524" layer="91"/>
-<pinref part="P+5" gate="1" pin="+18V"/>
+<pinref part="P+16" gate="1" pin="+18V"/>
 </segment>
 <segment>
-<pinref part="C4" gate="G$1" pin="1"/>
+<pinref part="C11" gate="G$1" pin="1"/>
 <wire x1="101.6" y1="43.18" x2="101.6" y2="35.56" width="0.1524" layer="91"/>
-<pinref part="P+6" gate="1" pin="+18V"/>
+<pinref part="P+17" gate="1" pin="+18V"/>
 </segment>
 <segment>
-<pinref part="C5" gate="G$1" pin="1"/>
+<pinref part="C12" gate="G$1" pin="1"/>
 <wire x1="101.6" y1="-7.62" x2="101.6" y2="-15.24" width="0.1524" layer="91"/>
-<pinref part="P+7" gate="1" pin="+18V"/>
+<pinref part="P+18" gate="1" pin="+18V"/>
 </segment>
 <segment>
-<pinref part="U2" gate="G$1" pin="VS"/>
-<pinref part="P+8" gate="1" pin="+18V"/>
+<pinref part="U4" gate="G$1" pin="VS"/>
+<pinref part="P+14" gate="1" pin="+18V"/>
 <wire x1="66.04" y1="45.72" x2="66.04" y2="50.8" width="0.1524" layer="91"/>
 <wire x1="66.04" y1="45.72" x2="71.12" y2="45.72" width="0.1524" layer="91"/>
 <wire x1="71.12" y1="45.72" x2="71.12" y2="55.88" width="0.1524" layer="91"/>
 <junction x="66.04" y="45.72"/>
 <wire x1="71.12" y1="55.88" x2="76.2" y2="55.88" width="0.1524" layer="91"/>
-<pinref part="R29" gate="G$1" pin="2"/>
+<pinref part="R22" gate="G$1" pin="2"/>
 <wire x1="76.2" y1="55.88" x2="76.2" y2="53.34" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="U3" gate="G$1" pin="VS"/>
-<pinref part="P+9" gate="1" pin="+18V"/>
+<pinref part="U5" gate="G$1" pin="VS"/>
+<pinref part="P+15" gate="1" pin="+18V"/>
 <wire x1="66.04" y1="-7.62" x2="66.04" y2="-2.54" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="P+19" gate="1" pin="+18V"/>
-<pinref part="PAD4" gate="G$1" pin="P"/>
+<pinref part="P+12" gate="1" pin="+18V"/>
+<pinref part="PAD1" gate="G$1" pin="P"/>
 <wire x1="58.42" y1="119.38" x2="81.28" y2="119.38" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="P+4" gate="1" pin="+18V"/>
-<pinref part="C11" gate="G$1" pin="+"/>
+<pinref part="P+20" gate="1" pin="+18V"/>
+<pinref part="C14" gate="G$1" pin="+"/>
 <wire x1="116.84" y1="73.66" x2="116.84" y2="71.12" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="GND" class="1">
 <segment>
-<pinref part="U1" gate="G$1" pin="GND"/>
-<pinref part="GND2" gate="1" pin="GND"/>
+<pinref part="U3" gate="G$1" pin="GND"/>
+<pinref part="GND21" gate="1" pin="GND"/>
 <wire x1="66.04" y1="81.28" x2="66.04" y2="76.2" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="GND1" gate="1" pin="GND"/>
-<pinref part="R5" gate="G$1" pin="1"/>
+<pinref part="GND18" gate="1" pin="GND"/>
+<pinref part="R17" gate="G$1" pin="1"/>
 <wire x1="38.1" y1="71.12" x2="35.56" y2="71.12" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="R3" gate="G$1" pin="1"/>
-<pinref part="GND4" gate="1" pin="GND"/>
+<pinref part="R14" gate="G$1" pin="1"/>
+<pinref part="GND15" gate="1" pin="GND"/>
 <wire x1="27.94" y1="106.68" x2="20.32" y2="106.68" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="C1" gate="G$1" pin="2"/>
+<pinref part="C10" gate="G$1" pin="2"/>
 <wire x1="101.6" y1="91.44" x2="101.6" y2="88.9" width="0.1524" layer="91"/>
-<pinref part="GND5" gate="1" pin="GND"/>
+<pinref part="GND28" gate="1" pin="GND"/>
 </segment>
 <segment>
-<pinref part="R7" gate="G$1" pin="1"/>
-<pinref part="GND6" gate="1" pin="GND"/>
+<pinref part="R21" gate="G$1" pin="1"/>
+<pinref part="GND25" gate="1" pin="GND"/>
 <wire x1="76.2" y1="68.58" x2="76.2" y2="66.04" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="GND7" gate="1" pin="GND"/>
-<pinref part="C3" gate="G$1" pin="-"/>
+<pinref part="GND31" gate="1" pin="GND"/>
+<pinref part="C13" gate="G$1" pin="-"/>
 <wire x1="116.84" y1="88.9" x2="116.84" y2="91.44" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="C4" gate="G$1" pin="2"/>
+<pinref part="C11" gate="G$1" pin="2"/>
 <wire x1="101.6" y1="27.94" x2="101.6" y2="25.4" width="0.1524" layer="91"/>
-<pinref part="GND8" gate="1" pin="GND"/>
+<pinref part="GND29" gate="1" pin="GND"/>
 </segment>
 <segment>
-<pinref part="C5" gate="G$1" pin="2"/>
+<pinref part="C12" gate="G$1" pin="2"/>
 <wire x1="101.6" y1="-22.86" x2="101.6" y2="-25.4" width="0.1524" layer="91"/>
-<pinref part="GND9" gate="1" pin="GND"/>
+<pinref part="GND30" gate="1" pin="GND"/>
 </segment>
 <segment>
-<pinref part="U2" gate="G$1" pin="GND"/>
-<pinref part="GND10" gate="1" pin="GND"/>
+<pinref part="U4" gate="G$1" pin="GND"/>
+<pinref part="GND22" gate="1" pin="GND"/>
 <wire x1="66.04" y1="27.94" x2="66.04" y2="25.4" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="GND11" gate="1" pin="GND"/>
-<pinref part="R11" gate="G$1" pin="1"/>
+<pinref part="GND20" gate="1" pin="GND"/>
+<pinref part="R18" gate="G$1" pin="1"/>
 <wire x1="40.64" y1="20.32" x2="35.56" y2="20.32" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="R10" gate="G$1" pin="1"/>
-<pinref part="GND12" gate="1" pin="GND"/>
+<pinref part="R15" gate="G$1" pin="1"/>
+<pinref part="GND16" gate="1" pin="GND"/>
 <wire x1="27.94" y1="53.34" x2="20.32" y2="53.34" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="R13" gate="G$1" pin="1"/>
-<pinref part="GND13" gate="1" pin="GND"/>
+<pinref part="R24" gate="G$1" pin="1"/>
+<pinref part="GND26" gate="1" pin="GND"/>
 <wire x1="76.2" y1="15.24" x2="76.2" y2="12.7" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="U3" gate="G$1" pin="GND"/>
-<pinref part="GND14" gate="1" pin="GND"/>
+<pinref part="U5" gate="G$1" pin="GND"/>
+<pinref part="GND23" gate="1" pin="GND"/>
 <wire x1="66.04" y1="-25.4" x2="66.04" y2="-30.48" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="GND15" gate="1" pin="GND"/>
-<pinref part="R17" gate="G$1" pin="1"/>
+<pinref part="GND19" gate="1" pin="GND"/>
+<pinref part="R19" gate="G$1" pin="1"/>
 <wire x1="38.1" y1="-35.56" x2="35.56" y2="-35.56" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="R16" gate="G$1" pin="1"/>
-<pinref part="GND16" gate="1" pin="GND"/>
+<pinref part="GND17" gate="1" pin="GND"/>
 <wire x1="27.94" y1="0" x2="20.32" y2="0" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="R19" gate="G$1" pin="1"/>
-<pinref part="GND17" gate="1" pin="GND"/>
+<pinref part="R26" gate="G$1" pin="1"/>
+<pinref part="GND27" gate="1" pin="GND"/>
 <wire x1="76.2" y1="-38.1" x2="76.2" y2="-40.64" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="GND18" gate="1" pin="GND"/>
-<pinref part="IC2" gate="G$1" pin="GND"/>
+<pinref part="GND3" gate="1" pin="GND"/>
+<pinref part="IC1" gate="G$1" pin="GND"/>
 <wire x1="-139.7" y1="99.06" x2="-139.7" y2="106.68" width="0.1524" layer="91"/>
-<pinref part="C6" gate="G$1" pin="2"/>
+<pinref part="C2" gate="G$1" pin="2"/>
 <wire x1="-139.7" y1="106.68" x2="-139.7" y2="109.22" width="0.1524" layer="91"/>
 <wire x1="-154.94" y1="106.68" x2="-139.7" y2="106.68" width="0.1524" layer="91"/>
 <junction x="-139.7" y="106.68"/>
-<pinref part="C7" gate="G$1" pin="2"/>
+<pinref part="C6" gate="G$1" pin="2"/>
 <wire x1="-139.7" y1="106.68" x2="-127" y2="106.68" width="0.1524" layer="91"/>
 <pinref part="D2" gate="G$1" pin="A"/>
 <wire x1="-127" y1="106.68" x2="-114.3" y2="106.68" width="0.1524" layer="91"/>
@@ -24355,200 +24355,200 @@ EAGLE CAD Libraries on element14&lt;/a&gt;</description>
 <junction x="-127" y="106.68"/>
 </segment>
 <segment>
-<pinref part="IC3" gate="G$1" pin="GND@1"/>
-<pinref part="IC3" gate="G$1" pin="GND@2"/>
+<pinref part="IC2" gate="G$1" pin="GND@1"/>
+<pinref part="IC2" gate="G$1" pin="GND@2"/>
 <wire x1="-101.6" y1="40.64" x2="-101.6" y2="38.1" width="0.1524" layer="91"/>
 <wire x1="-101.6" y1="40.64" x2="-101.6" y2="43.18" width="0.1524" layer="91"/>
 <junction x="-101.6" y="40.64"/>
-<pinref part="GND22" gate="1" pin="GND"/>
+<pinref part="GND9" gate="1" pin="GND"/>
 <wire x1="-101.6" y1="43.18" x2="-109.22" y2="43.18" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="C9" gate="G$1" pin="1"/>
 <pinref part="C8" gate="G$1" pin="1"/>
+<pinref part="C7" gate="G$1" pin="1"/>
 <wire x1="-119.38" y1="45.72" x2="-119.38" y2="55.88" width="0.1524" layer="91"/>
-<pinref part="GND19" gate="1" pin="GND"/>
+<pinref part="GND7" gate="1" pin="GND"/>
 <wire x1="-119.38" y1="45.72" x2="-119.38" y2="43.18" width="0.1524" layer="91"/>
 <junction x="-119.38" y="45.72"/>
 </segment>
 <segment>
-<pinref part="C10" gate="G$1" pin="2"/>
-<pinref part="GND23" gate="1" pin="GND"/>
+<pinref part="C3" gate="G$1" pin="2"/>
+<pinref part="GND4" gate="1" pin="GND"/>
 <wire x1="-137.16" y1="53.34" x2="-137.16" y2="50.8" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="GND24" gate="1" pin="GND"/>
-<pinref part="IC3" gate="G$1" pin="GND"/>
+<pinref part="GND8" gate="1" pin="GND"/>
+<pinref part="IC2" gate="G$1" pin="GND"/>
 <wire x1="-111.76" y1="68.58" x2="-101.6" y2="68.58" width="0.1524" layer="91"/>
 <wire x1="-101.6" y1="68.58" x2="-101.6" y2="66.04" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="GND3" gate="1" pin="GND"/>
-<pinref part="C2" gate="G$1" pin="2"/>
+<pinref part="GND5" gate="1" pin="GND"/>
+<pinref part="C4" gate="G$1" pin="2"/>
 <wire x1="-137.16" y1="12.7" x2="-137.16" y2="15.24" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="GND25" gate="1" pin="GND"/>
-<pinref part="SV1" gate="1" pin="2"/>
+<pinref part="GND11" gate="1" pin="GND"/>
+<pinref part="SV3" gate="1" pin="2"/>
 <wire x1="-60.96" y1="88.9" x2="-43.18" y2="88.9" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="GND26" gate="1" pin="GND"/>
+<pinref part="GND13" gate="1" pin="GND"/>
 <wire x1="-35.56" y1="104.14" x2="-35.56" y2="106.68" width="0.1524" layer="91"/>
-<pinref part="U5" gate="A" pin="VSS"/>
+<pinref part="U2" gate="A" pin="VSS"/>
 <wire x1="-38.1" y1="106.68" x2="-35.56" y2="106.68" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="GND29" gate="1" pin="GND"/>
+<pinref part="GND2" gate="1" pin="GND"/>
 <wire x1="-149.86" y1="-45.72" x2="-149.86" y2="-43.18" width="0.1524" layer="91"/>
-<pinref part="U4" gate="A" pin="VSS"/>
+<pinref part="U1" gate="A" pin="VSS"/>
 <wire x1="-149.86" y1="-43.18" x2="-144.78" y2="-43.18" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="GND30" gate="1" pin="GND"/>
-<pinref part="C12" gate="G$1" pin="2"/>
+<pinref part="GND1" gate="1" pin="GND"/>
+<pinref part="C1" gate="G$1" pin="2"/>
 <wire x1="-167.64" y1="-38.1" x2="-167.64" y2="-35.56" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="PAD5" gate="G$1" pin="P"/>
-<pinref part="GND32" gate="1" pin="GND"/>
+<pinref part="PAD2" gate="G$1" pin="P"/>
+<pinref part="GND24" gate="1" pin="GND"/>
 <wire x1="81.28" y1="109.22" x2="76.2" y2="109.22" width="0.1524" layer="91"/>
 <wire x1="76.2" y1="109.22" x2="76.2" y2="104.14" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="GND35" gate="1" pin="GND"/>
-<pinref part="C13" gate="G$1" pin="2"/>
+<pinref part="GND14" gate="1" pin="GND"/>
+<pinref part="C9" gate="G$1" pin="2"/>
 <wire x1="-7.62" y1="111.76" x2="-7.62" y2="114.3" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="GND36" gate="1" pin="GND"/>
-<pinref part="C14" gate="G$1" pin="2"/>
+<pinref part="GND6" gate="1" pin="GND"/>
+<pinref part="C5" gate="G$1" pin="2"/>
 <wire x1="-129.54" y1="48.26" x2="-129.54" y2="50.8" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="GND21" gate="1" pin="GND"/>
+<pinref part="GND10" gate="1" pin="GND"/>
 <wire x1="-83.82" y1="106.68" x2="-83.82" y2="101.6" width="0.1524" layer="91"/>
-<pinref part="SV2" gate="1" pin="1"/>
+<pinref part="SV1" gate="1" pin="1"/>
 <wire x1="-88.9" y1="106.68" x2="-83.82" y2="106.68" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="GND20" gate="1" pin="GND"/>
+<pinref part="GND12" gate="1" pin="GND"/>
 <wire x1="-58.42" y1="-20.32" x2="-58.42" y2="-15.24" width="0.1524" layer="91"/>
-<pinref part="SV3" gate="1" pin="6"/>
+<pinref part="SV2" gate="1" pin="6"/>
 <wire x1="-58.42" y1="-15.24" x2="-63.5" y2="-15.24" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="C11" gate="G$1" pin="-"/>
-<pinref part="GND27" gate="1" pin="GND"/>
+<pinref part="C14" gate="G$1" pin="-"/>
+<pinref part="GND32" gate="1" pin="GND"/>
 <wire x1="116.84" y1="63.5" x2="116.84" y2="60.96" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="VCC" class="1">
 <segment>
-<pinref part="P+14" gate="VCC" pin="VCC"/>
+<pinref part="P+6" gate="VCC" pin="VCC"/>
 <wire x1="-106.68" y1="30.48" x2="-101.6" y2="30.48" width="0.1524" layer="91"/>
-<pinref part="IC3" gate="G$1" pin="VCC@1"/>
-<pinref part="IC3" gate="G$1" pin="VCC@2"/>
+<pinref part="IC2" gate="G$1" pin="VCC@1"/>
+<pinref part="IC2" gate="G$1" pin="VCC@2"/>
 <wire x1="-101.6" y1="33.02" x2="-101.6" y2="35.56" width="0.1524" layer="91"/>
 <wire x1="-101.6" y1="30.48" x2="-101.6" y2="33.02" width="0.1524" layer="91"/>
 <junction x="-101.6" y="33.02"/>
 </segment>
 <segment>
-<pinref part="L1" gate="G$1" pin="2"/>
-<pinref part="R21" gate="G$1" pin="1"/>
-<pinref part="P+13" gate="VCC" pin="VCC"/>
+<pinref part="R2" gate="G$1" pin="2"/>
+<pinref part="R3" gate="G$1" pin="1"/>
+<pinref part="P+4" gate="VCC" pin="VCC"/>
 <wire x1="-137.16" y1="71.12" x2="-134.62" y2="71.12" width="0.1524" layer="91"/>
 <wire x1="-137.16" y1="76.2" x2="-137.16" y2="71.12" width="0.1524" layer="91"/>
 <junction x="-137.16" y="71.12"/>
 </segment>
 <segment>
-<pinref part="C2" gate="G$1" pin="1"/>
-<pinref part="P+2" gate="VCC" pin="VCC"/>
+<pinref part="C4" gate="G$1" pin="1"/>
+<pinref part="P+5" gate="VCC" pin="VCC"/>
 <wire x1="-137.16" y1="22.86" x2="-137.16" y2="27.94" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="P+11" gate="VCC" pin="VCC"/>
+<pinref part="P+9" gate="VCC" pin="VCC"/>
 <wire x1="-48.26" y1="93.98" x2="-48.26" y2="91.44" width="0.1524" layer="91"/>
 <wire x1="-48.26" y1="91.44" x2="-43.18" y2="91.44" width="0.1524" layer="91"/>
-<pinref part="SV1" gate="1" pin="1"/>
+<pinref part="SV3" gate="1" pin="1"/>
 </segment>
 <segment>
-<pinref part="P+15" gate="VCC" pin="VCC"/>
+<pinref part="P+10" gate="VCC" pin="VCC"/>
 <wire x1="-20.32" y1="132.08" x2="-20.32" y2="127" width="0.1524" layer="91"/>
-<pinref part="U5" gate="A" pin="VDD"/>
+<pinref part="U2" gate="A" pin="VDD"/>
 <wire x1="-38.1" y1="127" x2="-20.32" y2="127" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="U4" gate="A" pin="VDD"/>
+<pinref part="U1" gate="A" pin="VDD"/>
 <wire x1="-144.78" y1="-30.48" x2="-142.24" y2="-30.48" width="0.1524" layer="91"/>
-<pinref part="P+16" gate="VCC" pin="VCC"/>
+<pinref part="P+3" gate="VCC" pin="VCC"/>
 <wire x1="-144.78" y1="-25.4" x2="-144.78" y2="-30.48" width="0.1524" layer="91"/>
 <junction x="-144.78" y="-30.48"/>
 </segment>
 <segment>
-<pinref part="C12" gate="G$1" pin="1"/>
-<pinref part="P+17" gate="VCC" pin="VCC"/>
+<pinref part="C1" gate="G$1" pin="1"/>
+<pinref part="P+1" gate="VCC" pin="VCC"/>
 <wire x1="-167.64" y1="-27.94" x2="-167.64" y2="-22.86" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="P+18" gate="VCC" pin="VCC"/>
-<pinref part="R27" gate="G$1" pin="2"/>
+<pinref part="P+2" gate="VCC" pin="VCC"/>
+<pinref part="R1" gate="G$1" pin="2"/>
 <wire x1="-149.86" y1="5.08" x2="-149.86" y2="2.54" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="IC2" gate="G$1" pin="O"/>
-<pinref part="C7" gate="G$1" pin="1"/>
+<pinref part="IC1" gate="G$1" pin="O"/>
+<pinref part="C6" gate="G$1" pin="1"/>
 <wire x1="-132.08" y1="119.38" x2="-127" y2="119.38" width="0.1524" layer="91"/>
 <wire x1="-127" y1="119.38" x2="-127" y2="114.3" width="0.1524" layer="91"/>
 <wire x1="-127" y1="119.38" x2="-114.3" y2="119.38" width="0.1524" layer="91"/>
 <junction x="-127" y="119.38"/>
 <pinref part="D2" gate="G$1" pin="C"/>
 <wire x1="-114.3" y1="116.84" x2="-114.3" y2="119.38" width="0.1524" layer="91"/>
-<pinref part="P+10" gate="VCC" pin="VCC"/>
+<pinref part="P+7" gate="VCC" pin="VCC"/>
 <wire x1="-114.3" y1="119.38" x2="-104.14" y2="119.38" width="0.1524" layer="91"/>
 <junction x="-114.3" y="119.38"/>
 </segment>
 <segment>
-<pinref part="C13" gate="G$1" pin="1"/>
-<pinref part="P+20" gate="VCC" pin="VCC"/>
+<pinref part="C9" gate="G$1" pin="1"/>
+<pinref part="P+11" gate="VCC" pin="VCC"/>
 <wire x1="-7.62" y1="121.92" x2="-7.62" y2="127" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="SV3" gate="1" pin="2"/>
-<pinref part="P+12" gate="VCC" pin="VCC"/>
+<pinref part="SV2" gate="1" pin="2"/>
+<pinref part="P+8" gate="VCC" pin="VCC"/>
 <wire x1="-63.5" y1="-10.16" x2="-58.42" y2="-10.16" width="0.1524" layer="91"/>
 <wire x1="-58.42" y1="-10.16" x2="-58.42" y2="-7.62" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$1" class="0">
 <segment>
-<pinref part="U1" gate="G$1" pin="SR"/>
-<pinref part="R5" gate="G$1" pin="2"/>
+<pinref part="U3" gate="G$1" pin="SR"/>
+<pinref part="R17" gate="G$1" pin="2"/>
 <wire x1="38.1" y1="83.82" x2="35.56" y2="83.82" width="0.1524" layer="91"/>
 <wire x1="35.56" y1="83.82" x2="35.56" y2="81.28" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$3" class="0">
 <segment>
-<pinref part="R1" gate="G$1" pin="2"/>
-<pinref part="U1" gate="G$1" pin="INH"/>
+<pinref part="R7" gate="G$1" pin="2"/>
+<pinref part="U3" gate="G$1" pin="INH"/>
 <wire x1="30.48" y1="88.9" x2="38.1" y2="88.9" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$4" class="0">
 <segment>
-<pinref part="U1" gate="G$1" pin="IN"/>
-<pinref part="R2" gate="G$1" pin="2"/>
+<pinref part="U3" gate="G$1" pin="IN"/>
+<pinref part="R6" gate="G$1" pin="2"/>
 <wire x1="38.1" y1="91.44" x2="30.48" y2="91.44" width="0.1524" layer="91"/>
 <wire x1="30.48" y1="91.44" x2="30.48" y2="96.52" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$5" class="0">
 <segment>
-<pinref part="IC3" gate="G$1" pin="PC1(ADC1)"/>
+<pinref part="IC2" gate="G$1" pin="PC1(ADC1)"/>
 <wire x1="12.7" y1="68.58" x2="-53.34" y2="68.58" width="0.1524" layer="91"/>
-<pinref part="R7" gate="G$1" pin="2"/>
-<pinref part="R6" gate="G$1" pin="1"/>
+<pinref part="R21" gate="G$1" pin="2"/>
+<pinref part="R20" gate="G$1" pin="1"/>
 <wire x1="76.2" y1="81.28" x2="76.2" y2="78.74" width="0.1524" layer="91"/>
 <wire x1="12.7" y1="63.5" x2="71.12" y2="63.5" width="0.1524" layer="91"/>
 <wire x1="71.12" y1="63.5" x2="71.12" y2="78.74" width="0.1524" layer="91"/>
@@ -24559,13 +24559,13 @@ EAGLE CAD Libraries on element14&lt;/a&gt;</description>
 </net>
 <net name="N$7" class="2">
 <segment>
-<pinref part="R12" gate="G$1" pin="2"/>
+<pinref part="R23" gate="G$1" pin="2"/>
 <junction x="76.2" y="38.1"/>
-<pinref part="R29" gate="G$1" pin="1"/>
+<pinref part="R22" gate="G$1" pin="1"/>
 <wire x1="76.2" y1="43.18" x2="76.2" y2="38.1" width="0.1524" layer="91"/>
-<pinref part="PAD2" gate="G$1" pin="P"/>
+<pinref part="PAD4" gate="G$1" pin="P"/>
 <wire x1="76.2" y1="38.1" x2="83.82" y2="38.1" width="0.1524" layer="91"/>
-<pinref part="U2" gate="G$1" pin="OUT2"/>
+<pinref part="U4" gate="G$1" pin="OUT2"/>
 <wire x1="66.04" y1="35.56" x2="71.12" y2="35.56" width="0.1524" layer="91"/>
 <wire x1="71.12" y1="35.56" x2="71.12" y2="38.1" width="0.1524" layer="91"/>
 <wire x1="71.12" y1="38.1" x2="76.2" y2="38.1" width="0.1524" layer="91"/>
@@ -24573,22 +24573,22 @@ EAGLE CAD Libraries on element14&lt;/a&gt;</description>
 </net>
 <net name="N$8" class="0">
 <segment>
-<pinref part="U2" gate="G$1" pin="SR"/>
-<pinref part="R11" gate="G$1" pin="2"/>
+<pinref part="U4" gate="G$1" pin="SR"/>
+<pinref part="R18" gate="G$1" pin="2"/>
 <wire x1="38.1" y1="30.48" x2="35.56" y2="30.48" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$9" class="0">
 <segment>
-<pinref part="R8" gate="G$1" pin="2"/>
-<pinref part="U2" gate="G$1" pin="INH"/>
+<pinref part="R9" gate="G$1" pin="2"/>
+<pinref part="U4" gate="G$1" pin="INH"/>
 <wire x1="30.48" y1="35.56" x2="38.1" y2="35.56" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$10" class="0">
 <segment>
-<pinref part="U2" gate="G$1" pin="IN"/>
-<pinref part="R9" gate="G$1" pin="2"/>
+<pinref part="U4" gate="G$1" pin="IN"/>
+<pinref part="R8" gate="G$1" pin="2"/>
 <wire x1="38.1" y1="38.1" x2="30.48" y2="38.1" width="0.1524" layer="91"/>
 <wire x1="30.48" y1="38.1" x2="30.48" y2="43.18" width="0.1524" layer="91"/>
 </segment>
@@ -24596,18 +24596,18 @@ EAGLE CAD Libraries on element14&lt;/a&gt;</description>
 <net name="N$11" class="0">
 <segment>
 <wire x1="2.54" y1="66.04" x2="10.16" y2="58.42" width="0.1524" layer="91"/>
-<pinref part="IC3" gate="G$1" pin="PC2(ADC2)"/>
+<pinref part="IC2" gate="G$1" pin="PC2(ADC2)"/>
 <wire x1="2.54" y1="66.04" x2="-53.34" y2="66.04" width="0.1524" layer="91"/>
-<pinref part="R20" gate="G$1" pin="1"/>
+<pinref part="R5" gate="G$1" pin="1"/>
 <wire x1="10.16" y1="58.42" x2="17.78" y2="58.42" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$13" class="2">
 <segment>
-<pinref part="R18" gate="G$1" pin="2"/>
-<pinref part="PAD3" gate="G$1" pin="P"/>
+<pinref part="R25" gate="G$1" pin="2"/>
+<pinref part="PAD5" gate="G$1" pin="P"/>
 <wire x1="76.2" y1="-15.24" x2="83.82" y2="-15.24" width="0.1524" layer="91"/>
-<pinref part="U3" gate="G$1" pin="OUT2"/>
+<pinref part="U5" gate="G$1" pin="OUT2"/>
 <wire x1="66.04" y1="-17.78" x2="73.66" y2="-17.78" width="0.1524" layer="91"/>
 <wire x1="73.66" y1="-17.78" x2="73.66" y2="-15.24" width="0.1524" layer="91"/>
 <wire x1="73.66" y1="-15.24" x2="76.2" y2="-15.24" width="0.1524" layer="91"/>
@@ -24616,23 +24616,23 @@ EAGLE CAD Libraries on element14&lt;/a&gt;</description>
 </net>
 <net name="N$14" class="0">
 <segment>
-<pinref part="U3" gate="G$1" pin="SR"/>
-<pinref part="R17" gate="G$1" pin="2"/>
+<pinref part="U5" gate="G$1" pin="SR"/>
+<pinref part="R19" gate="G$1" pin="2"/>
 <wire x1="38.1" y1="-22.86" x2="35.56" y2="-22.86" width="0.1524" layer="91"/>
 <wire x1="35.56" y1="-22.86" x2="35.56" y2="-25.4" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$15" class="0">
 <segment>
-<pinref part="R14" gate="G$1" pin="2"/>
-<pinref part="U3" gate="G$1" pin="INH"/>
+<pinref part="R12" gate="G$1" pin="2"/>
+<pinref part="U5" gate="G$1" pin="INH"/>
 <wire x1="30.48" y1="-17.78" x2="38.1" y2="-17.78" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$16" class="0">
 <segment>
-<pinref part="U3" gate="G$1" pin="IN"/>
-<pinref part="R15" gate="G$1" pin="2"/>
+<pinref part="U5" gate="G$1" pin="IN"/>
+<pinref part="R11" gate="G$1" pin="2"/>
 <wire x1="38.1" y1="-15.24" x2="30.48" y2="-15.24" width="0.1524" layer="91"/>
 <wire x1="30.48" y1="-15.24" x2="30.48" y2="-10.16" width="0.1524" layer="91"/>
 </segment>
@@ -24642,15 +24642,15 @@ EAGLE CAD Libraries on element14&lt;/a&gt;</description>
 <wire x1="-2.54" y1="55.88" x2="7.62" y2="45.72" width="0.1524" layer="91"/>
 <wire x1="7.62" y1="45.72" x2="7.62" y2="7.62" width="0.1524" layer="91"/>
 <wire x1="7.62" y1="7.62" x2="20.32" y2="7.62" width="0.1524" layer="91"/>
-<pinref part="IC3" gate="G$1" pin="ADC6"/>
+<pinref part="IC2" gate="G$1" pin="ADC6"/>
 <wire x1="-53.34" y1="55.88" x2="-2.54" y2="55.88" width="0.1524" layer="91"/>
-<pinref part="R23" gate="G$1" pin="1"/>
+<pinref part="R10" gate="G$1" pin="1"/>
 </segment>
 </net>
 <net name="N$18" class="0">
 <segment>
-<pinref part="R19" gate="G$1" pin="2"/>
-<pinref part="R18" gate="G$1" pin="1"/>
+<pinref part="R26" gate="G$1" pin="2"/>
+<pinref part="R25" gate="G$1" pin="1"/>
 <wire x1="76.2" y1="-25.4" x2="76.2" y2="-27.94" width="0.1524" layer="91"/>
 <wire x1="-5.08" y1="53.34" x2="2.54" y2="45.72" width="0.1524" layer="91"/>
 <wire x1="2.54" y1="45.72" x2="2.54" y2="-43.18" width="0.1524" layer="91"/>
@@ -24660,7 +24660,7 @@ EAGLE CAD Libraries on element14&lt;/a&gt;</description>
 <wire x1="71.12" y1="-43.18" x2="71.12" y2="-27.94" width="0.1524" layer="91"/>
 <wire x1="71.12" y1="-27.94" x2="76.2" y2="-27.94" width="0.1524" layer="91"/>
 <junction x="76.2" y="-27.94"/>
-<pinref part="IC3" gate="G$1" pin="ADC7"/>
+<pinref part="IC2" gate="G$1" pin="ADC7"/>
 <wire x1="-53.34" y1="53.34" x2="-5.08" y2="53.34" width="0.1524" layer="91"/>
 </segment>
 </net>
@@ -24672,37 +24672,37 @@ EAGLE CAD Libraries on element14&lt;/a&gt;</description>
 <wire x1="20.32" y1="12.7" x2="66.04" y2="12.7" width="0.1524" layer="91"/>
 <wire x1="66.04" y1="12.7" x2="71.12" y2="15.24" width="0.1524" layer="91"/>
 <wire x1="71.12" y1="15.24" x2="71.12" y2="25.4" width="0.1524" layer="91"/>
-<pinref part="R13" gate="G$1" pin="2"/>
-<pinref part="R12" gate="G$1" pin="1"/>
+<pinref part="R24" gate="G$1" pin="2"/>
+<pinref part="R23" gate="G$1" pin="1"/>
 <wire x1="76.2" y1="27.94" x2="76.2" y2="25.4" width="0.1524" layer="91"/>
 <wire x1="71.12" y1="25.4" x2="76.2" y2="25.4" width="0.1524" layer="91"/>
 <junction x="76.2" y="25.4"/>
-<pinref part="IC3" gate="G$1" pin="PC3(ADC3)"/>
+<pinref part="IC2" gate="G$1" pin="PC3(ADC3)"/>
 <wire x1="0" y1="63.5" x2="-53.34" y2="63.5" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$12" class="0">
 <segment>
-<pinref part="IC3" gate="G$1" pin="PD4(XCK/T0)"/>
+<pinref part="IC2" gate="G$1" pin="PD4(XCK/T0)"/>
 <wire x1="-5.08" y1="38.1" x2="-53.34" y2="38.1" width="0.1524" layer="91"/>
-<pinref part="R9" gate="G$1" pin="1"/>
+<pinref part="R8" gate="G$1" pin="1"/>
 <wire x1="-5.08" y1="43.18" x2="20.32" y2="43.18" width="0.1524" layer="91"/>
 <wire x1="-5.08" y1="38.1" x2="-5.08" y2="43.18" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$21" class="0">
 <segment>
-<pinref part="IC3" gate="G$1" pin="PD5(T1)"/>
+<pinref part="IC2" gate="G$1" pin="PD5(T1)"/>
 <wire x1="20.32" y1="35.56" x2="-53.34" y2="35.56" width="0.1524" layer="91"/>
-<pinref part="R8" gate="G$1" pin="1"/>
+<pinref part="R9" gate="G$1" pin="1"/>
 </segment>
 </net>
 <net name="N$26" class="1">
 <segment>
 <wire x1="-160.02" y1="119.38" x2="-154.94" y2="119.38" width="0.1524" layer="91"/>
-<pinref part="IC2" gate="G$1" pin="I"/>
+<pinref part="IC1" gate="G$1" pin="I"/>
 <wire x1="-154.94" y1="119.38" x2="-147.32" y2="119.38" width="0.1524" layer="91"/>
-<pinref part="C6" gate="G$1" pin="1"/>
+<pinref part="C2" gate="G$1" pin="1"/>
 <wire x1="-154.94" y1="114.3" x2="-154.94" y2="119.38" width="0.1524" layer="91"/>
 <junction x="-154.94" y="119.38"/>
 <pinref part="D1" gate="G$1" pin="C"/>
@@ -24710,12 +24710,12 @@ EAGLE CAD Libraries on element14&lt;/a&gt;</description>
 </net>
 <net name="N$32" class="0">
 <segment>
-<pinref part="IC3" gate="G$1" pin="PB3(MOSI/OC2)"/>
+<pinref part="IC2" gate="G$1" pin="PB3(MOSI/OC2)"/>
 <wire x1="-43.18" y1="17.78" x2="-53.34" y2="17.78" width="0.1524" layer="91"/>
 <junction x="-43.18" y="17.78"/>
-<pinref part="SV1" gate="1" pin="6"/>
+<pinref part="SV3" gate="1" pin="6"/>
 <wire x1="-43.18" y1="17.78" x2="-43.18" y2="78.74" width="0.1524" layer="91"/>
-<pinref part="SV3" gate="1" pin="4"/>
+<pinref part="SV2" gate="1" pin="4"/>
 <wire x1="-63.5" y1="-12.7" x2="-43.18" y2="-12.7" width="0.1524" layer="91"/>
 <wire x1="-43.18" y1="-12.7" x2="-43.18" y2="17.78" width="0.1524" layer="91"/>
 </segment>
@@ -24724,36 +24724,36 @@ EAGLE CAD Libraries on element14&lt;/a&gt;</description>
 <segment>
 <wire x1="-91.44" y1="-20.32" x2="-152.4" y2="-20.32" width="0.1524" layer="91"/>
 <wire x1="-152.4" y1="-20.32" x2="-152.4" y2="-38.1" width="0.1524" layer="91"/>
-<pinref part="U4" gate="A" pin="SCK"/>
+<pinref part="U1" gate="A" pin="SCK"/>
 <wire x1="-152.4" y1="-38.1" x2="-144.78" y2="-38.1" width="0.1524" layer="91"/>
 <wire x1="-91.44" y1="-20.32" x2="-91.44" y2="-12.7" width="0.1524" layer="91"/>
-<pinref part="IC3" gate="G$1" pin="PB5(SCK)"/>
+<pinref part="IC2" gate="G$1" pin="PB5(SCK)"/>
 <wire x1="-91.44" y1="-12.7" x2="-91.44" y2="5.08" width="0.1524" layer="91"/>
 <wire x1="-50.8" y1="5.08" x2="-50.8" y2="12.7" width="0.1524" layer="91"/>
 <wire x1="-50.8" y1="12.7" x2="-53.34" y2="12.7" width="0.1524" layer="91"/>
 <wire x1="-91.44" y1="5.08" x2="-50.8" y2="5.08" width="0.1524" layer="91"/>
-<pinref part="SV3" gate="1" pin="3"/>
+<pinref part="SV2" gate="1" pin="3"/>
 <wire x1="-91.44" y1="-12.7" x2="-78.74" y2="-12.7" width="0.1524" layer="91"/>
 <junction x="-91.44" y="-12.7"/>
 </segment>
 </net>
 <net name="N$27" class="0">
 <segment>
-<pinref part="C8" gate="G$1" pin="2"/>
+<pinref part="C7" gate="G$1" pin="2"/>
 <pinref part="Q1" gate="G$1" pin="2"/>
 <wire x1="-111.76" y1="55.88" x2="-106.68" y2="55.88" width="0.1524" layer="91"/>
 <wire x1="-106.68" y1="55.88" x2="-106.68" y2="53.34" width="0.1524" layer="91"/>
 <junction x="-106.68" y="53.34"/>
-<pinref part="IC3" gate="G$1" pin="PB6(XTAL1/TOSC1)"/>
+<pinref part="IC2" gate="G$1" pin="PB6(XTAL1/TOSC1)"/>
 <wire x1="-106.68" y1="53.34" x2="-101.6" y2="53.34" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$31" class="0">
 <segment>
-<pinref part="IC3" gate="G$1" pin="PB7(XTAL2/TOSC2)"/>
+<pinref part="IC2" gate="G$1" pin="PB7(XTAL2/TOSC2)"/>
 <pinref part="Q1" gate="G$1" pin="1"/>
 <wire x1="-101.6" y1="48.26" x2="-106.68" y2="48.26" width="0.1524" layer="91"/>
-<pinref part="C9" gate="G$1" pin="2"/>
+<pinref part="C8" gate="G$1" pin="2"/>
 <wire x1="-111.76" y1="45.72" x2="-106.68" y2="45.72" width="0.1524" layer="91"/>
 <wire x1="-106.68" y1="45.72" x2="-106.68" y2="48.26" width="0.1524" layer="91"/>
 <junction x="-106.68" y="48.26"/>
@@ -24761,23 +24761,23 @@ EAGLE CAD Libraries on element14&lt;/a&gt;</description>
 </net>
 <net name="N$38" class="0">
 <segment>
-<pinref part="R3" gate="G$1" pin="2"/>
+<pinref part="R14" gate="G$1" pin="2"/>
 <wire x1="38.1" y1="114.3" x2="38.1" y2="106.68" width="0.1524" layer="91"/>
 <junction x="38.1" y="106.68"/>
-<pinref part="U1" gate="G$1" pin="IS"/>
+<pinref part="U3" gate="G$1" pin="IS"/>
 <wire x1="38.1" y1="96.52" x2="38.1" y2="106.68" width="0.1524" layer="91"/>
-<pinref part="R4" gate="G$1" pin="2"/>
+<pinref part="R13" gate="G$1" pin="2"/>
 <wire x1="35.56" y1="114.3" x2="38.1" y2="114.3" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$36" class="0">
 <segment>
-<pinref part="R10" gate="G$1" pin="2"/>
+<pinref part="R15" gate="G$1" pin="2"/>
 <wire x1="38.1" y1="58.42" x2="38.1" y2="53.34" width="0.1524" layer="91"/>
 <junction x="38.1" y="53.34"/>
-<pinref part="U2" gate="G$1" pin="IS"/>
+<pinref part="U4" gate="G$1" pin="IS"/>
 <wire x1="38.1" y1="43.18" x2="38.1" y2="53.34" width="0.1524" layer="91"/>
-<pinref part="R20" gate="G$1" pin="2"/>
+<pinref part="R5" gate="G$1" pin="2"/>
 <wire x1="27.94" y1="58.42" x2="38.1" y2="58.42" width="0.1524" layer="91"/>
 </segment>
 </net>
@@ -24786,80 +24786,80 @@ EAGLE CAD Libraries on element14&lt;/a&gt;</description>
 <pinref part="R16" gate="G$1" pin="2"/>
 <wire x1="38.1" y1="7.62" x2="38.1" y2="0" width="0.1524" layer="91"/>
 <junction x="38.1" y="0"/>
-<pinref part="U3" gate="G$1" pin="IS"/>
+<pinref part="U5" gate="G$1" pin="IS"/>
 <wire x1="38.1" y1="-10.16" x2="38.1" y2="0" width="0.1524" layer="91"/>
-<pinref part="R23" gate="G$1" pin="2"/>
+<pinref part="R10" gate="G$1" pin="2"/>
 <wire x1="30.48" y1="7.62" x2="38.1" y2="7.62" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$40" class="0">
 <segment>
-<pinref part="C10" gate="G$1" pin="1"/>
+<pinref part="C3" gate="G$1" pin="1"/>
 <wire x1="-137.16" y1="60.96" x2="-101.6" y2="60.96" width="0.1524" layer="91"/>
-<pinref part="IC3" gate="G$1" pin="AVCC"/>
-<pinref part="L1" gate="G$1" pin="1"/>
+<pinref part="IC2" gate="G$1" pin="AVCC"/>
+<pinref part="R2" gate="G$1" pin="1"/>
 <junction x="-137.16" y="60.96"/>
 </segment>
 </net>
 <net name="N$37" class="0">
 <segment>
-<pinref part="IC3" gate="G$1" pin="PC4(ADC4/SDA)"/>
+<pinref part="IC2" gate="G$1" pin="PC4(ADC4/SDA)"/>
 <wire x1="-53.34" y1="60.96" x2="-50.8" y2="60.96" width="0.1524" layer="91"/>
 <wire x1="-50.8" y1="60.96" x2="-50.8" y2="86.36" width="0.1524" layer="91"/>
-<pinref part="SV1" gate="1" pin="3"/>
+<pinref part="SV3" gate="1" pin="3"/>
 <wire x1="-50.8" y1="86.36" x2="-43.18" y2="86.36" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$41" class="0">
 <segment>
-<pinref part="IC3" gate="G$1" pin="PC5(ADC5/SCL)"/>
+<pinref part="IC2" gate="G$1" pin="PC5(ADC5/SCL)"/>
 <wire x1="-53.34" y1="58.42" x2="-48.26" y2="58.42" width="0.1524" layer="91"/>
 <wire x1="-48.26" y1="58.42" x2="-48.26" y2="83.82" width="0.1524" layer="91"/>
-<pinref part="SV1" gate="1" pin="4"/>
+<pinref part="SV3" gate="1" pin="4"/>
 <wire x1="-48.26" y1="83.82" x2="-43.18" y2="83.82" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$42" class="0">
 <segment>
-<pinref part="IC3" gate="G$1" pin="PD0(RXD)"/>
+<pinref part="IC2" gate="G$1" pin="PD0(RXD)"/>
 <wire x1="-53.34" y1="48.26" x2="-30.48" y2="48.26" width="0.1524" layer="91"/>
 <wire x1="-30.48" y1="48.26" x2="-30.48" y2="132.08" width="0.1524" layer="91"/>
 <wire x1="-30.48" y1="132.08" x2="-81.28" y2="132.08" width="0.1524" layer="91"/>
 <wire x1="-81.28" y1="132.08" x2="-81.28" y2="127" width="0.1524" layer="91"/>
-<pinref part="U5" gate="A" pin="RXD"/>
+<pinref part="U2" gate="A" pin="RXD"/>
 <wire x1="-81.28" y1="127" x2="-73.66" y2="127" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$43" class="0">
 <segment>
 <wire x1="-27.94" y1="111.76" x2="-27.94" y2="45.72" width="0.1524" layer="91"/>
-<pinref part="IC3" gate="G$1" pin="PD1(TXD)"/>
+<pinref part="IC2" gate="G$1" pin="PD1(TXD)"/>
 <wire x1="-27.94" y1="45.72" x2="-53.34" y2="45.72" width="0.1524" layer="91"/>
-<pinref part="U5" gate="A" pin="TXD"/>
+<pinref part="U2" gate="A" pin="TXD"/>
 <wire x1="-38.1" y1="111.76" x2="-27.94" y2="111.76" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$49" class="0">
 <segment>
-<pinref part="IC3" gate="G$1" pin="PB2(SS/OC1B)"/>
+<pinref part="IC2" gate="G$1" pin="PB2(SS/OC1B)"/>
 <wire x1="-53.34" y1="20.32" x2="-45.72" y2="20.32" width="0.1524" layer="91"/>
 <wire x1="-45.72" y1="20.32" x2="-45.72" y2="81.28" width="0.1524" layer="91"/>
-<pinref part="SV1" gate="1" pin="5"/>
+<pinref part="SV3" gate="1" pin="5"/>
 <wire x1="-45.72" y1="81.28" x2="-43.18" y2="81.28" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$50" class="0">
 <segment>
-<pinref part="IC3" gate="G$1" pin="PB0(ICP)"/>
+<pinref part="IC2" gate="G$1" pin="PB0(ICP)"/>
 <wire x1="-53.34" y1="25.4" x2="-38.1" y2="25.4" width="0.1524" layer="91"/>
 <wire x1="-38.1" y1="25.4" x2="-38.1" y2="0" width="0.1524" layer="91"/>
 <wire x1="-38.1" y1="0" x2="-101.6" y2="0" width="0.1524" layer="91"/>
 <wire x1="-101.6" y1="0" x2="-101.6" y2="-10.16" width="0.1524" layer="91"/>
 <wire x1="-101.6" y1="-10.16" x2="-149.86" y2="-10.16" width="0.1524" layer="91"/>
 <wire x1="-149.86" y1="-10.16" x2="-149.86" y2="-35.56" width="0.1524" layer="91"/>
-<pinref part="U4" gate="A" pin="CS*"/>
+<pinref part="U1" gate="A" pin="CS*"/>
 <wire x1="-149.86" y1="-35.56" x2="-144.78" y2="-35.56" width="0.1524" layer="91"/>
-<pinref part="R27" gate="G$1" pin="1"/>
+<pinref part="R1" gate="G$1" pin="1"/>
 <wire x1="-149.86" y1="-7.62" x2="-149.86" y2="-10.16" width="0.1524" layer="91"/>
 <junction x="-149.86" y="-10.16"/>
 </segment>
@@ -24868,18 +24868,18 @@ EAGLE CAD Libraries on element14&lt;/a&gt;</description>
 <segment>
 <wire x1="-78.74" y1="-15.24" x2="-124.46" y2="-15.24" width="0.1524" layer="91"/>
 <wire x1="-124.46" y1="-15.24" x2="-124.46" y2="71.12" width="0.1524" layer="91"/>
-<pinref part="IC3" gate="G$1" pin="PC6(/RESET)"/>
-<pinref part="R21" gate="G$1" pin="2"/>
+<pinref part="IC2" gate="G$1" pin="PC6(/RESET)"/>
+<pinref part="R3" gate="G$1" pin="2"/>
 <wire x1="-124.46" y1="71.12" x2="-101.6" y2="71.12" width="0.1524" layer="91"/>
 <junction x="-124.46" y="71.12"/>
-<pinref part="SV3" gate="1" pin="5"/>
+<pinref part="SV2" gate="1" pin="5"/>
 </segment>
 </net>
 <net name="N$54" class="0">
 <segment>
-<pinref part="C14" gate="G$1" pin="1"/>
+<pinref part="C5" gate="G$1" pin="1"/>
 <wire x1="-129.54" y1="58.42" x2="-129.54" y2="63.5" width="0.1524" layer="91"/>
-<pinref part="IC3" gate="G$1" pin="AREF"/>
+<pinref part="IC2" gate="G$1" pin="AREF"/>
 <wire x1="-129.54" y1="63.5" x2="-101.6" y2="63.5" width="0.1524" layer="91"/>
 </segment>
 </net>
@@ -24896,62 +24896,62 @@ EAGLE CAD Libraries on element14&lt;/a&gt;</description>
 <wire x1="-71.12" y1="86.36" x2="-71.12" y2="83.82" width="0.1524" layer="91"/>
 <wire x1="-76.2" y1="83.82" x2="-76.2" y2="109.22" width="0.1524" layer="91"/>
 <wire x1="-76.2" y1="109.22" x2="-88.9" y2="109.22" width="0.1524" layer="91"/>
-<pinref part="SV2" gate="1" pin="2"/>
+<pinref part="SV1" gate="1" pin="2"/>
 </segment>
 </net>
 <net name="N$55" class="0">
 <segment>
-<pinref part="IC3" gate="G$1" pin="PC0(ADC0)"/>
+<pinref part="IC2" gate="G$1" pin="PC0(ADC0)"/>
 <wire x1="-53.34" y1="71.12" x2="7.62" y2="71.12" width="0.1524" layer="91"/>
-<pinref part="R4" gate="G$1" pin="1"/>
+<pinref part="R13" gate="G$1" pin="1"/>
 <wire x1="7.62" y1="114.3" x2="25.4" y2="114.3" width="0.1524" layer="91"/>
 <wire x1="7.62" y1="71.12" x2="7.62" y2="114.3" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$25" class="0">
 <segment>
-<pinref part="IC3" gate="G$1" pin="PB1(OC1A)"/>
+<pinref part="IC2" gate="G$1" pin="PB1(OC1A)"/>
 <wire x1="-53.34" y1="22.86" x2="-25.4" y2="22.86" width="0.1524" layer="91"/>
 <wire x1="-25.4" y1="22.86" x2="-25.4" y2="116.84" width="0.1524" layer="91"/>
-<pinref part="U5" gate="A" pin="STBY"/>
+<pinref part="U2" gate="A" pin="STBY"/>
 <wire x1="-25.4" y1="116.84" x2="-38.1" y2="116.84" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$33" class="0">
 <segment>
-<pinref part="R2" gate="G$1" pin="1"/>
+<pinref part="R6" gate="G$1" pin="1"/>
 <wire x1="-7.62" y1="96.52" x2="20.32" y2="96.52" width="0.1524" layer="91"/>
 <wire x1="-10.16" y1="93.98" x2="-7.62" y2="96.52" width="0.1524" layer="91"/>
 <wire x1="-10.16" y1="93.98" x2="-10.16" y2="43.18" width="0.1524" layer="91"/>
-<pinref part="IC3" gate="G$1" pin="PD2(INT0)"/>
+<pinref part="IC2" gate="G$1" pin="PD2(INT0)"/>
 <wire x1="-10.16" y1="43.18" x2="-53.34" y2="43.18" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$44" class="0">
 <segment>
-<pinref part="R14" gate="G$1" pin="1"/>
+<pinref part="R12" gate="G$1" pin="1"/>
 <wire x1="-12.7" y1="-17.78" x2="20.32" y2="-17.78" width="0.1524" layer="91"/>
 <wire x1="-12.7" y1="-17.78" x2="-12.7" y2="30.48" width="0.1524" layer="91"/>
 <wire x1="-12.7" y1="30.48" x2="-53.34" y2="30.48" width="0.1524" layer="91"/>
-<pinref part="IC3" gate="G$1" pin="PD7(AIN1)"/>
+<pinref part="IC2" gate="G$1" pin="PD7(AIN1)"/>
 </segment>
 </net>
 <net name="N$45" class="0">
 <segment>
-<pinref part="R15" gate="G$1" pin="1"/>
+<pinref part="R11" gate="G$1" pin="1"/>
 <wire x1="20.32" y1="-10.16" x2="7.62" y2="-10.16" width="0.1524" layer="91"/>
 <wire x1="7.62" y1="-10.16" x2="-5.08" y2="2.54" width="0.1524" layer="91"/>
 <wire x1="-5.08" y1="2.54" x2="-5.08" y2="33.02" width="0.1524" layer="91"/>
-<pinref part="IC3" gate="G$1" pin="PD6(AIN0)"/>
+<pinref part="IC2" gate="G$1" pin="PD6(AIN0)"/>
 <wire x1="-53.34" y1="33.02" x2="-5.08" y2="33.02" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$46" class="0">
 <segment>
-<pinref part="R1" gate="G$1" pin="1"/>
+<pinref part="R7" gate="G$1" pin="1"/>
 <wire x1="-5.08" y1="88.9" x2="20.32" y2="88.9" width="0.1524" layer="91"/>
 <wire x1="-7.62" y1="86.36" x2="-5.08" y2="88.9" width="0.1524" layer="91"/>
-<pinref part="IC3" gate="G$1" pin="PD3(INT1)"/>
+<pinref part="IC2" gate="G$1" pin="PD3(INT1)"/>
 <wire x1="-7.62" y1="40.64" x2="-53.34" y2="40.64" width="0.1524" layer="91"/>
 <wire x1="-7.62" y1="86.36" x2="-7.62" y2="40.64" width="0.1524" layer="91"/>
 </segment>
@@ -24959,9 +24959,9 @@ EAGLE CAD Libraries on element14&lt;/a&gt;</description>
 <net name="N$19" class="0">
 <segment>
 <wire x1="-78.74" y1="114.3" x2="-88.9" y2="114.3" width="0.1524" layer="91"/>
-<pinref part="SV2" gate="1" pin="4"/>
-<pinref part="U5" gate="A" pin="CANL"/>
-<pinref part="R22" gate="G$1" pin="1"/>
+<pinref part="SV1" gate="1" pin="4"/>
+<pinref part="U2" gate="A" pin="CANL"/>
+<pinref part="R4" gate="G$1" pin="1"/>
 <wire x1="-88.9" y1="119.38" x2="-78.74" y2="119.38" width="0.1524" layer="91"/>
 <wire x1="-78.74" y1="119.38" x2="-73.66" y2="119.38" width="0.1524" layer="91"/>
 <wire x1="-78.74" y1="114.3" x2="-78.74" y2="119.38" width="0.1524" layer="91"/>
@@ -24971,9 +24971,9 @@ EAGLE CAD Libraries on element14&lt;/a&gt;</description>
 <net name="N$23" class="0">
 <segment>
 <wire x1="-76.2" y1="111.76" x2="-88.9" y2="111.76" width="0.1524" layer="91"/>
-<pinref part="SV2" gate="1" pin="3"/>
-<pinref part="U5" gate="A" pin="CANH"/>
-<pinref part="R22" gate="G$1" pin="2"/>
+<pinref part="SV1" gate="1" pin="3"/>
+<pinref part="U2" gate="A" pin="CANH"/>
+<pinref part="R4" gate="G$1" pin="2"/>
 <wire x1="-88.9" y1="129.54" x2="-83.82" y2="129.54" width="0.1524" layer="91"/>
 <wire x1="-83.82" y1="129.54" x2="-83.82" y2="121.92" width="0.1524" layer="91"/>
 <wire x1="-83.82" y1="121.92" x2="-76.2" y2="121.92" width="0.1524" layer="91"/>
@@ -24984,14 +24984,14 @@ EAGLE CAD Libraries on element14&lt;/a&gt;</description>
 </net>
 <net name="N$6" class="0">
 <segment>
-<pinref part="SV3" gate="1" pin="1"/>
+<pinref part="SV2" gate="1" pin="1"/>
 <wire x1="-86.36" y1="-30.48" x2="-86.36" y2="-10.16" width="0.1524" layer="91"/>
 <wire x1="-86.36" y1="-10.16" x2="-86.36" y2="2.54" width="0.1524" layer="91"/>
 <wire x1="-86.36" y1="2.54" x2="-48.26" y2="2.54" width="0.1524" layer="91"/>
 <wire x1="-48.26" y1="2.54" x2="-48.26" y2="15.24" width="0.1524" layer="91"/>
-<pinref part="IC3" gate="G$1" pin="PB4(MISO)"/>
+<pinref part="IC2" gate="G$1" pin="PB4(MISO)"/>
 <wire x1="-48.26" y1="15.24" x2="-53.34" y2="15.24" width="0.1524" layer="91"/>
-<pinref part="U4" gate="A" pin="SI/O"/>
+<pinref part="U1" gate="A" pin="SI/O"/>
 <wire x1="-109.22" y1="-30.48" x2="-86.36" y2="-30.48" width="0.1524" layer="91"/>
 <wire x1="-78.74" y1="-10.16" x2="-86.36" y2="-10.16" width="0.1524" layer="91"/>
 <junction x="-86.36" y="-10.16"/>
