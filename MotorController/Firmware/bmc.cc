@@ -31,6 +31,40 @@
 // PD7  O - INH C
 
 
+// Commutation Sequence
+
+//  A B
+//  A C
+//  B C
+//  B A
+//  C A
+//  C B
+
+#define MA(x) ((uint8_t) (2 + x)<<2)
+#define MB(x) ((uint8_t) (2 + x)<<4)
+#define MC(x) ((uint8_t) (2 + x)<<6)
+
+// Commutation sequence, with on , off values for PWM.
+
+const uint8_t g_commutationSequence[6][2] = {
+    { MB(0), MA(1)|MB(0)  },
+    { MC(0), MA(1)|MC(0)  },
+    { MC(0), MB(1)|MC(0)  },
+    { MA(0), MB(1)|MA(0)  },
+    { MA(0), MC(1)|MA(0)  },
+    { MB(0), MC(1)|MB(0)  },
+};
+
+const uint8_t g_breakSequence[6][2] = {
+    { MB(0), MA(0)|MB(0)  },
+    { MC(0), MA(0)|MC(0)  },
+    { MC(0), MB(0)|MC(0)  },
+    { MA(0), MB(0)|MA(0)  },
+    { MA(0), MC(0)|MA(0)  },
+    { MB(0), MC(0)|MB(0)  },
+};
+
+uint16_t g_phase = 0; //!< Current motor position. 0 to 360 degrees
 
 void InitIO()
 {
@@ -43,12 +77,12 @@ void InitIO()
   // See pg 107 in datasheet.
 
   // Port B
-  // Pull PB5 and PB6 high,
+  // Pull inputs PB5 and PB6 high,
   PORTB = _BV(PB0) | _BV(PB2) | _BV(PB3) ;
   DDRB =  _BV(DDB0) | _BV(DDB1) | _BV(DDB5);
 
   // Port C is all inputs.
-  // Pull pins 4 and 5 high.
+  // Pull inputs PB4 and PB5 high.
   PORTC = _BV(PB4) | _BV(PB5);
   DDRC = 0;
 
@@ -56,9 +90,8 @@ void InitIO()
   PORTD = 0;
   DDRD  = _BV(DDD1) | _BV(DDD2) | _BV(DDD3) | _BV(DDD4) | _BV(DDD5) | _BV(DDD6) | _BV(DDD7);
 
-
-
 }
+
 
 
 int main()
