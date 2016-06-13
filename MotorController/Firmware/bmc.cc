@@ -1,6 +1,10 @@
 #include <avr/io.h>
 #include <avr/interrupt.h>
 
+#define F_CPU 20000000UL  // 1 MHz
+
+#include <util/delay.h>
+
 // PIN D
 
 // PB0  O - Chip Select, Temp Sensor Active low
@@ -69,10 +73,13 @@ uint16_t g_position; //!< Current motor position. 0 to 360 degrees
 uint8_t g_phase = 0;    //!< Commutation phase.
 uint8_t g_pwmState = 0; //!<
 
-ISR(TIMER1_OVF_vect)
+uint8_t g_motorOff = 0;
+uint8_t g_motorOn = 0;
+uint8_t g_motorNext = 0;
+
+ISR(TIMER0_COMPA_vect)
 {
-  // BOTTOM Value reached.
-#if 1
+#if 0
   if(g_pwmState == 0) {
     PORTB=0x0e;
     g_pwmState = 1;
@@ -81,20 +88,26 @@ ISR(TIMER1_OVF_vect)
     g_pwmState = 0;
   }
 #endif
+}
 
+
+ISR(TIMER1_OVF_vect)
+{
+  // BOTTOM Value reached.
+  PORTB=0x0e;
+  g_motorNext = g_motorOff;
 }
 
 
 ISR(TIMER1_COMPA_vect)
 {
-   // TOP Value reached.
-  //g_pwmState = 0;
-//  PORTB=0x0;
+  PORTB=0x0;
+  g_motorNext = g_motorOn;
 }
 
 ISR(TIMER1_COMPB_vect)
 {
-  //PORTD = g_commutationSequence[g_phase][g_pwmState];
+  PORTD = g_motorNext;
 }
 
 
@@ -128,7 +141,7 @@ void InitIO()
 
   TCNT1 = 0;    // Start at 0
   OCR1A = 1023; // TOP Value
-  OCR1B = 200;    // Change at.
+  OCR1B = 5;    // Change at.
 
   // Enable interrupts
   TIMSK1 = _BV(OCIE1B) | _BV(OCIE1A) | _BV(TOIE1);
@@ -136,13 +149,27 @@ void InitIO()
   // Configure timer.
   // We want mode 9,  phase and frequency correct, TOP in OCR1A
   // Pg 188 in datasheet.
-  //TCCR1A = _BV(WGM10);
-  //TCCR1B = _BV(WGM13) | _BV(CS10);
+  TCCR1A = _BV(WGM10);
+  TCCR1B = _BV(WGM13) | _BV(CS10);
 
   //TCCR1A = ;
-  TCCR1A = _BV(WGM11) | _BV(WGM10);
-  TCCR1B = _BV(CS10);
+  //TCCR1A = _BV(WGM11) | _BV(WGM10);
+  //TCCR1B = _BV(CS10);
 
+#if 0
+  // Setup timer 0 for 100Hz
+  OCR0A = 195; // Give a 100Hz clock at 20Mhz
+
+  TCCR0A = _BV(WGM01);  // Enable CTC, no output.
+  TCCR0B = _BV(CS02) | _BV(CS00); // Set clock to clkio/1024
+  TIMSK0 = _BV(OCIE0A); // Enable interrupt
+#endif
+
+  // Setup ADC
+
+  ADMUX = _BV(ADLAR) | _BV(REFS0) | _BV(REFS1);
+  ADCSRA = _BV(ADEN) | _BV(ADPS2) | _BV(ADPS0); // Divide system clock by 32, enable ADC.
+  DIDR0 = _BV(ADC0D) | _BV(ADC1D) | _BV(ADC2D) | _BV(ADC3D) | _BV(PD6) | _BV(PD7); // Disable digital inputs.
 
 }
 
@@ -151,7 +178,20 @@ int main()
 {
   InitIO();
 
+  // Make sure interrupts are enabled.
+  sei();
+
+  g_motorOff = g_commutationSequence[g_phase][0];
+  g_motorOn = g_commutationSequence[g_phase][1];
+
+
+
   while(true) {
+    for(int i = 0;i < 1000;i++) {
+      OCR1B = i;    // Change at.
+      i++;
+      _delay_ms(10);
+    }
     //
     // BOTTOM Value reached.
 #if 0
@@ -163,6 +203,7 @@ int main()
       g_pwmState = 0;
     }
 #endif
+
   }
   return 0;
 }
