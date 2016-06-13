@@ -3,8 +3,9 @@
 COMPILERHOME=/usr/local/CrossPack-AVR
 PRG            = bmc
 OBJ= bmc.o 
-MCU_TARGET     = atmega168
-DEFS           =-I. -I$(COMPILERHOME)/avr/include -O2 -I../include
+MCU_TARGET     = atmega168p
+DEFS           =-I. -I$(COMPILERHOME)/avr/include  -I../include
+OPTIMIZE = -O2
 
 override CC = avr-gcc
 override CXX = avr-g++
@@ -20,11 +21,15 @@ all: $(PRG).elf bin
 #lst text eeprom
 
 prog:
-	avrdude -c ponyser -p m168 -P /dev/ttyS0 -U flash:w:quad.bin
+	avrdude -c stk500v2 -p m168pb -P /dev/tty.usbmodem00156942 -U flash:w:bmc.bin
 
 # Set slow rising power, with crystal oscilator
 setfuse:
-	avrdude -c ponyser -p m168 -P /dev/ttyS0 -U lfuse:w:0x77:m
+	avrdude -c stk500v2 -p m168pb -P /dev/tty.usbmodem00156942 -U lfuse:w:0xfe:m -U hfuse:w:0xdf:m 
+	
+# -U efuse:w:0xf9:m
+	
+#	-U lfuse:w:0x77:m
 
 $(PRG).elf: $(OBJ)
 	$(CC) $(CFLAGS) $(LDFLAGS) -o $@ $^ $(LIBS)
