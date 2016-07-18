@@ -1,3 +1,28 @@
 
 
 setenv PATH /usr/local/CrossPack-AVR/bin $PATH
+
+
+Programmer:
+
+https://www.pololu.com/product/3170
+
+Users guide:
+
+https://www.pololu.com/docs/0J67
+
+
+Rotation:
+
+14 Magnets.
+
+6 Combinations, 7 cycles for 1 rotation. 42 positions per rotation.
+28 positions for encoder.
+
+Using 84 steps per rotation both are divisble.
+
+
+ 
+
+
+

@@ -5,7 +5,7 @@ PRG            = bmc
 OBJ= bmc.o 
 MCU_TARGET     = atmega168p
 DEFS           =-I. -I$(COMPILERHOME)/avr/include  -I../include
-OPTIMIZE = -O2
+OPTIMIZE = -O2 -std=c++11
 
 override CC = avr-gcc
 override CXX = avr-g++
