@@ -2,7 +2,7 @@
 
 COMPILERHOME=/usr/local/CrossPack-AVR
 PRG            = bmc
-OBJ= bmc.o 
+OBJ= bmc.o fxpt_atan2.o
 MCU_TARGET     = atmega168p
 DEFS           =-I. -I$(COMPILERHOME)/avr/include  -I../include
 OPTIMIZE = -O2 -std=c++11
@@ -32,11 +32,13 @@ setfuse:
 #	-U lfuse:w:0x77:m
 
 $(PRG).elf: $(OBJ)
-	$(CC) $(CFLAGS) $(LDFLAGS) -o $@ $^ $(LIBS)
+	$(CXX) $(CFLAGS) $(LDFLAGS) -o $@ $^ $(LIBS)
 
 
 # dependency:
 bmc.o: bmc.cc Fifo.hh
+
+fxpt_atan2.o: bmc.cc Fifo.hh
 
 clean:
 	rm -rf *.o $(PRG).elf *.eps *.png *.pdf *.bak 
