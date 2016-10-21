@@ -120,7 +120,7 @@ const uint8_t g_admuxConfg = _BV(REFS0) ; // Select 5 Volt ref.
 
 uint16_t g_position; //!< Current motor position. 0 to 360 degrees
 
-uint8_t g_phase = 0;    //!< Commutation phase.
+uint8_t g_drivePhase = 0;    //!< Commutation phase.
 uint8_t g_phaseAdc = 0; //!< Commutation phase.
 uint8_t g_sampleAdc = 0; //!< Sample adc
 uint8_t g_lastAdc = 0;   //!< MUX state at start of last conversion.
@@ -333,7 +333,7 @@ namespace PositionN
 
   void TickMotor()
   {
-    g_phase += m_direction;
+    g_drivePhase += m_direction;
 
     if(m_direction == 0) {
       g_motorOff = 0;
@@ -342,17 +342,17 @@ namespace PositionN
     }
     if(m_direction > 0) {
       m_position += m_stepSize;
-      if(g_phase > 5)
-        g_phase = 0;
+      if(g_drivePhase > 5)
+        g_drivePhase = 0;
     } else {
       m_position -= m_stepSize;
-      if(g_phase < 0)
-        g_phase = 5;
+      if(g_drivePhase < 0)
+        g_drivePhase = 5;
     }
 
 
-    uint8_t nextOff =  g_commutationSequence[g_phase][0];
-    uint8_t nextOn = g_commutationSequence[g_phase][1];
+    uint8_t nextOff =  g_commutationSequence[g_drivePhase][0];
+    uint8_t nextOn = g_commutationSequence[g_drivePhase][1];
 
     g_motorOff = nextOff;
     g_motorOn = nextOn;
@@ -404,12 +404,12 @@ void ReadADC()
   if(g_motorNext == g_motorOff)
     g_sampleAdc |= 2;
   if(g_sampleAdc & 1) {
-    ADMUX = g_admuxConfg | g_currentADMux[g_phase][(g_sampleAdc >>1) & 1]; // Pick the next signal.
+    ADMUX = g_admuxConfg | g_currentADMux[g_drivePhase][(g_sampleAdc >>1) & 1]; // Pick the next signal.
   } else {
     ADMUX = g_admuxConfg | (((g_sampleAdc & 1) == 0) ? ADC_PA : ADC_PB);
   }
   uint8_t thePhase = g_phaseAdc;
-  g_phaseAdc = g_phase;
+  g_phaseAdc = g_drivePhase;
 
   g_sampleAdc++;
   switch(g_sampleAdc) {
@@ -482,12 +482,12 @@ void SendSync()
 
 void TurnMotor()
 {
-  g_phase++;
-  if(g_phase > 5)
-    g_phase = 0;
+  g_drivePhase++;
+  if(g_drivePhase > 5)
+    g_drivePhase = 0;
 
-  uint8_t nextOff =  g_commutationSequence[g_phase][0];
-  uint8_t nextOn = g_commutationSequence[g_phase][1];
+  uint8_t nextOff =  g_commutationSequence[g_drivePhase][0];
+  uint8_t nextOn = g_commutationSequence[g_drivePhase][1];
 
   g_motorOff = nextOff;
   g_motorOn = nextOn;
@@ -510,7 +510,7 @@ int main()
   // Make sure interrupts are enabled.
   sei();
 
-  g_phase = 0;
+  g_drivePhase = 0;
   g_motorOff = 0;
   g_motorOn = 0;
 
@@ -592,12 +592,12 @@ int main()
 
 #if 0
   while(true) {
-    uint8_t nextOff =  g_commutationSequence[g_phase][0];
-    uint8_t nextOn = g_commutationSequence[g_phase][1];
+    uint8_t nextOff =  g_commutationSequence[g_drivePhase][0];
+    uint8_t nextOn = g_commutationSequence[g_drivePhase][1];
 
-    g_phase++;
-    if(g_phase > 5)
-      g_phase = 0;
+    g_drivePhase++;
+    if(g_drivePhase > 5)
+      g_drivePhase = 0;
 
     g_motorOff = nextOff;
     g_motorOn = nextOn;

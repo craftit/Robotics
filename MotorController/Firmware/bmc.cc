@@ -8,6 +8,7 @@
 #include "Fifo.hh"
 
 extern uint16_t fxpt_atan2(const int16_t y, const int16_t x);
+extern uint16_t fxpt_atan2fast(int16_t y, int16_t x);
 
 const uint8_t g_charSTX = 0x02;
 const uint8_t g_charETX = 0x03;
@@ -171,7 +172,7 @@ void SendPacket(char *buff,int len)
 
 }
 
-uint8_t g_phase = 0;    //!< Commutation phase.
+uint8_t g_drivePhase = 0;    //!< Commutation phase.
 
 volatile uint8_t g_motorOff = 0; //!< PWM Off.
 volatile uint8_t g_motorOn = 0;  //!< PWM On.
@@ -185,6 +186,7 @@ ISR(TIMER0_OVF_vect,ISR_NAKED)
   // BOTTOM Value reached.
   __asm__ __volatile__ ("push r24" ::);
   g_motorNext = g_motorOff;
+  PINB=0x08;
   __asm__ __volatile__ ("pop r24" ::);
   //ADCSRA |= _BV(ADSC);  // Trigger next ADC conversion.
   //PORTB=0x0e;
@@ -197,6 +199,7 @@ ISR(TIMER0_COMPA_vect,ISR_NAKED)
 {
   __asm__ __volatile__ ("push r24" ::);
   g_motorNext = g_motorOn;
+  PINB=0x08;
   __asm__ __volatile__ ("pop r24" ::);
   //ADCSRA |= _BV(ADSC); // Trigger next ADC conversion.
   //PORTB=0x0;
@@ -215,47 +218,96 @@ uint16_t g_lastCurrent = 0;
 uint16_t g_lastVoltage = 0;
 int16_t g_lastPhaseA = 0;
 int16_t g_lastPhaseB = 0;
+int8_t g_atPhase = 0;
 uint8_t g_measure = 0;
 
 uint8_t g_adcNewData = 0;
 
-void MotorPhase(uint16_t phase) {
+int32_t g_position = 0;
+int32_t g_goalPosition = 100;
+
+void MotorPhase() {
+
+  uint16_t rawPhase = fxpt_atan2fast(g_lastPhaseA,g_lastPhaseB);
+
   uint16_t last = g_phaseTopAngle[5];
-  int i = 0;
-  for(;i < 6;i++) {
-    uint16_t next = g_phaseTopAngle[i];
+  int phase = 0;
+  for(;phase < 6;phase++) {
+    uint16_t next = g_phaseTopAngle[phase];
     if(last < next) {
-      if(last < phase && phase <= next) {
+      if(last < rawPhase && rawPhase <= next) {
         break;
       }
     } else {
-      if(last < phase || phase <= next) {
+      if(last < rawPhase || rawPhase <= next) {
         break;
       }
     }
     last = next;
   }
-#if 1
-  i++;
-  if(i > 5) i = 0;
-#else
-  if(i == 0) i = 6;
-  i--;
 
-#endif
-  g_phase = i;
-  uint8_t nextOff =  g_commutationSequence[g_phase][0];
-  uint8_t nextOn = g_commutationSequence[g_phase][1];
 
-  g_motorOff = nextOff;
-  g_motorOn = nextOn;
+  int8_t change = phase - g_atPhase;
+  g_atPhase = phase;
+
+  if(change > 3) change -= 6;
+  if(change < -3) change += 6;
+
+  g_position += change;
+
+
+  if(true) {
+    phase++;
+    if(phase > 5)
+      phase = 0;
+    g_drivePhase = phase;
+    uint8_t nextOff =  g_commutationSequence[g_drivePhase][0];
+    uint8_t nextOn = g_commutationSequence[g_drivePhase][1];
+
+    g_motorOff = nextOff;
+    g_motorOn = nextOn;
+    return ;
+  }
+
+  int32_t positionError = g_goalPosition - g_position;
+  if(positionError > 127) positionError = 127;
+  if(positionError < -127) positionError = -127;
+
+  int8_t drive = positionError;
+
+  if(g_motorMode == MM_SensorDrive) {
+    if(drive == 0) {
+      g_motorOff = 0;
+      g_motorOn = 0;
+    } else {
+      uint8_t pwmWidth;
+      if(drive > 0) {
+        phase++;
+        if(phase > 5) phase = 0;
+        pwmWidth = drive;
+      } else {
+        if(phase == 0) phase = 6;
+        phase--;
+        pwmWidth = -drive;
+      }
+      if(pwmWidth < 3) pwmWidth = 3;
+      if(pwmWidth > 120) pwmWidth = 120;
+
+      g_drivePhase = phase;
+      uint8_t nextOff =  g_commutationSequence[g_drivePhase][0];
+      uint8_t nextOn = g_commutationSequence[g_drivePhase][1];
+
+      g_motorOff = nextOff;
+      g_motorOn = nextOn;
+    }
+  }
 
 }
 
 ISR(ADC_vect,ISR_NOBLOCK)
 {
   // Make sure interrupts are enabled for PWM
-  PORTB=0x0e;
+  PINB=0x04;
   uint16_t data = ADC;
 
   int8_t nextSampleMotorOn = 0;
@@ -292,19 +344,13 @@ ISR(ADC_vect,ISR_NOBLOCK)
       break;
     case 2: {
       g_lastPhaseA = ((int16_t) data)-512;
-      if(g_motorMode == MM_SensorDrive) {
-        uint16_t phase = fxpt_atan2(g_lastPhaseA,g_lastPhaseB);
-        MotorPhase(phase);
-      }
+      MotorPhase();
       nextSampleMotorOn = 1;
       g_adcNewData = 1;
     } break;
     case 3: {
       g_lastPhaseB = ((int16_t) data)-512;
-      if(g_motorMode == MM_SensorDrive) {
-        uint16_t phase = fxpt_atan2(g_lastPhaseA,g_lastPhaseB);
-        MotorPhase(phase);
-      }
+      MotorPhase();
       nextSampleMotorOn = 1;
       g_adcNewData = 1;
     } break;
@@ -323,8 +369,8 @@ ISR(ADC_vect,ISR_NOBLOCK)
       g_measure = 1;
       sampleState = 1;
     }
-    ADMUX = g_admuxConfg | g_currentADMux[g_phase][g_measure];
-    ADCSRB = _BV(ADTS1) | _BV(ADTS0); // Trigger on time counter 0 match A (Off)
+    ADMUX = g_admuxConfg | g_currentADMux[g_drivePhase][g_measure];
+    ADCSRB = _BV(ADTS2); // Trigger on time counter 0 overflow. (On)
 
     //PORTB= _BV(PB0);
 
@@ -344,10 +390,10 @@ ISR(ADC_vect,ISR_NOBLOCK)
       //PORTB= _BV(PB0) | _BV(PB2);
     }
     //PORTB=0x0;
-    ADCSRB = _BV(ADTS2); // Trigger on time counter 0 overflow. (On)
+    ADCSRB = _BV(ADTS1) | _BV(ADTS0); // Trigger on time counter 0 match A (Off)
 
   }
-  PORTB=0x00;
+  PINB=0x04;
 
 }
 
@@ -382,8 +428,8 @@ void InitIO()
 #if 1
   // ---------------------------------------
   // Setup timer 0 PWM
-  OCR0A = 150;  // Frequency. 255 = 5 KHz
-  OCR0B = 60;  // Min value 3
+  OCR0A = 255;  // 150 = ~16Khz Frequency. 255 = 5 KHz
+  OCR0B = 50;  // Min value 3
 
   TCCR0A = _BV(WGM00) ;  // Phase correct PWM.
   //| _BV(CS00)
@@ -448,7 +494,8 @@ void InitIO()
 
   ADMUX = g_admuxConfg | ADC_PB;
   g_measure = 3;
-  ADCSRB = _BV(ADTS1) | _BV(ADTS0); // Trigger on time counter 0 match A (Off)
+  ADCSRB = _BV(ADTS1) | _BV(ADTS0); // 40KHz Trigger on time counter 0 match A (Off)
+  //ADCSRB = _BV(ADTS2); // Trigger on time counter 0 match A (Off)
 
   // Divide system clock by 32, enable ADC .
   ADCSRA = _BV(ADEN) | _BV(ADPS2) | _BV(ADPS0) | _BV(ADIE) | _BV(ADATE); // Trigger on Counter timer overflow event.
@@ -471,12 +518,12 @@ void SendSync()
 
 void TurnMotor()
 {
-  g_phase++;
-  if(g_phase > 5)
-    g_phase = 0;
+  g_drivePhase++;
+  if(g_drivePhase > 5)
+    g_drivePhase = 0;
 
-  uint8_t nextOff =  g_commutationSequence[g_phase][0];
-  uint8_t nextOn = g_commutationSequence[g_phase][1];
+  uint8_t nextOff =  g_commutationSequence[g_drivePhase][0];
+  uint8_t nextOn = g_commutationSequence[g_drivePhase][1];
 
   g_motorOff = nextOff;
   g_motorOn = nextOn;
@@ -515,7 +562,7 @@ int main()
   }
 #endif
 
-  g_phase = 0;
+  g_drivePhase = 0;
   g_motorOff = 0;
   g_motorOn = 0; //MB(0);
 
@@ -575,6 +622,7 @@ int main()
 
     if(g_adcNewData) {
       g_adcNewData = 0;
+#if 1
       uint16_t phase = fxpt_atan2(g_lastPhaseA,g_lastPhaseB);
       {
         char buff[16];
@@ -585,7 +633,7 @@ int main()
         buff[at++] = g_lastCurrent >> 8;
         buff[at++] = g_lastVoltage; // 4 Voltage
         buff[at++] = g_lastVoltage>>8;
-        buff[at++] = g_phase;      // 6
+        buff[at++] = g_drivePhase;      // 6
         buff[at++] = OCR1B;         // 7
         buff[at++] = g_lastPhaseA;  // 8
         buff[at++] = g_lastPhaseA >> 8;
@@ -595,6 +643,7 @@ int main()
         buff[at++] = phase >> 8;
         SendPacket(buff,at);
       }
+#endif
     }
 
 
