@@ -2,7 +2,7 @@
 
 COMPILERHOME=/usr/local/CrossPack-AVR
 PRG            = bmc
-OBJ= bmc.o fxpt_atan2.o pid.o fxpt_atan2fast.o
+OBJ= bmc.o fxpt_atan2.o pid.o fxpt_atan2fast.o coms.o
 MCU_TARGET     = atmega168p
 DEFS           =-I. -I$(COMPILERHOME)/avr/include  -I../include
 OPTIMIZE = -O2 -std=c++11
@@ -36,10 +36,11 @@ $(PRG).elf: $(OBJ)
 
 
 # dependency:
-bmc.o: bmc.cc Fifo.hh pid.h
+bmc.o: bmc.cc Fifo.hh pid.h coms.hh
 
 fxpt_atan2.o: fxpt_atan2.cc 
 fxpt_atan2fast.o: fxpt_atan2fast.cc
+coms.o: coms.cc coms.hh
 
 pid.c : pid.h
 

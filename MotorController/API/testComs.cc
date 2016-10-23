@@ -100,6 +100,9 @@ void SerialDecodeC::ProcessPacket()
   // m_data[0] //
   switch(m_data[1])
   {
+  case 1: {
+    RavlDebug("Ping reply.");
+  } break;
   case 2: { // ADC Data.
     int current = ((int) m_data[2])  + (((int) m_data[3]) << 8);
     int volt = ((int) m_data[4])  + (((int) m_data[5]) << 8);
@@ -140,6 +143,7 @@ int main(int nargs,char **argv)
   serialPort.SetReadTimeout(2.0);
   serialPort.SetWriteTimeout(2.0);
   serialPort.SetNonBlocking(false);
+
 
 
   SerialDecodeC decoder;

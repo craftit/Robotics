@@ -40,6 +40,14 @@ uint16_t atan2b(int16_t y, int16_t x)
 
 int main(int nargs,char **argv)
 {
+  RavlDebug(" %d ",(int) atan2b(140,-540));
+  RavlDebug(" %d ",(int) atan2b(-180,-340));
+  RavlDebug(" %d ",(int) atan2b(-380,460));
+  RavlDebug(" %d ",(int) atan2b(60,580));
+  RavlDebug(" %d ",(int) atan2b(460,380));
+  RavlDebug(" %d ",(int) atan2b(500,-380));
+
+#if 0
   float maxErr = 0;
   for(int x = -1024;x < 1024; x += 1) {
     for(int y = -1024;y < 1024;y += 1) {
@@ -61,5 +69,6 @@ int main(int nargs,char **argv)
     }
   }
   RavlDebug("MaxError:%f ", maxErr / (float) maxAngle);
+#endif
   return 0;
 }
