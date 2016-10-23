@@ -11,13 +11,13 @@
 extern uint16_t fxpt_atan2(const int16_t y, const int16_t x);
 extern uint16_t fxpt_atan2fast(int16_t y, int16_t x);
 
-#if 0
+#if 1
 #define DBTIMING(x) x
 #else
 #define DBTIMING(x)
 #endif
 
-#if 1
+#if 0
 #define DBMISC(x) x
 #else
 #define DBMISC(x)
@@ -132,8 +132,8 @@ const uint8_t g_currentADMux[6][2] =
   { ADC_IC, ADC_VA }
 };
 
-uint16_t g_phaseAngle[6] = {
-   11270,  // 0
+uint16_t g_switchPhaseAngle[6] = {
+   11270, // 0
    24954, // 1
    34738, // 2
    45509, // 3
@@ -141,14 +141,13 @@ uint16_t g_phaseAngle[6] = {
     2517, // 5
 };
 
-
-uint16_t g_phaseTopAngle[6] = {
-   23462, // 0
-   29388, // 1
-   38443, // 2
-   58119, // 3
-   1536,  // 4
-   8966,  // 5
+uint16_t g_switchMag[6] = {
+   11270-2517, // 0
+   24954-11270, // 1
+   34738-24954, // 2
+   45509-34738, // 3
+   60539-45509, // 4
+    2517+(60539-65535), // 5
 };
 
 //const uint8_t g_admuxConfg = _BV(REFS0) | _BV(REFS1); // Select 1.1 Volt ref.
@@ -170,7 +169,7 @@ enum MotorModeT {
 } g_motorMode = MM_FreeWheel;
 
 const uint8_t g_minPWM = 4;
-const uint8_t g_maxPWM = 120; // 250
+const uint8_t g_maxPWM = 250; // 250
 
 uint8_t g_drivePhase = 0;    //!< Commutation phase.
 uint16_t g_atPhaseAngle = 0;    //!< Commutation phase.
@@ -231,6 +230,9 @@ uint16_t g_lastCurrent = 0;
 uint16_t g_lastVoltage = 0;
 int16_t g_lastPhaseA = 0;
 int16_t g_lastPhaseB = 0;
+
+int16_t g_lastVelocity = 0;
+
 int8_t g_atPhase = 0;
 uint8_t g_measure = 0;
 
@@ -262,12 +264,10 @@ void MotorPhase() {
 
   uint16_t rawPhase = fxpt_atan2fast(g_lastPhaseA,g_lastPhaseB);
 
-  g_atPhaseAngle = rawPhase;
-
-  uint16_t last = g_phaseAngle[5];
+  uint16_t last = g_switchPhaseAngle[5];
   int phase = 0;
   for(;phase < 6;phase++) {
-    uint16_t next = g_phaseAngle[phase];
+    uint16_t next = g_switchPhaseAngle[phase];
     if(last < next) {
       if(last < rawPhase && rawPhase <= next) {
         break;
@@ -280,6 +280,10 @@ void MotorPhase() {
     last = next;
   }
 
+  int16_t velEst = ((rawPhase - g_atPhaseAngle));/// (g_switchMag[phase]>>4);
+
+  g_atPhaseAngle = rawPhase;
+  g_lastVelocity = (g_lastVelocity * 3 + velEst) / 4;
 
   int8_t change = phase - g_atPhase;
   g_atPhase = phase;
@@ -302,7 +306,7 @@ void MotorPhase() {
     if(positionError > 127) positionError = 127;
     if(positionError < -127) positionError = -127;
 
-    int8_t drive = positionError;
+    int16_t drive = positionError * 16;
 
     if(drive == 0) {
       g_motorOff = 0;
@@ -318,9 +322,10 @@ void MotorPhase() {
         if(phase < 0) phase += 6;
         pwmWidth = -drive;
       }
+      pwmWidth *= 2;
       if(pwmWidth < g_minPWM) pwmWidth = g_minPWM;
       if(pwmWidth > g_maxPWM) pwmWidth = g_maxPWM;
-
+      OCR0B = pwmWidth;
       DrivePhase(phase);
     }
   }
@@ -388,9 +393,9 @@ ISR(ADC_vect,ISR_NOBLOCK)
         int err = g_targetCurrent - (int) g_lastCurrent;
 
         static int sum = 0;
-        sum = (15 * sum + 16 * err)/16;
+        sum = (3 * sum + 16 * err)/4;
 
-        nextVal = 40 + (sum/16);    // Change at.
+        nextVal = 10 + (sum/16);    // Change at.
         if(nextVal < g_minPWM)
           nextVal = g_minPWM;
         if(nextVal > g_maxPWM)
@@ -451,7 +456,7 @@ void InitIO()
   // ---------------------------------------
   // Setup timer 0 PWM
   OCR0A = 255;  // 255 = 5 KHz
-  OCR0B = 80;  // Min value 3
+  OCR0B = 20;  // Min value 3
 
   TCCR0A = _BV(WGM00) ;  // Phase correct PWM.
   //| _BV(CS00)
@@ -545,25 +550,6 @@ void StartCalibration()
   g_servoTask = ST_Calibrate;
 }
 
-void UpdateBoundaries()
-{
-#if 0
-  // Compute angle boundaries.
-  for(int i = 0;i < 6;i++) {
-    int ni = i+1;
-    if(ni > 5) ni = 0;
-    uint32_t curr = g_phaseAngle[i];
-    uint32_t next = g_phaseAngle[ni];
-    if(next > curr) {
-      g_phaseTopAngle[i] = (curr + next)/2;
-    } else {
-      uint32_t sum = (curr + next + 65535)/2;
-      g_phaseTopAngle[i] = sum;
-    }
-  }
-#endif
-}
-
 void CalibrateStep()
 {
   static int counter = 0;
@@ -607,10 +593,8 @@ void CalibrateStep()
 #if 1
   default: {
     for(int i =0;i < 6;i++)
-      g_phaseAngle[i] = g_phaseSum[i] / 8;// >> 2;//>>3;
+      g_switchPhaseAngle[i] = g_phaseSum[i] / 8;
 
-    // Finished.
-    UpdateBoundaries();
     // Finished.
     g_motorMode = MM_SensorDrive;
     g_servoTask = ST_Idle;
@@ -642,8 +626,8 @@ bool SendStatus() {
     buff[at++] = OCR1B;         // 7
     buff[at++] = g_lastPhaseA;  // 8
     buff[at++] = g_lastPhaseA >> 8;
-    buff[at++] = g_lastPhaseB;  // 10
-    buff[at++] = g_lastPhaseB >> 8;
+    buff[at++] = g_lastVelocity;  // 10
+    buff[at++] = g_lastVelocity >> 8;
     buff[at++] = g_atPhaseAngle;         // 12
     buff[at++] = g_atPhaseAngle >> 8;
     SendPacket(buff,at);
@@ -658,8 +642,6 @@ int main()
   // Make sure interrupts are enabled.
   sei();
 
-  UpdateBoundaries();
-
   g_drivePhase = 0;
   g_motorOff = 0;
   g_motorOn = 0; //MB(0);
@@ -670,7 +652,8 @@ int main()
   g_motorMode = MM_StepDrive;
   DrivePhase(0);
 #else
-  g_motorMode = MM_SensorDrive;
+  //g_motorMode = MM_SensorDrive;
+  g_motorMode = MM_SensorServo;
 #endif
 
   //StartCalibration();

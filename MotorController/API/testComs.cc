@@ -107,12 +107,12 @@ void SerialDecodeC::ProcessPacket()
     int current = ((int) m_data[2])  + (((int) m_data[3]) << 8);
     int volt = ((int) m_data[4])  + (((int) m_data[5]) << 8);
     int phaseA = (int16_t) (((int) m_data[8])  + (((int) m_data[9]) << 8));
-    int phaseB = (int16_t) (((int) m_data[10])  + (((int) m_data[11]) << 8));
+    int vel = (int16_t) (((int) m_data[10])  + (((int) m_data[11]) << 8));
     int phase = ((int) m_data[12])  + (((int) m_data[13]) << 8);
 
     //(int) m_data[6];
 
-    RavlDebug("I:%4d V:%4d  Phase:%d  PWM:%d  A:%d B:%d Ph:%d ",current,volt,(int) m_data[6],(int) m_data[7],phaseA,phaseB,phase);
+    RavlDebug("I:%4d V:%4d  Phase:%d  PWM:%d  A:%d Vel:%d Ph:%d ",current,volt,(int) m_data[6],(int) m_data[7],phaseA,vel,phase);
   } break;
   default:
     RavlDebug("Unexpected packet type %d ",(int) m_data[1]);
