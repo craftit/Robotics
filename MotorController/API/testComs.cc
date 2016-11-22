@@ -3,6 +3,7 @@
 #include "Ravl/OS/SerialIO.hh"
 #include "Ravl/SysLog.hh"
 
+static bool g_logPhaseChangeOnly = false;
 
 class SerialDecodeC
 {
@@ -104,6 +105,9 @@ void SerialDecodeC::ProcessPacket()
     RavlDebug("Ping reply.");
   } break;
   case 2: { // ADC Data.
+
+    static int lastPhase = -1;
+    int drivePhase = (int) m_data[6];
     int current = ((int) m_data[2])  + (((int) m_data[3]) << 8);
     int volt = ((int) m_data[4])  + (((int) m_data[5]) << 8);
     int phaseA = (int16_t) (((int) m_data[8])  + (((int) m_data[9]) << 8));
@@ -111,8 +115,20 @@ void SerialDecodeC::ProcessPacket()
     int phase = ((int) m_data[12])  + (((int) m_data[13]) << 8);
 
     //(int) m_data[6];
+    if(lastPhase != drivePhase || !g_logPhaseChangeOnly) {
+      lastPhase = drivePhase;
+      //RavlDebug("I:%4d V:%4d  Phase:%d  PWM:%d  A:%d B:%d Ph:%d ",current,volt,drivePhase,(int) m_data[7],phaseA,vel,phase);
+      std::cout << phase << "\t" <<  phaseA << "\t" << vel << "\t" << drivePhase  << "\t" << volt << std::endl;
+    }
+  } break;
+  case 8: { // Cal info
+    std::cout << "Cal info \n";
+    for(int i = 0;i < 6;i++) {
+      int angle = ((int) m_data[2+i])  + (((int) m_data[3+i]) << 8);
+      std::cout << i << " = " << angle << "\n";
+    }
+    std::cout << "\n";
 
-    RavlDebug("I:%4d V:%4d  Phase:%d  PWM:%d  A:%d Vel:%d Ph:%d ",current,volt,(int) m_data[6],(int) m_data[7],phaseA,vel,phase);
   } break;
   default:
     RavlDebug("Unexpected packet type %d ",(int) m_data[1]);
@@ -125,7 +141,7 @@ void SerialDecodeC::ProcessPacket()
 int main(int nargs,char **argv)
 {
   RavlN::OptionC opt(nargs,argv);
-
+  g_logPhaseChangeOnly = opt.Boolean("p",false,"Log phase change points only. ");
   opt.Check();
 
   RavlN::SerialCtrlC serialPort;

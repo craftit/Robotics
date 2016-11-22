@@ -9,4 +9,4 @@ HEADERS=
 
 USESLIBS=RavlCore RavlOS RavlSerialIO
 
-MAINS=testComs.cc testMath.cc
+MAINS=testComs.cc testMath.cc doDataProc.cc

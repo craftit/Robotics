@@ -132,6 +132,7 @@ const uint8_t g_currentADMux[6][2] =
   { ADC_IC, ADC_VA }
 };
 
+#if 0
 uint16_t g_switchPhaseAngle[6] = {
    11270, // 0
    24954, // 1
@@ -141,14 +142,18 @@ uint16_t g_switchPhaseAngle[6] = {
     2517, // 5
 };
 
-uint16_t g_switchMag[6] = {
-   11270-2517, // 0
-   24954-11270, // 1
-   34738-24954, // 2
-   45509-34738, // 3
-   60539-45509, // 4
-    2517+(60539-65535), // 5
+#else
+uint16_t g_switchPhaseAngle[6] = {
+   32220, // 0
+   46294, // 1
+   57920, // 2
+    2939, // 3
+   10572, // 4
+   22324, // 5
 };
+#endif
+
+
 
 //const uint8_t g_admuxConfg = _BV(REFS0) | _BV(REFS1); // Select 1.1 Volt ref.
 const uint8_t g_admuxConfg = _BV(REFS0) ; // Select 5 Volt ref.
@@ -167,6 +172,9 @@ enum MotorModeT {
   MM_SensorServo,
   MM_StepDrive
 } g_motorMode = MM_FreeWheel;
+
+
+bool SendStatus();
 
 const uint8_t g_minPWM = 4;
 const uint8_t g_maxPWM = 250; // 250
@@ -264,6 +272,8 @@ void MotorPhase() {
 
   uint16_t rawPhase = fxpt_atan2fast(g_lastPhaseA,g_lastPhaseB);
 
+  //rawPhase -= 2000;
+
   uint16_t last = g_switchPhaseAngle[5];
   int phase = 0;
   for(;phase < 6;phase++) {
@@ -294,9 +304,11 @@ void MotorPhase() {
   g_position += change;
 
   if(g_motorMode == MM_SensorDrive) {
-    phase += 2;
+    phase -= 2; // +1 -2
     if(phase > 5)
       phase -= 6;
+    if(phase < 0)
+      phase += 6;
     DrivePhase(phase);
     return ;
   }
@@ -306,7 +318,7 @@ void MotorPhase() {
     if(positionError > 127) positionError = 127;
     if(positionError < -127) positionError = -127;
 
-    int16_t drive = positionError * 16;
+    int16_t drive = positionError * 16; //16;
 
     if(drive == 0) {
       g_motorOff = 0;
@@ -314,7 +326,7 @@ void MotorPhase() {
     } else {
       uint8_t pwmWidth;
       if(drive > 0) {
-        phase += 2;
+        phase += 1;
         if(phase > 5) phase -= 6;
         pwmWidth = drive;
       } else {
@@ -322,10 +334,11 @@ void MotorPhase() {
         if(phase < 0) phase += 6;
         pwmWidth = -drive;
       }
-      pwmWidth *= 2;
+#if 1
       if(pwmWidth < g_minPWM) pwmWidth = g_minPWM;
       if(pwmWidth > g_maxPWM) pwmWidth = g_maxPWM;
       OCR0B = pwmWidth;
+#endif
       DrivePhase(phase);
     }
   }
@@ -409,12 +422,12 @@ ISR(ADC_vect,ISR_NOBLOCK)
       g_lastVoltage = data;
       break;
     case 2: {
-      g_lastPhaseA = ((int16_t) data)-512;
+      g_lastPhaseA = (((int16_t) data)-512)+13;
       MotorPhase();
       g_adcNewData = 1;
     } break;
     case 3: {
-      g_lastPhaseB = ((int16_t) data)-512;
+      g_lastPhaseB = (((int16_t) data)-512)+16;
       MotorPhase();
       g_adcNewData = 1;
     } break;
@@ -488,7 +501,7 @@ void InitIO()
   // ---------------------------------------
   // Setup timer 2 for 100Hz
 #if 1
-  OCR2A = 40;
+  OCR2A = 20;
   TCCR2A = _BV(WGM21);
   TCCR2B = _BV(CS02) | _BV(CS00); // Set clock to clkio/1024
   //TCCR2B = _BV(CS22) | _BV(CS21) | _BV(CS20);
@@ -550,11 +563,29 @@ void StartCalibration()
   g_servoTask = ST_Calibrate;
 }
 
+bool SendCal() {
+  char buff[20];
+  int at = 0;
+  buff[at++] = 1; // Address
+  buff[at++] = 8; // Type
+
+  for(int i = 0;i < 6;i++) {
+    uint16_t angle = g_switchPhaseAngle[i];
+    buff[at++] = angle;
+    buff[at++] = angle >> 8;
+  }
+
+  SendPacket(buff,at);
+
+  return true;
+}
+
+
 void CalibrateStep()
 {
   static int counter = 0;
   static int cycle = 0;
-  static int32_t g_phaseSum[6];
+  static uint32_t g_phaseSum[6];
 
   switch(g_taskStep) {
   case 0: {
@@ -569,8 +600,9 @@ void CalibrateStep()
   } break;
   case 1: { // Go through steps forward.
     counter++;
-    if(counter > 2000) { // Wait for position to settle.
+    if(counter > 4000) { // Wait for position to settle.
       counter = 0;
+      SendStatus();
       uint8_t nextPhase = g_drivePhase;
       g_phaseSum[nextPhase] += g_atPhaseAngle;
       nextPhase++;
@@ -578,8 +610,33 @@ void CalibrateStep()
         nextPhase = 0;
 #if 1
         cycle++;
-        if(cycle >= 8) {
-          g_taskStep = 2;
+        if(cycle >= 2) {
+          g_taskStep++;
+          DrivePhase(5);
+          break;
+        }
+#else
+        DBMISC(PINB=0x04);
+        g_taskStep = 2;
+#endif
+      }
+      DrivePhase(nextPhase);
+    }
+  } break;
+  case 2: { // Go through steps backward.
+    counter++;
+    if(counter > 4000) { // Wait for position to settle.
+      counter = 0;
+      SendStatus();
+      uint8_t nextPhase = g_drivePhase;
+      g_phaseSum[nextPhase] += g_atPhaseAngle;
+      nextPhase--;
+      if(nextPhase > 128) {
+        nextPhase = 5;
+#if 1
+        cycle++;
+        if(cycle >= 4) {
+          g_taskStep++;
           break;
         }
 #else
@@ -591,10 +648,22 @@ void CalibrateStep()
     }
   } break;
 #if 1
-  default: {
+  case 3: {
     for(int i =0;i < 6;i++)
-      g_switchPhaseAngle[i] = g_phaseSum[i] / 8;
-
+      g_switchPhaseAngle[i] = (uint16_t) (g_phaseSum[i] / 4); //cycle;
+    g_taskStep++;
+  } break;
+  case 4: {
+    if(g_txBuff.Space() < 20)
+      break;
+    static int count = 0;
+    if(count++ > 2) {
+      g_taskStep++;
+    }
+    SendCal();
+    break;
+  }
+  default: {
     // Finished.
     g_motorMode = MM_SensorDrive;
     g_servoTask = ST_Idle;
@@ -626,14 +695,18 @@ bool SendStatus() {
     buff[at++] = OCR1B;         // 7
     buff[at++] = g_lastPhaseA;  // 8
     buff[at++] = g_lastPhaseA >> 8;
-    buff[at++] = g_lastVelocity;  // 10
-    buff[at++] = g_lastVelocity >> 8;
+    buff[at++] = g_lastPhaseB;  // 10
+    buff[at++] = g_lastPhaseB >> 8;
+//    buff[at++] = g_lastVelocity;  // 10
+//    buff[at++] = g_lastVelocity >> 8;
     buff[at++] = g_atPhaseAngle;         // 12
     buff[at++] = g_atPhaseAngle >> 8;
     SendPacket(buff,at);
   }
   return true;
 }
+
+
 
 int main()
 {
@@ -652,12 +725,11 @@ int main()
   g_motorMode = MM_StepDrive;
   DrivePhase(0);
 #else
-  //g_motorMode = MM_SensorDrive;
-  g_motorMode = MM_SensorServo;
+  g_motorMode = MM_SensorDrive;
+  //g_motorMode = MM_SensorServo;
 #endif
 
   //StartCalibration();
-
 #if 1
   while(true) {
 
@@ -694,7 +766,7 @@ int main()
       }
     }
 
-    SendStatus();
+    //SendStatus();
     if(g_servoTask == ST_StatusReport) {
       if(SendStatus()) {
         g_taskStep--;
