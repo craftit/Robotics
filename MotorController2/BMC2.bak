@@ -1,0 +1,136 @@
+EESchema Schematic File Version 2
+LIBS:power
+LIBS:device
+LIBS:transistors
+LIBS:conn
+LIBS:linear
+LIBS:regul
+LIBS:74xx
+LIBS:cmos4000
+LIBS:adc-dac
+LIBS:memory
+LIBS:xilinx
+LIBS:microcontrollers
+LIBS:dsp
+LIBS:microchip
+LIBS:analog_switches
+LIBS:motorola
+LIBS:texas
+LIBS:intel
+LIBS:audio
+LIBS:interface
+LIBS:digital-audio
+LIBS:philips
+LIBS:display
+LIBS:cypress
+LIBS:siliconi
+LIBS:opto
+LIBS:atmel
+LIBS:contrib
+LIBS:valves
+LIBS:stm32
+LIBS:Power_Management
+LIBS:motor_drivers
+LIBS:drv8305
+LIBS:bsc016n06ns
+LIBS:BMC2-cache
+EELAYER 25 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 3
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Sheet
+S 3350 2250 1500 2600
+U 5851BC18
+F0 "Controller" 59
+F1 "Controller.sch" 59
+F2 "VSenseA" I R 4850 2400 60 
+F3 "VSenseB" I R 4850 2500 60 
+F4 "VSenseC" I R 4850 2600 60 
+F5 "ISenseA" I R 4850 2750 60 
+F6 "ISenseB" I R 4850 2850 60 
+F7 "ISenseC" I R 4850 2950 60 
+F8 "VSense" I R 4850 3150 60 
+$EndSheet
+$Sheet
+S 6700 2050 1400 3200
+U 5851C864
+F0 "power" 60
+F1 "power.sch" 60
+F2 "PhaseA" O R 8100 2400 60 
+F3 "PhaseB" O R 8100 2550 60 
+F4 "PhaseC" O R 8100 2700 60 
+F5 "VSenseA" O L 6700 2200 60 
+F6 "VSenseB" O L 6700 2300 60 
+F7 "VSenseC" O L 6700 2400 60 
+F8 "ISenseA" O L 6700 2550 60 
+F9 "ISenseB" O L 6700 2650 60 
+F10 "ISenseC" O L 6700 2750 60 
+F11 "SCLK" I L 6700 2950 60 
+F12 "MISO" O L 6700 3050 60 
+F13 "MOSI" I L 6700 3150 60 
+F14 "sSCS" I L 6700 3250 60 
+F15 "PWRGD" O L 6700 3400 60 
+F16 "nFAULT" O L 6700 3500 60 
+F17 "WAKE" I L 6700 3700 60 
+F18 "EN_GATE" I L 6700 3800 60 
+F19 "INHA" I L 6700 4000 60 
+F20 "INLA" I L 6700 4100 60 
+F21 "INHB" I L 6700 4200 60 
+F22 "INLB" I L 6700 4300 60 
+F23 "INHC" I L 6700 4400 60 
+F24 "INLC" I L 6700 4600 60 
+F25 "VSupplySense" O L 6700 2850 60 
+$EndSheet
+Wire Wire Line
+	4850 2400 5550 2400
+Wire Wire Line
+	5550 2400 5550 2200
+Wire Wire Line
+	5550 2200 6700 2200
+Wire Wire Line
+	4850 2500 5650 2500
+Wire Wire Line
+	5650 2500 5650 2300
+Wire Wire Line
+	5650 2300 6700 2300
+Wire Wire Line
+	4850 2600 5750 2600
+Wire Wire Line
+	5750 2600 5750 2400
+Wire Wire Line
+	5750 2400 6700 2400
+Wire Wire Line
+	6700 2550 5850 2550
+Wire Wire Line
+	5850 2550 5850 2750
+Wire Wire Line
+	5850 2750 4850 2750
+Wire Wire Line
+	4850 2850 5950 2850
+Wire Wire Line
+	5950 2850 5950 2650
+Wire Wire Line
+	5950 2650 6700 2650
+Wire Wire Line
+	6700 2750 6050 2750
+Wire Wire Line
+	6050 2750 6050 2950
+Wire Wire Line
+	6050 2950 4850 2950
+Wire Wire Line
+	6700 2850 6150 2850
+Wire Wire Line
+	6150 2850 6150 3150
+Wire Wire Line
+	6150 3150 4850 3150
+$EndSCHEMATC
