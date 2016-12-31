@@ -33,12 +33,14 @@ LIBS:Power_Management
 LIBS:motor_drivers
 LIBS:drv8305
 LIBS:bsc016n06ns
+LIBS:dc-dc
+LIBS:IFX91041EJV33
 LIBS:BMC2-cache
 EELAYER 25 0
 EELAYER END
 $Descr A3 16535 11693
 encoding utf-8
-Sheet 2 3
+Sheet 2 4
 Title ""
 Date ""
 Rev ""
@@ -883,4 +885,18 @@ Wire Wire Line
 	3250 6500 3250 6450
 Wire Wire Line
 	3000 6350 3000 6500
+Text HLabel 4350 6250 0    60   Input ~ 0
+Temp
+Text HLabel 4300 7250 0    60   Output ~ 0
+Wake
+Wire Wire Line
+	4300 7250 4600 7250
+Text HLabel 4300 6850 0    60   Output ~ 0
+sSCS
+Wire Wire Line
+	4300 6850 4600 6850
+Text HLabel 4300 5750 0    60   Input ~ 0
+PWRGD
+Wire Wire Line
+	4300 5750 4600 5750
 $EndSCHEMATC

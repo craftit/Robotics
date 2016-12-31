@@ -33,12 +33,14 @@ LIBS:Power_Management
 LIBS:motor_drivers
 LIBS:drv8305
 LIBS:bsc016n06ns
+LIBS:dc-dc
+LIBS:IFX91041EJV33
 LIBS:BMC2-cache
 EELAYER 25 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 3 3
+Sheet 3 4
 Title ""
 Date ""
 Rev ""
@@ -699,8 +701,6 @@ Wire Wire Line
 Wire Wire Line
 	1550 2050 1550 1900
 Wire Wire Line
-	1550 1900 2200 1900
-Wire Wire Line
 	3850 1900 3850 1950
 Wire Wire Line
 	3850 1650 3700 1650
@@ -1132,7 +1132,7 @@ F 3 "" H 2000 2100 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	2000 1950 2000 1900
+	2000 1750 2000 1950
 Connection ~ 2000 1900
 $Comp
 L GND #PWR?
@@ -1202,4 +1202,19 @@ Connection ~ 5250 4450
 Wire Wire Line
 	5450 4150 5450 4050
 Connection ~ 5450 4050
+Wire Wire Line
+	1550 1900 1750 1900
+Wire Wire Line
+	2000 1900 2200 1900
+$Comp
+L +3.3VADC #PWR?
+U 1 1 585F8E91
+P 2000 1750
+F 0 "#PWR?" H 2150 1700 50  0001 C CNN
+F 1 "+3.3VADC" H 2000 1850 50  0000 C CNN
+F 2 "" H 2000 1750 50  0000 C CNN
+F 3 "" H 2000 1750 50  0000 C CNN
+	1    2000 1750
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC

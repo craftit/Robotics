@@ -1,4 +1,4 @@
-update=Saturday, 17 December 2016 'pmt' 12:37:12
+update=Saturday, 24 December 2016 'pmt' 21:13:38
 version=1
 last_client=kicad
 [pcbnew]
@@ -63,3 +63,5 @@ LibName31=Power_Management
 LibName32=motor_drivers
 LibName33=drv8305
 LibName34=bsc016n06ns
+LibName35=dc-dc
+LibName36=IFX91041EJV33

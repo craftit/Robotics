@@ -33,12 +33,14 @@ LIBS:Power_Management
 LIBS:motor_drivers
 LIBS:drv8305
 LIBS:bsc016n06ns
+LIBS:dc-dc
+LIBS:IFX91041EJV33
 LIBS:BMC2-cache
 EELAYER 25 0
 EELAYER END
 $Descr A3 16535 11693
 encoding utf-8
-Sheet 2 3
+Sheet 2 4
 Title ""
 Date ""
 Rev ""
@@ -621,9 +623,9 @@ Wire Wire Line
 Wire Wire Line
 	8700 3850 8700 3550
 Wire Wire Line
-	8700 3550 8450 3550
+	8450 3550 8700 3550
 Wire Wire Line
-	8450 3550 8450 2700
+	8450 2700 8450 3550
 Wire Wire Line
 	8450 2800 8250 2800
 Wire Wire Line
@@ -631,9 +633,9 @@ Wire Wire Line
 Wire Wire Line
 	8600 3850 8600 3650
 Wire Wire Line
-	8600 3650 8050 3650
+	8050 3650 8600 3650
 Wire Wire Line
-	8050 3650 8050 2700
+	8050 2700 8050 3650
 Wire Wire Line
 	8050 2800 7900 2800
 Wire Wire Line
@@ -897,4 +899,21 @@ Text HLabel 4300 5750 0    60   Input ~ 0
 PWRGD
 Wire Wire Line
 	4300 5750 4600 5750
+$Comp
+L +3.3VADC #PWR?
+U 1 1 585F9182
+P 10150 2700
+F 0 "#PWR?" H 10300 2650 50  0001 C CNN
+F 1 "+3.3VADC" H 10150 2800 50  0000 C CNN
+F 2 "" H 10150 2700 50  0000 C CNN
+F 3 "" H 10150 2700 50  0000 C CNN
+	1    10150 2700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	10150 2950 10150 2700
+Text HLabel 13650 6450 2    60   Output ~ 0
+CAN_STBY
+Wire Wire Line
+	13650 6450 12800 6450
 $EndSCHEMATC
