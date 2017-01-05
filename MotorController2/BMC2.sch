@@ -905,8 +905,6 @@ Wire Wire Line
 	1150 3050 1150 2750
 Wire Wire Line
 	1050 3050 1050 2850
-NoConn ~ 3350 4800
-NoConn ~ 3350 4900
 NoConn ~ 4050 1350
 $Comp
 L +36V #PWR015
@@ -953,7 +951,7 @@ F 3 "" H 8400 1650 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	8200 1650 7800 1650
+	7800 1650 8200 1650
 Wire Wire Line
 	8200 1350 7750 1350
 $Comp
@@ -972,4 +970,62 @@ Wire Wire Line
 Wire Wire Line
 	7950 1950 7950 1650
 Connection ~ 7950 1650
+$Comp
+L CONN_01X04 P11
+U 1 1 586E38C6
+P 2650 4650
+F 0 "P11" H 2650 4900 50  0000 C CNN
+F 1 "I2C" V 2750 4650 50  0000 C CNN
+F 2 "Sockets_MOLEX_KK-System:Socket_MOLEX-KK-RM2-54mm_Lock_4pin_straight" H 2650 4650 50  0001 C CNN
+F 3 "" H 2650 4650 50  0000 C CNN
+F 4 "http://uk.farnell.com/molex/171856-0004/connector-header-tht-2-54mm-4way/dp/2366182" H 2650 4650 60  0001 C CNN "Order"
+	1    2650 4650
+	-1   0    0    -1  
+$EndComp
+$Comp
+L GND #PWR018
+U 1 1 586E3AFE
+P 3150 4300
+F 0 "#PWR018" H 3150 4050 50  0001 C CNN
+F 1 "GND" H 3150 4150 50  0000 C CNN
+F 2 "" H 3150 4300 50  0000 C CNN
+F 3 "" H 3150 4300 50  0000 C CNN
+	1    3150 4300
+	1    0    0    -1  
+$EndComp
+$Comp
+L +3V3 #PWR019
+U 1 1 586E3CD7
+P 3200 4650
+F 0 "#PWR019" H 3200 4500 50  0001 C CNN
+F 1 "+3V3" H 3200 4790 50  0000 C CNN
+F 2 "" H 3200 4650 50  0000 C CNN
+F 3 "" H 3200 4650 50  0000 C CNN
+	1    3200 4650
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2850 4500 2900 4500
+Wire Wire Line
+	2900 4500 2900 4300
+Wire Wire Line
+	2900 4300 3150 4300
+Wire Wire Line
+	2850 4600 3050 4600
+Wire Wire Line
+	3050 4600 3050 4650
+Wire Wire Line
+	3050 4650 3200 4650
+Wire Wire Line
+	3350 4800 3000 4800
+Wire Wire Line
+	3000 4800 3000 4700
+Wire Wire Line
+	3000 4700 2850 4700
+Wire Wire Line
+	2850 4800 2950 4800
+Wire Wire Line
+	2950 4800 2950 4900
+Wire Wire Line
+	2950 4900 3350 4900
 $EndSCHEMATC
