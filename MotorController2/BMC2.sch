@@ -1,4 +1,5 @@
 EESchema Schematic File Version 2
+LIBS:BMC2-rescue
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -36,7 +37,7 @@ LIBS:bsc016n06ns
 LIBS:dc-dc
 LIBS:IFX91041EJV33
 LIBS:BMC2-cache
-EELAYER 25 0
+EELAYER 26 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
@@ -243,7 +244,7 @@ F 3 "" H 1150 5500 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L USB_OTG P4
+L USB_OTG-RESCUE-BMC2 P4
 U 1 1 5865C76F
 P 2000 5350
 F 0 "P4" H 2325 5225 50  0000 C CNN
@@ -852,7 +853,7 @@ U 1 1 586E727E
 P 2850 3850
 F 0 "W1" H 2850 4120 50  0000 C CNN
 F 1 "CAN_TX" H 2850 4050 50  0000 C CNN
-F 2 "Measurement_Points:Measurement_Point_Round-SMD-Pad_Big" H 3050 3850 50  0001 C CNN
+F 2 "Measurement_Points:Measurement_Point_Round-SMD-Pad_Small" H 3050 3850 50  0001 C CNN
 F 3 "" H 3050 3850 50  0000 C CNN
 	1    2850 3850
 	1    0    0    -1  
@@ -866,7 +867,7 @@ U 1 1 586E75E8
 P 3150 3850
 F 0 "W2" H 3150 4120 50  0000 C CNN
 F 1 "CAN_RX" H 3150 4050 50  0000 C CNN
-F 2 "Measurement_Points:Measurement_Point_Round-SMD-Pad_Big" H 3350 3850 50  0001 C CNN
+F 2 "Measurement_Points:Measurement_Point_Round-SMD-Pad_Small" H 3350 3850 50  0001 C CNN
 F 3 "" H 3350 3850 50  0000 C CNN
 	1    3150 3850
 	1    0    0    -1  
@@ -901,7 +902,6 @@ Wire Wire Line
 	1150 3050 1150 2750
 Wire Wire Line
 	1050 3050 1050 2850
-NoConn ~ 4050 1350
 $Comp
 L +36V #PWR015
 U 1 1 58747DA2

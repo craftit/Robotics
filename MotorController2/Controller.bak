@@ -1,4 +1,5 @@
 EESchema Schematic File Version 2
+LIBS:BMC2-rescue
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -36,7 +37,7 @@ LIBS:bsc016n06ns
 LIBS:dc-dc
 LIBS:IFX91041EJV33
 LIBS:BMC2-cache
-EELAYER 25 0
+EELAYER 26 0
 EELAYER END
 $Descr A3 16535 11693
 encoding utf-8
@@ -804,7 +805,7 @@ F 3 "" H 3000 6650 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L LED D2
+L LED-RESCUE-BMC2 D2
 U 1 1 585E07CB
 P 3000 7050
 F 0 "D2" H 3000 7150 50  0000 C CNN
@@ -828,7 +829,7 @@ F 3 "" H 3250 6650 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L LED D3
+L LED-RESCUE-BMC2 D3
 U 1 1 585E0AF9
 P 3250 7050
 F 0 "D3" H 3250 7150 50  0000 C CNN
@@ -1084,7 +1085,7 @@ U 1 1 58716B1C
 P 13650 7150
 F 0 "W14" H 13650 7420 50  0000 C CNN
 F 1 "PB12" H 13650 7350 50  0000 C CNN
-F 2 "Measurement_Points:Measurement_Point_Round-SMD-Pad_Big" H 13850 7150 50  0001 C CNN
+F 2 "Measurement_Points:Measurement_Point_Round-SMD-Pad_Small" H 13850 7150 50  0001 C CNN
 F 3 "" H 13850 7150 50  0000 C CNN
 	1    13650 7150
 	1    0    0    -1  
@@ -1154,9 +1155,9 @@ U 1 1 587A548C
 P 4000 5300
 F 0 "X1" H 4000 5450 50  0000 C CNN
 F 1 "8MHz" H 4000 5150 50  0000 C CNN
-F 2 "Crystals:Crystal_HC49-SD_SMD" H 4000 5300 50  0001 C CNN
-F 3 "http://www.farnell.com/datasheets/1998804.pdf?_ga=1.267373838.1808009743.1471515981" H 4000 5300 50  0001 C CNN
-F 4 "http://uk.farnell.com/qantek-technology-corporation/qcs8-00000f18b23m/crystal-8mhz-18pf-12-5mm-x-4-6mm/dp/2508478" H 4000 5300 60  0001 C CNN "Order"
+F 2 "Crystals:ABM3" H 4000 5300 50  0001 C CNN
+F 3 "http://www.farnell.com/datasheets/1754353.pdf?_ga=1.70757648.1808009743.1471515981" H 4000 5300 50  0001 C CNN
+F 4 "http://uk.farnell.com/abracon/abm3-8-000mhz-d2y-t/crystal-8mhz-18pf-smd/dp/2101329" H 4000 5300 60  0001 C CNN "Order"
 	1    4000 5300
 	0    1    1    0   
 $EndComp

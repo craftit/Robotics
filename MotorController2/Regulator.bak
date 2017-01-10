@@ -1,4 +1,5 @@
 EESchema Schematic File Version 2
+LIBS:BMC2-rescue
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -36,7 +37,7 @@ LIBS:bsc016n06ns
 LIBS:dc-dc
 LIBS:IFX91041EJV33
 LIBS:BMC2-cache
-EELAYER 25 0
+EELAYER 26 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
@@ -121,9 +122,10 @@ L D D4
 U 1 1 585F7042
 P 1300 1600
 F 0 "D4" H 1300 1700 50  0000 C CNN
-F 1 "D" H 1300 1500 50  0000 C CNN
-F 2 "Diodes_SMD:DO-214AB_Handsoldering" H 1300 1600 50  0001 C CNN
+F 1 "60V 2A" H 1300 1500 50  0000 C CNN
+F 2 "Diodes_SMD:SOD-123" H 1300 1600 50  0001 C CNN
 F 3 "" H 1300 1600 50  0000 C CNN
+F 4 "http://uk.farnell.com/panasonic-electronic-components/db2w60400l/diode-schottky-60v-mini2-f3-b/dp/2284958" H 1300 1600 60  0001 C CNN "Order"
 	1    1300 1600
 	-1   0    0    1   
 $EndComp
@@ -363,9 +365,11 @@ Wire Wire Line
 	5900 2450 5900 2500
 Connection ~ 5550 2450
 $Comp
-L LED D9
+L LED-RESCUE-BMC2 D9
 U 1 1 585F871A
 P 8550 2850
+AR Path="/585F871A" Ref="D9"  Part="1" 
+AR Path="/585F64FD/585F871A" Ref="D9"  Part="1" 
 F 0 "D9" H 8550 2950 50  0000 C CNN
 F 1 "LED" H 8550 2750 50  0000 C CNN
 F 2 "LEDs:LED_0805" H 8550 2850 50  0001 C CNN
@@ -414,9 +418,11 @@ L D D5
 U 1 1 58659257
 P 1600 1300
 F 0 "D5" H 1600 1400 50  0000 C CNN
-F 1 "D" H 1600 1200 50  0000 C CNN
-F 2 "Diodes_SMD:DO-214AB_Handsoldering" H 1600 1300 50  0001 C CNN
-F 3 "" H 1600 1300 50  0000 C CNN
+F 1 "60V 2A " H 1600 1200 50  0000 C CNN
+F 2 "Diodes_SMD:SOD-123" H 1600 1300 50  0001 C CNN
+F 3 "http://www.farnell.com/datasheets/1912070.pdf?_ga=1.4639027.1808009743.1471515981" H 1600 1300 50  0001 C CNN
+F 4 "http://uk.farnell.com/panasonic-electronic-components/db2w60400l/diode-schottky-60v-mini2-f3-b/dp/2284958" H 1600 1300 60  0001 C CNN "Order"
+F 5 "DB2W60400L" H 1600 1300 60  0001 C CNN "Type"
 	1    1600 1300
 	0    -1   -1   0   
 $EndComp
@@ -560,7 +566,7 @@ U 1 1 586E8A7C
 P 5750 2200
 F 0 "W12" H 5750 2470 50  0000 C CNN
 F 1 "5V" H 5750 2400 50  0000 C CNN
-F 2 "Measurement_Points:Measurement_Point_Round-SMD-Pad_Big" H 5950 2200 50  0001 C CNN
+F 2 "Measurement_Points:Measurement_Point_Round-SMD-Pad_Small" H 5950 2200 50  0001 C CNN
 F 3 "" H 5950 2200 50  0000 C CNN
 	1    5750 2200
 	1    0    0    -1  
@@ -574,7 +580,7 @@ U 1 1 586E8BDF
 P 8250 1950
 F 0 "W13" H 8250 2220 50  0000 C CNN
 F 1 "3V3" H 8250 2150 50  0000 C CNN
-F 2 "Measurement_Points:Measurement_Point_Round-SMD-Pad_Big" H 8450 1950 50  0001 C CNN
+F 2 "Measurement_Points:Measurement_Point_Round-SMD-Pad_Small" H 8450 1950 50  0001 C CNN
 F 3 "" H 8450 1950 50  0000 C CNN
 	1    8250 1950
 	1    0    0    -1  
@@ -588,7 +594,7 @@ U 1 1 586EC5DC
 P 3000 1400
 F 0 "W10" H 3000 1670 50  0000 C CNN
 F 1 "DSUP" H 3000 1600 50  0000 C CNN
-F 2 "Measurement_Points:Measurement_Point_Round-SMD-Pad_Big" H 3200 1400 50  0001 C CNN
+F 2 "Measurement_Points:Measurement_Point_Round-SMD-Pad_Small" H 3200 1400 50  0001 C CNN
 F 3 "" H 3200 1400 50  0000 C CNN
 	1    3000 1400
 	1    0    0    -1  
