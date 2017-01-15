@@ -147,17 +147,17 @@ Text HLabel 13100 6750 2    60   Output ~ 0
 CAN_TX
 Text HLabel 13100 6850 2    60   Input ~ 0
 CAN_RX
-Text HLabel 13300 5050 2    60   Output ~ 0
+Text HLabel 13250 5250 2    60   Output ~ 0
 INHA
-Text HLabel 13300 5150 2    60   Output ~ 0
+Text HLabel 13250 5150 2    60   Output ~ 0
 INHB
-Text HLabel 13300 5250 2    60   Output ~ 0
+Text HLabel 13250 5050 2    60   Output ~ 0
 INHC
-Text HLabel 13100 7250 2    60   Output ~ 0
+Text HLabel 13100 7450 2    60   Output ~ 0
 INLA
 Text HLabel 13100 7350 2    60   Output ~ 0
 INLB
-Text HLabel 13100 7450 2    60   Output ~ 0
+Text HLabel 13100 7250 2    60   Output ~ 0
 INLC
 Text HLabel 4300 7350 0    60   Output ~ 0
 EN_GATE
@@ -576,18 +576,6 @@ Wire Wire Line
 	4350 5950 4600 5950
 Wire Wire Line
 	4350 6050 4600 6050
-Wire Wire Line
-	12800 5050 13300 5050
-Wire Wire Line
-	12800 5150 13300 5150
-Wire Wire Line
-	12800 5250 13300 5250
-Wire Wire Line
-	12800 7250 13100 7250
-Wire Wire Line
-	12800 7350 13100 7350
-Wire Wire Line
-	12800 7450 13100 7450
 Wire Wire Line
 	4350 6150 4600 6150
 Wire Wire Line
@@ -1163,4 +1151,16 @@ F 4 "http://uk.farnell.com/abracon/abm3-8-000mhz-d2y-t/crystal-8mhz-18pf-smd/dp/
 $EndComp
 Wire Wire Line
 	4000 5150 4000 5100
+Wire Wire Line
+	12800 5050 13250 5050
+Wire Wire Line
+	12800 5150 13250 5150
+Wire Wire Line
+	12800 5250 13250 5250
+Wire Wire Line
+	13100 7250 12800 7250
+Wire Wire Line
+	12800 7350 13100 7350
+Wire Wire Line
+	12800 7450 13100 7450
 $EndSCHEMATC
