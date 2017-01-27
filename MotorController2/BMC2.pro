@@ -1,4 +1,4 @@
-update=Tue 10 Jan 2017 13:07:50 GMT
+update=Wed 18 Jan 2017 13:59:37 GMT
 version=1
 last_client=kicad
 [pcbnew]
@@ -23,8 +23,6 @@ ModuleOutlineThickness=0.150000000000
 [cvpcb]
 version=1
 NetIExt=net
-[general]
-version=1
 [eeschema]
 version=1
 LibDir=
@@ -66,3 +64,5 @@ LibName34=drv8305
 LibName35=bsc016n06ns
 LibName36=dc-dc
 LibName37=IFX91041EJV33
+[general]
+version=1
