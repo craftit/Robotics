@@ -11,6 +11,8 @@ Design battery controllers.
 Design circuit board for hall sensors.
 Design bumpers
 Design end stop switch mounts + board.
+
+Add hall filtering to motor controller
  
 To print
 --------
@@ -23,4 +25,5 @@ Leg mount x2
 Bearing race x4
 Gears x12
 Hip reinforce x2
+MotorAdaptor + Sun Gear x8
 
