@@ -16,7 +16,11 @@
 
 #include "ch.h"
 #include "hal.h"
+
+#include "coms_serial.h"
 #include "test.h"
+
+#include "usbcfg.h"
 
 /*
  * This is a periodic thread that does absolutely nothing except flashing
@@ -35,10 +39,140 @@ static THD_FUNCTION(Thread1, arg) {
   }
 }
 
+
+
+#include <stdio.h>
+#include <string.h>
+
+#include "ch.h"
+#include "hal.h"
+#include "test.h"
+
+#include "shell.h"
+#include "chprintf.h"
+
+#include "usbcfg.h"
+
+/*===========================================================================*/
+/* Command line related.                                                     */
+/*===========================================================================*/
+
+#define SHELL_WA_SIZE   THD_WORKING_AREA_SIZE(2048)
+#define TEST_WA_SIZE    THD_WORKING_AREA_SIZE(256)
+
+static void cmd_mem(BaseSequentialStream *chp, int argc, char *argv[]) {
+  size_t n, size;
+
+  (void)argv;
+  if (argc > 0) {
+    chprintf(chp, "Usage: mem\r\n");
+    return;
+  }
+  n = chHeapStatus(NULL, &size);
+  chprintf(chp, "core free memory : %u bytes\r\n", chCoreGetStatusX());
+  chprintf(chp, "heap fragments   : %u\r\n", n);
+  chprintf(chp, "heap free total  : %u bytes\r\n", size);
+}
+
+static void cmd_threads(BaseSequentialStream *chp, int argc, char *argv[]) {
+  static const char *states[] = {CH_STATE_NAMES};
+  thread_t *tp;
+
+  (void)argv;
+  if (argc > 0) {
+    chprintf(chp, "Usage: threads\r\n");
+    return;
+  }
+  chprintf(chp, "    addr    stack prio refs     state time\r\n");
+  tp = chRegFirstThread();
+  do {
+    chprintf(chp, "%08lx %08lx %4lu %4lu %9s\r\n",
+            (uint32_t)tp, (uint32_t)tp->p_ctx.r13,
+            (uint32_t)tp->p_prio, (uint32_t)(tp->p_refs - 1),
+            states[tp->p_state]);
+    tp = chRegNextThread(tp);
+  } while (tp != NULL);
+}
+
+static void cmd_test(BaseSequentialStream *chp, int argc, char *argv[]) {
+  thread_t *tp;
+
+  (void)argv;
+  if (argc > 0) {
+    chprintf(chp, "Usage: test\r\n");
+    return;
+  }
+  tp = chThdCreateFromHeap(NULL, TEST_WA_SIZE, chThdGetPriorityX(),
+                           TestThread, chp);
+  if (tp == NULL) {
+    chprintf(chp, "out of memory\r\n");
+    return;
+  }
+  chThdWait(tp);
+}
+
+/* Can be measured using dd if=/dev/xxxx of=/dev/null bs=512 count=10000.*/
+static void cmd_write(BaseSequentialStream *chp, int argc, char *argv[]) {
+  static uint8_t buf[] =
+      "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"
+      "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"
+      "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"
+      "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"
+      "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"
+      "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"
+      "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"
+      "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"
+      "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"
+      "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"
+      "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"
+      "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"
+      "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"
+      "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"
+      "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef"
+      "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef";
+
+  (void)argv;
+  if (argc > 0) {
+    chprintf(chp, "Usage: write\r\n");
+    return;
+  }
+
+  while (chnGetTimeout((BaseChannel *)chp, TIME_IMMEDIATE) == Q_TIMEOUT) {
+#if 1
+    /* Writing in channel mode.*/
+    chnWrite(&SDU1, buf, sizeof buf - 1);
+#else
+    /* Writing in buffer mode.*/
+    (void) obqGetEmptyBufferTimeout(&SDU1.obqueue, TIME_INFINITE);
+    memcpy(SDU1.obqueue.ptr, buf, SERIAL_USB_BUFFERS_SIZE);
+    obqPostFullBuffer(&SDU1.obqueue, SERIAL_USB_BUFFERS_SIZE);
+#endif
+  }
+  chprintf(chp, "\r\n\nstopped\r\n");
+}
+
+static const ShellCommand commands[] = {
+  {"mem", cmd_mem},
+  {"threads", cmd_threads},
+  {"test", cmd_test},
+  {"write", cmd_write},
+  {NULL, NULL}
+};
+
+static const ShellConfig shell_cfg1 = {
+  (BaseSequentialStream *)&SDU1,
+  commands
+};
+
+/*===========================================================================*/
+/* Generic code.                                                             */
+/*===========================================================================*/
+
 /*
  * Application entry point.
  */
 int main(void) {
+  thread_t *shelltp = NULL;
 
   /*
    * System initializations.
@@ -49,43 +183,51 @@ int main(void) {
    */
   halInit();
   chSysInit();
-#if 0
+
+  InitSerial();
+
+  InitUSB();
+
   /*
-   * Activates the serial driver 2 using the driver default configuration.
-   * PA2(TX) and PA3(RX) are routed to USART2.
+   * Shell manager initialization.
    */
-  sdStart(&SD2, NULL);
-  palSetPadMode(GPIOA, 2, PAL_MODE_ALTERNATE(7));
-  palSetPadMode(GPIOA, 3, PAL_MODE_ALTERNATE(7));
-#endif
+  shellInit();
+
   /*
-   * Creates the example thread.
+   * Creates the blinker thread.
    */
   chThdCreateStatic(waThread1, sizeof(waThread1), NORMALPRIO, Thread1, NULL);
 #if 0
-  //palClearPad(GPIOD, GPIOD_PIN4);     /* Orange.  */
-  palSetPad(GPIOC, GPIOC_PIN4);       /* Orange.  */
-  palSetPad(GPIOC, GPIOC_PIN5);       /* Orange.  */
-
+  bool wasTrue = false;
   while (true) {
-    palClearPad(GPIOC, GPIOC_PIN4);       /* Orange.  */
-    palSetPad(GPIOC, GPIOC_PIN5);       /* Orange.  */
-    chThdSleepMilliseconds(500);
-    palClearPad(GPIOC, GPIOC_PIN5);       /* Orange.  */
-    palSetPad(GPIOC, GPIOC_PIN4);       /* Orange.  */
-    chThdSleepMilliseconds(500);
+    if (palReadPad(GPIOB, GPIOA_PIN2)) {
+      palSetPad(GPIOC, GPIOC_PIN5);       /* Orange.  */
+      if(!wasTrue) {
+        wasTrue = true;
+        SendSerialTest();
+      }
+    } else {
+      wasTrue = false;
+      palClearPad(GPIOC,GPIOC_PIN5);       /* Orange.  */
+    }
+    chThdSleepMilliseconds(100);
   }
 #endif
 
+#if 1
   /*
    * Normal main() thread activity, in this demo it does nothing except
    * sleeping in a loop and check the button state.
    */
   while (true) {
-#if 0
-    if (palReadPad(GPIOA, GPIOA_BUTTON))
-      TestThread(&SD2);
-#endif
-    chThdSleepMilliseconds(500);
+    if (!shelltp && (SDU1.config->usbp->state == USB_ACTIVE))
+      shelltp = shellCreate(&shell_cfg1, SHELL_WA_SIZE, NORMALPRIO);
+    else if (chThdTerminatedX(shelltp)) {
+      chThdRelease(shelltp);    /* Recovers memory of the previous shell.   */
+      shelltp = NULL;           /* Triggers spawning of a new shell.        */
+    }
+    chThdSleepMilliseconds(1000);
   }
+#endif
 }
+
