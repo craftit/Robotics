@@ -14,33 +14,6 @@
     limitations under the License.
 */
 
-#include "ch.h"
-#include "hal.h"
-
-#include "coms_serial.h"
-#include "test.h"
-
-#include "usbcfg.h"
-
-/*
- * This is a periodic thread that does absolutely nothing except flashing
- * a LED.
- */
-static THD_WORKING_AREA(waThread1, 128);
-static THD_FUNCTION(Thread1, arg) {
-
-  (void)arg;
-  chRegSetThreadName("blinker");
-  while (true) {
-    palSetPad(GPIOC, GPIOC_PIN4);       /* Orange.  */
-    chThdSleepMilliseconds(500);
-    palClearPad(GPIOC, GPIOC_PIN4);     /* Orange.  */
-    chThdSleepMilliseconds(500);
-  }
-}
-
-
-
 #include <stdio.h>
 #include <string.h>
 
@@ -151,22 +124,11 @@ static void cmd_write(BaseSequentialStream *chp, int argc, char *argv[]) {
   chprintf(chp, "\r\n\nstopped\r\n");
 }
 
-extern int DoADC(void);
-extern void InitADC(void);
-
-static void cmd_doAdc(BaseSequentialStream *chp, int argc, char *argv[]) {
-  chprintf(chp, "Starting conversion \r\n");
-  int value = DoADC();
-  chprintf(chp, "Result:%d  \r\n",value);
-
-}
-
 static const ShellCommand commands[] = {
   {"mem", cmd_mem},
   {"threads", cmd_threads},
   {"test", cmd_test},
   {"write", cmd_write},
-  {"adc", cmd_doAdc},
   {NULL, NULL}
 };
 
@@ -178,6 +140,32 @@ static const ShellConfig shell_cfg1 = {
 /*===========================================================================*/
 /* Generic code.                                                             */
 /*===========================================================================*/
+
+/*
+ * LED blinker thread, times are in milliseconds.
+ */
+static THD_WORKING_AREA(waThread1, 128);
+static THD_FUNCTION(Thread1, arg) {
+
+  (void)arg;
+  chRegSetThreadName("blinker");
+  while (true) {
+    systime_t time;
+
+    time = serusbcfg.usbp->state == USB_ACTIVE ? 250 : 500;
+#if defined(BOARD_ST_STM32F4_DISCOVERY)
+    palClearPad(GPIOD, GPIOD_LED4);
+    chThdSleepMilliseconds(time);
+    palSetPad(GPIOD, GPIOD_LED4);
+    chThdSleepMilliseconds(time);
+#else
+    palClearPad(GPIOC, GPIOC_LED);
+    chThdSleepMilliseconds(time);
+    palSetPad(GPIOC, GPIOC_LED);
+    chThdSleepMilliseconds(time);
+#endif
+  }
+}
 
 /*
  * Application entry point.
@@ -195,11 +183,21 @@ int main(void) {
   halInit();
   chSysInit();
 
-  InitADC();
+  /*
+   * Initializes a serial-over-USB CDC driver.
+   */
+  sduObjectInit(&SDU1);
+  sduStart(&SDU1, &serusbcfg);
 
-  InitSerial();
-
-  InitUSB();
+  /*
+   * Activates the USB driver and then the USB bus pull-up on D+.
+   * Note, a delay is inserted in order to not have to disconnect the cable
+   * after a reset.
+   */
+  usbDisconnectBus(serusbcfg.usbp);
+  chThdSleepMilliseconds(1500);
+  usbStart(serusbcfg.usbp, &usbcfg);
+  usbConnectBus(serusbcfg.usbp);
 
   /*
    * Shell manager initialization.
@@ -210,24 +208,7 @@ int main(void) {
    * Creates the blinker thread.
    */
   chThdCreateStatic(waThread1, sizeof(waThread1), NORMALPRIO, Thread1, NULL);
-#if 0
-  bool wasTrue = false;
-  while (true) {
-    if (palReadPad(GPIOB, GPIOA_PIN2)) {
-      palSetPad(GPIOC, GPIOC_PIN5);       /* Orange.  */
-      if(!wasTrue) {
-        wasTrue = true;
-        SendSerialTest();
-      }
-    } else {
-      wasTrue = false;
-      palClearPad(GPIOC,GPIOC_PIN5);       /* Orange.  */
-    }
-    chThdSleepMilliseconds(100);
-  }
-#endif
 
-#if 1
   /*
    * Normal main() thread activity, in this demo it does nothing except
    * sleeping in a loop and check the button state.
@@ -241,6 +222,4 @@ int main(void) {
     }
     chThdSleepMilliseconds(1000);
   }
-#endif
 }
-
