@@ -153,7 +153,9 @@ static void cmd_write(BaseSequentialStream *chp, int argc, char *argv[]) {
 
 extern int DoADC(void);
 extern void InitADC(void);
-extern uint16_t Drv8503ReadStatus();
+extern uint16_t Drv8503ReadStatus(void);
+extern uint16_t Drv8503Test(void);
+extern uint16_t Drv8503ReadRegister(uint16_t addr);
 
 static void cmd_doDiag(BaseSequentialStream *chp, int argc, char *argv[]) {
   chprintf(chp, "Starting conversion \r\n");
@@ -174,14 +176,16 @@ static void cmd_doDiag(BaseSequentialStream *chp, int argc, char *argv[]) {
     chprintf(chp, "Fault \r\n");
   }
 
-  while(true) {
-    uint16_t stat = Drv8503ReadStatus();
-    chprintf(chp, "Status: %x \r\n",stat);
-    chThdSleepMilliseconds(100);
+  for(int i = 0;i < 15;i++){
+    chprintf(chp, "Status %d: %x \r\n",i,Drv8503ReadRegister(i));
   }
 
 }
 
+static void cmd_doDrvTest(BaseSequentialStream *chp, int argc, char *argv[]) {
+  chprintf(chp, "Testing... \r\n");
+  Drv8503Test();
+}
 
 
 
@@ -191,6 +195,7 @@ static const ShellCommand commands[] = {
   {"test", cmd_test},
   {"write", cmd_write},
   {"diag", cmd_doDiag},
+  {"drvtest", cmd_doDrvTest},
   {NULL, NULL}
 };
 

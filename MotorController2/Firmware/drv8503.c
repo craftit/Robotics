@@ -46,15 +46,37 @@ uint16_t Drv8503ReadRegister(uint16_t addr) {
   return (uint16_t) data[0] << 8 | (uint16_t) data[1];
 }
 
-uint16_t Drv8503ReadStatus()
+uint16_t Drv8503ReadStatus(void)
 {
   uint16_t ret= Drv8503ReadRegister(0x5);
 
   return ret;
 }
 
-void InitDrv8503()
+void InitDrv8503(void)
 {
 
 
 }
+
+
+uint16_t Drv8503Test(void)
+{
+  // Turn everything off
+  palClearPad(GPIOA, GPIOC_PIN8);  // HC
+  palClearPad(GPIOA, GPIOC_PIN9);  // HB
+  palClearPad(GPIOA, GPIOC_PIN10); // HA
+  palClearPad(GPIOB, GPIOC_PIN13); // LC
+  palClearPad(GPIOB, GPIOC_PIN14); // LB
+  palClearPad(GPIOB, GPIOC_PIN15); // LA
+
+  palSetPad(GPIOC, GPIOC_PIN13); // Wake
+  palSetPad(GPIOC, GPIOC_PIN14); // Gate enable
+
+  palSetPad(GPIOA, GPIOC_PIN10); // HA
+  palSetPad(GPIOB, GPIOC_PIN14); // LB
+
+
+  return 0;
+}
+
