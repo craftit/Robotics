@@ -5,6 +5,9 @@
 #define ADC_GRP1_BUF_DEPTH      8
 
 
+
+
+
 static adcsample_t samples1[ADC_GRP1_NUM_CHANNELS * ADC_GRP1_BUF_DEPTH];
 
 static void adcerrorcallback(ADCDriver *adcp, adcerror_t err) {

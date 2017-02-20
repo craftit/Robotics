@@ -153,20 +153,44 @@ static void cmd_write(BaseSequentialStream *chp, int argc, char *argv[]) {
 
 extern int DoADC(void);
 extern void InitADC(void);
+extern uint16_t Drv8503ReadStatus();
 
-static void cmd_doAdc(BaseSequentialStream *chp, int argc, char *argv[]) {
+static void cmd_doDiag(BaseSequentialStream *chp, int argc, char *argv[]) {
   chprintf(chp, "Starting conversion \r\n");
   int value = DoADC();
   chprintf(chp, "Result:%d  \r\n",value);
 
+  chprintf(chp, "Power good: ");
+  if (palReadPad(GPIOD, GPIOD_PIN2)) {
+    chprintf(chp, "Ready \r\n");
+  } else {
+    chprintf(chp, "No \r\n");
+  }
+
+  chprintf(chp, "Status: ");
+  if (palReadPad(GPIOC, GPIOC_PIN15)) {
+    chprintf(chp, "Ok \r\n");
+  } else {
+    chprintf(chp, "Fault \r\n");
+  }
+
+  while(true) {
+    uint16_t stat = Drv8503ReadStatus();
+    chprintf(chp, "Status: %x \r\n",stat);
+    chThdSleepMilliseconds(100);
+  }
+
 }
+
+
+
 
 static const ShellCommand commands[] = {
   {"mem", cmd_mem},
   {"threads", cmd_threads},
   {"test", cmd_test},
   {"write", cmd_write},
-  {"adc", cmd_doAdc},
+  {"diag", cmd_doDiag},
   {NULL, NULL}
 };
 
