@@ -21,6 +21,7 @@
 #include "test.h"
 
 #include "usbcfg.h"
+#include "pwm.h"
 
 /*
  * This is a periodic thread that does absolutely nothing except flashing
@@ -158,6 +159,9 @@ extern uint16_t Drv8503Test(void);
 extern uint16_t Drv8503ReadRegister(uint16_t addr);
 
 static void cmd_doDiag(BaseSequentialStream *chp, int argc, char *argv[]) {
+  (void)argv;
+  (void)argc;
+
   chprintf(chp, "Starting conversion \r\n");
   int value = DoADC();
   chprintf(chp, "Result:%d  \r\n",value);
@@ -183,6 +187,8 @@ static void cmd_doDiag(BaseSequentialStream *chp, int argc, char *argv[]) {
 }
 
 static void cmd_doDrvTest(BaseSequentialStream *chp, int argc, char *argv[]) {
+  (void)argv;
+  (void)argc;
   chprintf(chp, "Testing... \r\n");
   Drv8503Test();
 }
@@ -208,6 +214,8 @@ static const ShellConfig shell_cfg1 = {
 /* Generic code.                                                             */
 /*===========================================================================*/
 
+extern void Drv8503Init(void);
+
 /*
  * Application entry point.
  */
@@ -229,6 +237,8 @@ int main(void) {
   InitSerial();
 
   InitUSB();
+
+  Drv8503Init();
 
   /*
    * Shell manager initialization.

@@ -120,8 +120,9 @@ CSRC = $(STARTUPSRC) \
        usbcfg.c \
 		   coms_serial.c \
 		   do_adc.c \
-		   drv8503.c
-
+		   drv8503.c \
+       pwm.c
+ 			
 # C++ sources that can be compiled in ARM or THUMB mode depending on the global
 # setting.
 CPPSRC =

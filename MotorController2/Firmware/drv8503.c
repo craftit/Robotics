@@ -11,13 +11,15 @@ static const SPIConfig ls_spicfg = {
   9,
   SPI_CR1_BR_2 | SPI_CR1_BR_1  | SPI_CR1_CPHA
 };
+
+
 //| SPI_CR1_DFF
 
-uint16_t Drv8503SetRegister(uint16_t cmd) {
+uint16_t Drv8503SetRegister(uint16_t addr,uint16_t value) {
   uint8_t data[2];
   uint8_t txbuff[2];
-  txbuff[0] = cmd;
-  txbuff[1] = 0;
+  txbuff[0] = addr << 3 | (value >> 8);
+  txbuff[1] = value & 0xff;
 
   spiAcquireBus(&SPID3);              /* Acquire ownership of the bus.    */
   spiStart(&SPID3, &ls_spicfg);       /* Setup transfer parameters.       */
@@ -53,9 +55,15 @@ uint16_t Drv8503ReadStatus(void)
   return ret;
 }
 
-void InitDrv8503(void)
-{
+#define DRV8503_FLIP_OTSD  (1U<<10)
+#define DRV8503_EN_SNS_CLAMP (1U<<7)
+#define DRV8503_CLR_FLTS (1U<<2)
 
+void Drv8503Init(void)
+{
+  // Make sure the output of the sense amplifiers is clamped to 3.3V clear any faults
+  // before being enabled
+  Drv8503SetRegister(9,DRV8503_FLIP_OTSD | DRV8503_EN_SNS_CLAMP | DRV8503_CLR_FLTS);
 
 }
 
