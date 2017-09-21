@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2
+EESchema Schematic File Version 3
 LIBS:BMC2-rescue
 LIBS:power
 LIBS:device
@@ -36,8 +36,9 @@ LIBS:drv8305
 LIBS:bsc016n06ns
 LIBS:dc-dc
 LIBS:IFX91041EJV33
+LIBS:MIC2009A-1YM6TR
 LIBS:BMC2-cache
-EELAYER 25 0
+EELAYER 26 0
 EELAYER END
 $Descr A3 16535 11693
 encoding utf-8
@@ -144,9 +145,9 @@ Text Notes 14400 5600 0    60   ~ 0
 TDI
 Text Notes 14350 5700 0    60   ~ 0
 RST
-Text HLabel 13100 6750 2    60   Output ~ 0
+Text HLabel 13100 6850 2    60   Output ~ 0
 CAN_TX
-Text HLabel 13100 6850 2    60   Input ~ 0
+Text HLabel 13100 6750 2    60   Input ~ 0
 CAN_RX
 Text HLabel 13250 5250 2    60   Output ~ 0
 INHA
@@ -578,10 +579,6 @@ Wire Wire Line
 Wire Wire Line
 	14550 5700 14550 6350
 Wire Wire Line
-	12800 6750 13100 6750
-Wire Wire Line
-	12800 6850 13100 6850
-Wire Wire Line
 	4350 5950 4600 5950
 Wire Wire Line
 	4350 6050 4600 6050
@@ -782,10 +779,10 @@ Wire Wire Line
 	13150 5350 12800 5350
 Wire Wire Line
 	12800 5450 13150 5450
-Text HLabel 13100 6950 2    60   BiDi ~ 0
-I2C_SCL
-Text HLabel 13100 7050 2    60   BiDi ~ 0
-I2C_SDA
+Text HLabel 13100 6950 2    60   Input ~ 0
+SENSOR_PWR_FAULT
+Text HLabel 13100 7050 2    60   Input ~ 0
+FAN_FAULT
 Wire Wire Line
 	12800 6950 13100 6950
 Wire Wire Line
@@ -968,37 +965,7 @@ Wire Wire Line
 Connection ~ 14750 7450
 Wire Wire Line
 	15050 7050 15050 7100
-$Comp
-L R R15
-U 1 1 586FC3AC
-P 14350 6650
-F 0 "R15" V 14430 6650 50  0000 C CNN
-F 1 "10K" V 14350 6650 50  0000 C CNN
-F 2 "Resistors_SMD:R_0805_HandSoldering" V 14280 6650 50  0001 C CNN
-F 3 "" H 14350 6650 50  0000 C CNN
-	1    14350 6650
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	14350 6500 14250 6500
-Wire Wire Line
-	14250 6500 14250 6350
 Connection ~ 14250 6350
-$Comp
-L +3V3 #PWR044
-U 1 1 586FC541
-P 14500 6950
-F 0 "#PWR044" H 14500 6800 50  0001 C CNN
-F 1 "+3V3" H 14500 7090 50  0000 C CNN
-F 2 "" H 14500 6950 50  0000 C CNN
-F 3 "" H 14500 6950 50  0000 C CNN
-	1    14500 6950
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	14500 6950 14350 6950
-Wire Wire Line
-	14350 6950 14350 6800
 $Comp
 L SW_PUSH SW2
 U 1 1 586FD8D0
@@ -1012,32 +979,8 @@ F 5 "2468741" H 14100 8050 60  0001 C CNN "Farnell"
 	1    14100 8050
 	0    1    1    0   
 $EndComp
-$Comp
-L R R14
-U 1 1 586FE4BF
-P 14100 7500
-F 0 "R14" V 14180 7500 50  0000 C CNN
-F 1 "10K" V 14100 7500 50  0000 C CNN
-F 2 "Resistors_SMD:R_0805_HandSoldering" V 14030 7500 50  0001 C CNN
-F 3 "" H 14100 7500 50  0000 C CNN
-	1    14100 7500
-	1    0    0    -1  
-$EndComp
-$Comp
-L +3V3 #PWR045
-U 1 1 586FE559
-P 14100 7250
-F 0 "#PWR045" H 14100 7100 50  0001 C CNN
-F 1 "+3V3" H 14100 7390 50  0000 C CNN
-F 2 "" H 14100 7250 50  0000 C CNN
-F 3 "" H 14100 7250 50  0000 C CNN
-	1    14100 7250
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
-	14100 7250 14100 7350
-Wire Wire Line
-	14100 7650 14100 7750
+	14100 7700 14100 7750
 $Comp
 L GND #PWR046
 U 1 1 586FE773
@@ -1081,19 +1024,6 @@ Wire Wire Line
 Wire Wire Line
 	13800 6150 12800 6150
 $Comp
-L TEST_1P W14
-U 1 1 58716B1C
-P 13650 7150
-F 0 "W14" H 13650 7420 50  0000 C CNN
-F 1 "PB12" H 13650 7350 50  0000 C CNN
-F 2 "Measurement_Points:Measurement_Point_Round-SMD-Pad_Small" H 13850 7150 50  0001 C CNN
-F 3 "" H 13850 7150 50  0000 C CNN
-	1    13650 7150
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	12800 7150 13650 7150
-$Comp
 L +3.3VADC #PWR047
 U 1 1 585F9182
 P 10150 2700
@@ -1121,7 +1051,6 @@ Connection ~ 10150 2800
 Wire Wire Line
 	3500 5550 3350 5550
 Connection ~ 3350 5550
-NoConn ~ 12800 4950
 $Comp
 L PWR_FLAG #FLG049
 U 1 1 587659B8
@@ -1177,4 +1106,16 @@ Wire Wire Line
 	12800 7350 13100 7350
 Wire Wire Line
 	12800 7450 13100 7450
+Wire Wire Line
+	12800 6750 13100 6750
+Wire Wire Line
+	12800 6850 13100 6850
+Text HLabel 13250 4950 2    60   Output ~ 0
+FanCtrl
+Wire Wire Line
+	12800 4950 13250 4950
+Text HLabel 13100 7150 2    60   Output ~ 0
+SensorPwrCtrl
+Wire Wire Line
+	12800 7150 13100 7150
 $EndSCHEMATC

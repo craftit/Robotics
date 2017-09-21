@@ -1,4 +1,4 @@
-EESchema Schematic File Version 2
+EESchema Schematic File Version 3
 LIBS:BMC2-rescue
 LIBS:power
 LIBS:device
@@ -36,12 +36,13 @@ LIBS:drv8305
 LIBS:bsc016n06ns
 LIBS:dc-dc
 LIBS:IFX91041EJV33
+LIBS:MIC2009A-1YM6TR
 LIBS:BMC2-cache
-EELAYER 25 0
+EELAYER 26 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 4 4
+Sheet 3 4
 Title ""
 Date ""
 Rev ""
@@ -379,31 +380,6 @@ Connection ~ 5550 2950
 Wire Wire Line
 	5900 2450 5900 2500
 Connection ~ 5550 2450
-$Comp
-L LED-RESCUE-BMC2 D9
-U 1 1 585F871A
-P 8550 2850
-AR Path="/585F871A" Ref="D9"  Part="1" 
-AR Path="/585F64FD/585F871A" Ref="D9"  Part="1" 
-F 0 "D9" H 8550 2950 50  0000 C CNN
-F 1 "RED" H 8550 2750 50  0000 C CNN
-F 2 "LEDs:LED_0805" H 8550 2850 50  0001 C CNN
-F 3 "" H 8550 2850 50  0000 C CNN
-F 4 "1581239" H 8550 2850 60  0001 C CNN "Farnell"
-	1    8550 2850
-	0    -1   -1   0   
-$EndComp
-$Comp
-L R R34
-U 1 1 585F876D
-P 8550 2400
-F 0 "R34" V 8630 2400 50  0000 C CNN
-F 1 "100R" V 8550 2400 50  0000 C CNN
-F 2 "Resistors_SMD:R_0805_HandSoldering" V 8480 2400 50  0001 C CNN
-F 3 "" H 8550 2400 50  0000 C CNN
-	1    8550 2400
-	1    0    0    -1  
-$EndComp
 Connection ~ 5900 2950
 Connection ~ 5900 2450
 $Comp
@@ -532,27 +508,9 @@ $EndComp
 Wire Wire Line
 	7900 2150 7900 2600
 Connection ~ 7300 2450
-Wire Wire Line
-	8550 2550 8550 2650
-Wire Wire Line
-	7900 2150 8550 2150
-Wire Wire Line
-	8550 2150 8550 2250
 Connection ~ 7900 2450
 Wire Wire Line
 	5300 2950 5900 2950
-$Comp
-L TC2117-3.3V U5
-U 1 1 5865A268
-P 6600 2550
-F 0 "U5" H 6600 2950 60  0000 C CNN
-F 1 "TC2117-3.3V" H 6600 2850 60  0000 C CNN
-F 2 "TO_SOT_Packages_SMD:SOT-223" H 6600 2550 60  0001 C CNN
-F 3 "http://www.farnell.com/datasheets/1669439.pdf?_ga=1.267823246.1808009743.1471515981" H 6600 2550 60  0001 C CNN
-F 4 "http://uk.farnell.com/microchip/tc2117-3-3vdbtr/ic-cmso-ldo-3-3v-800ma-sot223/dp/1605581" H 6600 2550 60  0001 C CNN "Order"
-	1    6600 2550
-	1    0    0    -1  
-$EndComp
 $Comp
 L GND #PWR089
 U 1 1 5865A3E7
@@ -564,19 +522,6 @@ F 3 "" H 7900 3100 50  0000 C CNN
 	1    7900 3100
 	1    0    0    -1  
 $EndComp
-$Comp
-L GND #PWR090
-U 1 1 5865A42E
-P 8550 3150
-F 0 "#PWR090" H 8550 2900 50  0001 C CNN
-F 1 "GND" H 8550 3000 50  0000 C CNN
-F 2 "" H 8550 3150 50  0000 C CNN
-F 3 "" H 8550 3150 50  0000 C CNN
-	1    8550 3150
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	8550 3050 8550 3150
 Wire Wire Line
 	7900 3000 7900 3100
 Wire Wire Line
@@ -607,8 +552,7 @@ F 3 "" H 8450 1950 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	8250 1950 8250 2150
-Connection ~ 8250 2150
+	8250 2150 8250 1950
 $Comp
 L TEST_1P W10
 U 1 1 586EC5DC
@@ -623,30 +567,6 @@ $EndComp
 Wire Wire Line
 	3000 1400 3000 1600
 Connection ~ 3000 1600
-$Comp
-L TEST_1P W11
-U 1 1 586ECE27
-P 4350 1450
-F 0 "W11" H 4350 1720 50  0000 C CNN
-F 1 "GND" H 4350 1650 50  0000 C CNN
-F 2 "Measurement_Points:Measurement_Point_Round-SMD-Pad_Big" H 4550 1450 50  0001 C CNN
-F 3 "" H 4550 1450 50  0000 C CNN
-	1    4350 1450
-	1    0    0    -1  
-$EndComp
-$Comp
-L GND #PWR091
-U 1 1 586ECEC7
-P 4350 1550
-F 0 "#PWR091" H 4350 1300 50  0001 C CNN
-F 1 "GND" H 4350 1400 50  0000 C CNN
-F 2 "" H 4350 1550 50  0000 C CNN
-F 3 "" H 4350 1550 50  0000 C CNN
-	1    4350 1550
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	4350 1550 4350 1450
 $Comp
 L PWR_FLAG #FLG092
 U 1 1 5874647E
@@ -717,7 +637,21 @@ F 3 "" H 3350 1450 50  0000 C CNN
 	1    3350 1450
 	1    0    0    -1  
 $EndComp
+Connection ~ 7250 2550
+Wire Wire Line
+	7900 2150 8250 2150
+$Comp
+L TC2117-3.3V U5
+U 1 1 5865A268
+P 6600 2550
+F 0 "U5" H 6600 2950 60  0000 C CNN
+F 1 "TC2117-3.3V" H 6600 2850 60  0000 C CNN
+F 2 "TO_SOT_Packages_SMD:SOT-223" H 6600 2550 60  0001 C CNN
+F 3 "http://www.farnell.com/datasheets/1669439.pdf?_ga=1.267823246.1808009743.1471515981" H 6600 2550 60  0001 C CNN
+F 4 "http://uk.farnell.com/microchip/tc2117-3-3vdbtr/ic-cmso-ldo-3-3v-800ma-sot223/dp/1605581" H 6600 2550 60  0001 C CNN "Order"
+	1    6600 2550
+	1    0    0    -1  
+$EndComp
 Wire Wire Line
 	7050 2550 7250 2550
-Connection ~ 7250 2550
 $EndSCHEMATC
