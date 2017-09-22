@@ -2,8 +2,8 @@
 
   (general
     (thickness 1.6)
-    (drawings 0)
-    (tracks 0)
+    (drawings 4)
+    (tracks 5)
     (zones 0)
     (modules 6)
     (nets 8)
@@ -439,5 +439,16 @@
       (rotate (xyz 0 0 -90))
     )
   )
+
+  (gr_line (start 148 121) (end 148 98) (layer Edge.Cuts) (width 0.15))
+  (gr_line (start 161 121) (end 148 121) (layer Edge.Cuts) (width 0.15))
+  (gr_line (start 161 98) (end 161 121) (layer Edge.Cuts) (width 0.15))
+  (gr_line (start 148 98) (end 161 98) (layer Edge.Cuts) (width 0.15))
+
+  (segment (start 153.6 103.45) (end 158.3 103.45) (width 0.25) (layer F.Cu) (net 6))
+  (segment (start 158.3 103.45) (end 159.65 102.1) (width 0.25) (layer F.Cu) (net 6))
+  (segment (start 159.65 102.1) (end 159.65 101) (width 0.25) (layer F.Cu) (net 6))
+  (segment (start 153.6 100.91) (end 157.02 100.91) (width 0.25) (layer F.Cu) (net 7))
+  (segment (start 157.02 100.91) (end 157.11 101) (width 0.25) (layer F.Cu) (net 7))
 
 )
