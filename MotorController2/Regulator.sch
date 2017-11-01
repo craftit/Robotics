@@ -1,13 +1,9 @@
-EESchema Schematic File Version 2
+EESchema Schematic File Version 3
 LIBS:BMC2-rescue
 LIBS:power
 LIBS:device
-LIBS:transistors
-LIBS:conn
 LIBS:linear
 LIBS:regul
-LIBS:74xx
-LIBS:cmos4000
 LIBS:adc-dac
 LIBS:memory
 LIBS:xilinx
@@ -22,14 +18,11 @@ LIBS:audio
 LIBS:interface
 LIBS:digital-audio
 LIBS:philips
-LIBS:display
 LIBS:cypress
 LIBS:siliconi
 LIBS:opto
 LIBS:atmel
 LIBS:contrib
-LIBS:valves
-LIBS:stm32
 LIBS:Power_Management
 LIBS:motor_drivers
 LIBS:drv8305
@@ -38,7 +31,7 @@ LIBS:dc-dc
 LIBS:IFX91041EJV33
 LIBS:MIC2009A-1YM6TR
 LIBS:BMC2-cache
-EELAYER 25 0
+EELAYER 26 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
@@ -78,8 +71,9 @@ F 0 "C38" H 2525 2800 50  0000 L CNN
 F 1 "22nF 50V" H 2525 2600 50  0000 L CNN
 F 2 "Capacitors_SMD:C_0805_HandSoldering" H 2538 2550 50  0001 C CNN
 F 3 "" H 2500 2700 50  0000 C CNN
-F 4 "2581093" H 2500 2700 60  0001 C CNN "Farnell"
+F 4 "1414682" H 2500 2700 60  0001 C CNN "Farnell"
 F 5 "6V" H 2500 2700 60  0001 C CNN "Notes"
+F 6 "0.0246" H 2500 2700 60  0001 C CNN "Price"
 	1    2500 2700
 	1    0    0    -1  
 $EndComp
@@ -91,6 +85,8 @@ F 0 "R33" V 2580 3050 50  0000 C CNN
 F 1 "22k" V 2500 3050 50  0000 C CNN
 F 2 "Resistors_SMD:R_0805_HandSoldering" V 2430 3050 50  0001 C CNN
 F 3 "" H 2500 3050 50  0000 C CNN
+F 4 "0.01" V 2500 3050 60  0001 C CNN "Price"
+F 5 "9238646" V 2500 3050 60  0001 C CNN "Farnell"
 	1    2500 3050
 	1    0    0    -1  
 $EndComp
@@ -141,6 +137,7 @@ F 1 "220nF 100V" H 1300 1700 50  0000 L CNN
 F 2 "Capacitors_SMD:C_1206_HandSoldering" H 1588 1650 50  0001 C CNN
 F 3 "" H 1550 1800 50  0000 C CNN
 F 4 "1856615" H 1550 1800 60  0001 C CNN "Farnell"
+F 5 "0.205" H 1550 1800 60  0001 C CNN "Price"
 	1    1550 1800
 	1    0    0    -1  
 $EndComp
@@ -153,6 +150,8 @@ F 1 "47uH" V 2100 1600 50  0000 C CNN
 F 2 "Inductors:SELF-WE-PD3S" H 2000 1600 50  0001 C CNN
 F 3 "" H 2000 1600 50  0000 C CNN
 F 4 "http://uk.farnell.com/tdk/clf7045t-470m/inductor-47uh-1-3a-20-smd/dp/2345091" V 2000 1600 60  0001 C CNN "Order"
+F 5 "2345091" V 2000 1600 60  0001 C CNN "Farnell"
+F 6 "0.765" V 2000 1600 60  0001 C CNN "Price"
 	1    2000 1600
 	0    1    1    0   
 $EndComp
@@ -178,6 +177,7 @@ F 1 "100uF 63V" H 2150 1750 50  0000 L CNN
 F 2 "Capacitors_SMD:c_elec_10x10.5" H 2438 1700 50  0001 C CNN
 F 3 "" H 2400 1850 50  0000 C CNN
 F 4 "9696040" H 2400 1850 60  0001 C CNN "Farnell"
+F 5 "0.43" H 2400 1850 60  0001 C CNN "Price"
 	1    2400 1850
 	1    0    0    -1  
 $EndComp
@@ -191,6 +191,7 @@ F 2 "Capacitors_SMD:C_0805_HandSoldering" H 4388 2100 50  0001 C CNN
 F 3 "" H 4350 2250 50  0000 C CNN
 F 4 "6V" H 4350 2250 60  0001 C CNN "Notes"
 F 5 "1856615" H 4350 2250 60  0001 C CNN "Farnell"
+F 6 "0.205" H 4350 2250 60  0001 C CNN "Price"
 	1    4350 2250
 	1    0    0    -1  
 $EndComp
@@ -215,6 +216,7 @@ F 1 "100uF 6.3V" H 4900 2600 50  0000 L CNN
 F 2 "Capacitors_SMD:c_elec_6.3x5.8" H 5338 2550 50  0001 C CNN
 F 3 "" H 5300 2700 50  0000 C CNN
 F 4 "2611349" H 5300 2700 60  0001 C CNN "Farnell"
+F 5 "0.138" H 5300 2700 60  0001 C CNN "Price"
 	1    5300 2700
 	1    0    0    -1  
 $EndComp
@@ -228,6 +230,7 @@ F 2 "Capacitors_SMD:C_0805_HandSoldering" H 5588 2550 50  0001 C CNN
 F 3 "" H 5550 2700 50  0000 C CNN
 F 4 "6V" H 5550 2700 60  0001 C CNN "Notes"
 F 5 "1856615" H 5550 2700 60  0001 C CNN "Farnell"
+F 6 "0.205" H 5550 2700 60  0001 C CNN "Price"
 	1    5550 2700
 	1    0    0    -1  
 $EndComp
@@ -365,12 +368,16 @@ L ZENER D7
 U 1 1 585F8179
 P 5900 2700
 F 0 "D7" H 5900 2800 50  0000 C CNN
-F 1 "5.6V" H 5900 2600 50  0000 C CNN
+F 1 "5.6V Zener" H 5900 2900 50  0000 C CNN
 F 2 "Diodes_SMD:SOD-123" H 5900 2700 50  0001 C CNN
 F 3 "" H 5900 2700 50  0000 C CNN
-F 4 "MMSZ5V6T1G" H 5900 2700 60  0001 C CNN "Part"
+F 4 "MMSZ4690T1G" H 5900 2700 60  0001 C CNN "Part"
 F 5 "http://uk.farnell.com/on-semiconductor/mmsz5v6t1g/diode-zener-5-6v-0-5w/dp/1431292" H 5900 2700 60  0001 C CNN "Order"
-F 6 "1431292" H 5900 2700 60  0001 C CNN "Farnell"
+F 6 "1459122" H 5900 2700 60  0001 C CNN "Farnell"
+F 7 "863-SZMMSZ5V6T1G" H 5900 2700 60  0001 C CNN "Mouser"
+F 8 "?" H 5900 2700 60  0001 C CNN "Supplier"
+F 9 "0.16" H 5900 2700 60  0001 C CNN "Price"
+F 10 "MMSZ5V6T1G" H 5900 2700 60  0001 C CNN "OldPart"
 	1    5900 2700
 	0    1    1    0   
 $EndComp
@@ -391,6 +398,8 @@ F 1 "IFX91041EJV50" H 3450 3100 60  0000 C CNN
 F 2 "Housings_SOIC:SOIC-8-1EP_3.9x4.9mm_Pitch1.27mm" H 3450 3100 60  0001 C CNN
 F 3 "http://www.infineon.com/dgdl/Infineon-IFX91041-DS-v01_01-en.pdf?fileId=db3a304320d39d59012153afb91a0548" H 3450 3100 60  0001 C CNN
 F 4 "https://www.digikey.co.uk/product-detail/en/infineon-technologies/IFX91041EJ-V50/IFX91041EJ-V50INCT-ND/3300395" H 3450 3100 60  0001 C CNN "Order"
+F 5 "2432504" H 3450 3100 60  0001 C CNN "Farnell"
+F 6 "1.10" H 3450 3100 60  0001 C CNN "Price"
 	1    3450 3100
 	1    0    0    -1  
 $EndComp
@@ -496,12 +505,14 @@ L ZENER D8
 U 1 1 58659A6D
 P 7900 2800
 F 0 "D8" H 7900 2900 50  0000 C CNN
-F 1 "3.6V" H 7900 2700 50  0000 C CNN
+F 1 "3.6V Zener" H 7900 2700 50  0000 C CNN
 F 2 "Diodes_SMD:SOD-123" H 7900 2800 50  0001 C CNN
 F 3 "" H 7900 2800 50  0000 C CNN
 F 4 "http://uk.farnell.com/on-semiconductor/mmsz4685t1g/diode-zener-vz-3-6v/dp/1651592" H 7900 2800 60  0001 C CNN "Order"
-F 5 "MMSZ4685T1G" H 7900 2800 60  0001 C CNN "Part"
-F 6 "1651592" H 7900 2800 60  0001 C CNN "Farnell"
+F 5 "MMSZ5227B" H 7900 2800 60  0001 C CNN "Part"
+F 6 "1700854" H 7900 2800 60  0001 C CNN "Farnell"
+F 7 "MMSZ4685T1G" H 7900 2800 60  0001 C CNN "PartPrevious"
+F 8 "0.155" H 7900 2800 60  0001 C CNN "Price"
 	1    7900 2800
 	0    1    1    0   
 $EndComp
@@ -633,6 +644,8 @@ F 1 "TC2117-3.3V" H 6600 2850 60  0000 C CNN
 F 2 "TO_SOT_Packages_SMD:SOT-223" H 6600 2550 60  0001 C CNN
 F 3 "http://www.farnell.com/datasheets/1669439.pdf?_ga=1.267823246.1808009743.1471515981" H 6600 2550 60  0001 C CNN
 F 4 "http://uk.farnell.com/microchip/tc2117-3-3vdbtr/ic-cmso-ldo-3-3v-800ma-sot223/dp/1605581" H 6600 2550 60  0001 C CNN "Order"
+F 5 "1605581" H 6600 2550 60  0001 C CNN "Farnell"
+F 6 "0.669" H 6600 2550 60  0001 C CNN "Price "
 	1    6600 2550
 	1    0    0    -1  
 $EndComp
@@ -643,7 +656,7 @@ L R R15
 U 1 1 59C4B75A
 P 2300 1050
 F 0 "R15" V 2380 1050 50  0000 C CNN
-F 1 "10k" V 2300 1050 50  0000 C CNN
+F 1 "10K" V 2300 1050 50  0000 C CNN
 F 2 "Resistors_SMD:R_0805_HandSoldering" V 2230 1050 50  0001 C CNN
 F 3 "" H 2300 1050 50  0000 C CNN
 	1    2300 1050
@@ -657,7 +670,9 @@ F 0 "C51" H 2625 1300 50  0000 L CNN
 F 1 "0.1uF 100V" H 2350 1100 50  0000 L CNN
 F 2 "Capacitors_SMD:C_0805_HandSoldering" H 2638 1050 50  0001 C CNN
 F 3 "" H 2600 1200 50  0000 C CNN
-F 4 "1856615" H 2600 1200 60  0001 C CNN "Farnell"
+F 4 "1650862" H 2600 1200 60  0001 C CNN "Farnell"
+F 5 "+- 10%" H 2600 1200 60  0001 C CNN "Notes"
+F 6 "0.116" H 2600 1200 60  0001 C CNN "Price"
 	1    2600 1200
 	1    0    0    -1  
 $EndComp
@@ -696,6 +711,7 @@ F 0 "JP3" H 3350 1880 50  0000 C CNN
 F 1 "Jumper_NO_Small" H 3360 1740 50  0001 C CNN
 F 2 "Resistors_SMD:R_0805_HandSoldering" H 3350 1800 50  0001 C CNN
 F 3 "" H 3350 1800 50  0000 C CNN
+F 4 "None" H 3350 1800 60  0001 C CNN "Supplier"
 	1    3350 1800
 	1    0    0    -1  
 $EndComp

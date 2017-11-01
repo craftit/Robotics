@@ -29,6 +29,7 @@ LIBS:atmel
 LIBS:contrib
 LIBS:valves
 LIBS:s49e
+LIBS:HallSensorBoard-cache
 EELAYER 26 0
 EELAYER END
 $Descr A4 11693 8268
@@ -117,6 +118,7 @@ F 0 "C1" H 2565 2146 50  0000 L CNN
 F 1 "0.1uF 50V" H 2000 1950 50  0000 L CNN
 F 2 "Capacitors_SMD:C_0805_HandSoldering" H 2488 1950 50  0001 C CNN
 F 3 "" H 2450 2100 50  0001 C CNN
+F 4 "1759265" H 2450 2100 60  0001 C CNN "Farnell"
 	1    2450 2100
 	1    0    0    -1  
 $EndComp
@@ -152,6 +154,7 @@ F 0 "J1" H 3080 3342 50  0000 L CNN
 F 1 "Conn_01x07" H 3080 3251 50  0000 L CNN
 F 2 "Pin_Headers:Pin_Header_Angled_1x07_Pitch2.54mm" H 3000 3300 50  0001 C CNN
 F 3 "" H 3000 3300 50  0001 C CNN
+F 4 "Socket  588763 ,  Plug 1098693" H 3000 3300 60  0001 C CNN "Farnell"
 	1    3000 3300
 	-1   0    0    -1  
 $EndComp

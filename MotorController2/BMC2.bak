@@ -1,13 +1,9 @@
-EESchema Schematic File Version 2
+EESchema Schematic File Version 3
 LIBS:BMC2-rescue
 LIBS:power
 LIBS:device
-LIBS:transistors
-LIBS:conn
 LIBS:linear
 LIBS:regul
-LIBS:74xx
-LIBS:cmos4000
 LIBS:adc-dac
 LIBS:memory
 LIBS:xilinx
@@ -22,14 +18,11 @@ LIBS:audio
 LIBS:interface
 LIBS:digital-audio
 LIBS:philips
-LIBS:display
 LIBS:cypress
 LIBS:siliconi
 LIBS:opto
 LIBS:atmel
 LIBS:contrib
-LIBS:valves
-LIBS:stm32
 LIBS:Power_Management
 LIBS:motor_drivers
 LIBS:drv8305
@@ -38,7 +31,7 @@ LIBS:dc-dc
 LIBS:IFX91041EJV33
 LIBS:MIC2009A-1YM6TR
 LIBS:BMC2-cache
-EELAYER 25 0
+EELAYER 26 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
@@ -98,6 +91,8 @@ F 1 "TJA1042T/3" H 1950 4350 50  0000 L CNN
 F 2 "Housings_SOIC:SOIC-8_3.9x4.9mm_Pitch1.27mm" H 1900 3500 50  0001 C CIN
 F 3 "" H 1900 4000 50  0000 C CNN
 F 4 "http://uk.farnell.com/nxp/tja1042t-3-1j/can-transceiver-aec-q100-2mbps/dp/2574957" H 1900 4000 60  0001 C CNN "Order"
+F 5 "2574957" H 1900 4000 60  0001 C CNN "Farnell"
+F 6 "0.838" H 1900 4000 60  0001 C CNN "Price"
 	1    1900 4000
 	-1   0    0    -1  
 $EndComp
@@ -144,6 +139,7 @@ F 2 "Pin_Headers:Pin_Header_Angled_1x04" H 750 4000 50  0001 C CNN
 F 3 "" H 750 4000 50  0000 C CNN
 F 4 "588738" H 750 4000 60  0001 C CNN "Farnell"
 F 5 "1098455" H 750 4000 60  0001 C CNN "Farnell Related"
+F 6 "0.101" H 750 4000 60  0001 C CNN "Price"
 	1    750  4000
 	-1   0    0    -1  
 $EndComp
@@ -178,6 +174,7 @@ F 1 "0.1uF 50V" H 1175 5150 50  0000 L CNN
 F 2 "Capacitors_SMD:C_0805_HandSoldering" H 1188 5100 50  0001 C CNN
 F 3 "" H 1150 5250 50  0000 C CNN
 F 4 "1759265" H 1150 5250 60  0001 C CNN "Farnell"
+F 5 "0.0224" H 1150 5250 60  0001 C CNN "Price"
 	1    1150 5250
 	1    0    0    -1  
 $EndComp
@@ -212,6 +209,10 @@ F 1 "USB_OTG" H 2000 5550 50  0000 C CNN
 F 2 "Connect:USB_Mini-B" V 1950 5250 50  0001 C CNN
 F 3 "" V 1950 5250 50  0000 C CNN
 F 4 "http://uk.farnell.com/molex/67503-1020/mini-usb-2-0-otg-type-b-rcpt-smt/dp/1125348" H 2000 5350 60  0001 C CNN "Order"
+F 5 "1125348" H 2000 5350 60  0001 C CNN "Farnell"
+F 6 " 67503-1020" H 2000 5350 60  0001 C CNN "MP"
+F 7 "Molex" H 2000 5350 60  0001 C CNN "MF"
+F 8 "0.555" H 2000 5350 60  0001 C CNN "Price"
 	1    2000 5350
 	0    -1   1    0   
 $EndComp
@@ -223,6 +224,8 @@ F 0 "R9" V 2880 5150 50  0000 C CNN
 F 1 "22R" V 2800 5150 50  0000 C CNN
 F 2 "Resistors_SMD:R_0805_HandSoldering" V 2730 5150 50  0001 C CNN
 F 3 "" H 2800 5150 50  0000 C CNN
+F 4 "2447609" V 2800 5150 60  0001 C CNN "Farnell"
+F 5 "0.0057" V 2800 5150 60  0001 C CNN "Price"
 	1    2800 5150
 	0    1    1    0   
 $EndComp
@@ -455,6 +458,7 @@ F 1 "60V 2A" H 2350 4800 50  0000 C CNN
 F 2 "Diodes_SMD:SOD-123" H 2350 4900 50  0001 C CNN
 F 3 "" H 2350 4900 50  0000 C CNN
 F 4 "2284958" H 2350 4900 60  0001 C CNN "Farnell"
+F 5 "0.425" H 2350 4900 60  0001 C CNN "Price"
 	1    2350 4900
 	0    1    1    0   
 $EndComp
@@ -490,6 +494,8 @@ F 0 "R4" V 1880 2400 50  0000 C CNN
 F 1 "1k" V 1800 2400 50  0000 C CNN
 F 2 "Resistors_SMD:R_0805_HandSoldering" V 1730 2400 50  0001 C CNN
 F 3 "" H 1800 2400 50  0000 C CNN
+F 4 "2447587" V 1800 2400 60  0001 C CNN "Farnell"
+F 5 "0.0062" V 1800 2400 60  0001 C CNN "Price"
 	1    1800 2400
 	0    1    1    0   
 $EndComp
@@ -512,6 +518,8 @@ F 0 "R7" V 1480 3000 50  0000 C CNN
 F 1 "10K" V 1400 3000 50  0000 C CNN
 F 2 "Resistors_SMD:R_0805_HandSoldering" V 1330 3000 50  0001 C CNN
 F 3 "" H 1400 3000 50  0000 C CNN
+F 4 "2447553" V 1400 3000 60  0001 C CNN "Farnell"
+F 5 "0.0062" V 1400 3000 60  0001 C CNN "Price"
 	1    1400 3000
 	1    0    0    -1  
 $EndComp
@@ -620,6 +628,7 @@ F 1 "DATA" V 950 900 50  0000 C CNN
 F 2 "Pin_Headers:Pin_Header_Angled_1x05" H 850 900 50  0001 C CNN
 F 3 "" H 850 900 50  0000 C CNN
 F 4 "588740" H 850 900 60  0001 C CNN "Farnell"
+F 5 "0.199" H 850 900 60  0001 C CNN "Price"
 	1    850  900 
 	-1   0    0    -1  
 $EndComp
@@ -666,6 +675,7 @@ F 0 "P5" H 8750 2500 50  0000 C CNN
 F 1 "PhaseA" H 8850 2400 50  0000 C CNN
 F 2 "Connect:1pin" H 8750 2400 50  0001 C CNN
 F 3 "" H 8750 2400 50  0000 C CNN
+F 4 "None" H 8750 2400 60  0001 C CNN "Supplier"
 	1    8750 2400
 	1    0    0    -1  
 $EndComp
@@ -679,6 +689,7 @@ F 0 "P6" H 8750 2750 50  0000 C CNN
 F 1 "PhaseB" H 8850 2650 50  0000 C CNN
 F 2 "Connect:1pin" H 8750 2650 50  0001 C CNN
 F 3 "" H 8750 2650 50  0000 C CNN
+F 4 "None" H 8750 2650 60  0001 C CNN "Supplier"
 	1    8750 2650
 	1    0    0    -1  
 $EndComp
@@ -690,6 +701,7 @@ F 0 "P7" H 8750 3000 50  0000 C CNN
 F 1 "PhaseC" H 8850 2900 50  0000 C CNN
 F 2 "Connect:1pin" H 8750 2900 50  0001 C CNN
 F 3 "" H 8750 2900 50  0000 C CNN
+F 4 "None" H 8750 2900 60  0001 C CNN "Supplier"
 	1    8750 2900
 	1    0    0    -1  
 $EndComp
@@ -753,6 +765,11 @@ F 2 "Pin_Headers:Pin_Header_Angled_1x09" H 750 2250 50  0001 C CNN
 F 3 "" H 750 2250 50  0000 C CNN
 F 4 "2468365" H 750 2250 60  0001 C CNN "Farnell"
 F 5 "1098695" H 750 2250 60  0001 C CNN "Plug Farnell"
+F 6 "Mouser" H 750 2250 60  0001 C CNN "Supplier"
+F 7 "571-6404579" H 750 2250 60  0001 C CNN "Mouser"
+F 8 "TE Connectivity" H 750 2250 60  0001 C CNN "MF"
+F 9 "640457-9" H 750 2250 60  0001 C CNN "MP"
+F 10 "0.266" H 750 2250 60  0001 C CNN "Price"
 	1    750  2250
 	-1   0    0    1   
 $EndComp
@@ -786,6 +803,7 @@ F 0 "P9" H 8400 1450 50  0000 C CNN
 F 1 "VSUPPLY" H 8500 1350 50  0000 C CNN
 F 2 "Connect:1pin" H 8400 1350 50  0001 C CNN
 F 3 "" H 8400 1350 50  0000 C CNN
+F 4 "None" H 8400 1350 60  0001 C CNN "Supplier"
 	1    8400 1350
 	1    0    0    -1  
 $EndComp
@@ -797,6 +815,7 @@ F 0 "P10" H 8400 1750 50  0000 C CNN
 F 1 "GND" H 8500 1650 50  0000 C CNN
 F 2 "Connect:1pin" H 8400 1650 50  0001 C CNN
 F 3 "" H 8400 1650 50  0000 C CNN
+F 4 "None" H 8400 1650 60  0001 C CNN "Supplier"
 	1    8400 1650
 	1    0    0    -1  
 $EndComp
@@ -910,6 +929,7 @@ F 1 "1nF 50V" H 1750 2850 50  0000 L CNN
 F 2 "Capacitors_SMD:C_0805_HandSoldering" H 1988 2900 50  0001 C CNN
 F 3 "" H 1950 3050 50  0000 C CNN
 F 4 "9406344" H 1950 3050 60  0001 C CNN "Farnell"
+F 5 "0.0182" H 1950 3050 60  0001 C CNN "Price"
 	1    1950 3050
 	1    0    0    -1  
 $EndComp
@@ -983,10 +1003,10 @@ F 1 "MIC2009A-1YM6TR" H 2125 1729 50  0000 C CNN
 F 2 "TO_SOT_Packages_SMD:SOT-23-6" H 1800 1800 50  0001 L BNN
 F 3 "SOT-23-6 Microchip" H 2950 1350 50  0001 L BNN
 F 4 "MIC2009A-1YM6-TR" H 2900 1400 50  0001 L BNN "MP"
-F 5 "Good" H 3000 1700 50  0001 L BNN "Availability"
-F 6 "0.37 USD" H 3050 1600 50  0001 L BNN "Price"
-F 7 "Microchip" H 3100 1500 50  0001 L BNN "MF"
-F 8 "MIC2009 Series 1 Channel 5.5 V Adj. High Side Power Distribution Switch SOT-23-6" H 2700 1100 50  0001 L BNN "Description"
+F 5 "0.33" H 3050 1600 50  0001 L BNN "Price"
+F 6 "Microchip" H 3100 1500 50  0001 L BNN "MF"
+F 7 "MIC2009 Series 1 Channel 5.5 V Adj. High Side Power Distribution Switch SOT-23-6" H 2700 1100 50  0001 L BNN "Description"
+F 8 "2509888" H 2150 1450 60  0001 C CNN "Farnell"
 	1    2150 1450
 	-1   0    0    -1  
 $EndComp
@@ -1170,6 +1190,8 @@ F 0 "R2" V 5080 1600 50  0000 C CNN
 F 1 "300R" V 5000 1600 50  0000 C CNN
 F 2 "Resistors_SMD:R_0805_HandSoldering" V 4930 1600 50  0001 C CNN
 F 3 "" H 5000 1600 50  0000 C CNN
+F 4 "2447633" V 5000 1600 60  0001 C CNN "Farnell"
+F 5 "0.005" V 5000 1600 60  0001 C CNN "Price"
 	1    5000 1600
 	-1   0    0    1   
 $EndComp
