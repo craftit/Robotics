@@ -1,4 +1,5 @@
-EESchema Schematic File Version 3
+EESchema Schematic File Version 2
+LIBS:HallSensorBoard-rescue
 LIBS:power
 LIBS:device
 LIBS:transistors
@@ -28,9 +29,8 @@ LIBS:opto
 LIBS:atmel
 LIBS:contrib
 LIBS:valves
-LIBS:s49e
 LIBS:HallSensorBoard-cache
-EELAYER 26 0
+EELAYER 25 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
@@ -118,6 +118,7 @@ F 0 "C1" H 2565 2146 50  0000 L CNN
 F 1 "0.1uF 50V" H 2000 1950 50  0000 L CNN
 F 2 "Capacitors_SMD:C_0805_HandSoldering" H 2488 1950 50  0001 C CNN
 F 3 "" H 2450 2100 50  0001 C CNN
+F 4 "1759265" H 2450 2100 60  0001 C CNN "Farnell"
 	1    2450 2100
 	1    0    0    -1  
 $EndComp
@@ -146,7 +147,7 @@ Wire Wire Line
 Wire Wire Line
 	5150 2300 5200 2300
 $Comp
-L Conn_01x07 J1
+L CONN_01X07 J1
 U 1 1 59C4E97F
 P 3000 3300
 F 0 "J1" H 3080 3342 50  0000 L CNN
