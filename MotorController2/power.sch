@@ -1,9 +1,13 @@
-EESchema Schematic File Version 3
+EESchema Schematic File Version 2
 LIBS:BMC2-rescue
 LIBS:power
 LIBS:device
+LIBS:transistors
+LIBS:conn
 LIBS:linear
 LIBS:regul
+LIBS:74xx
+LIBS:cmos4000
 LIBS:adc-dac
 LIBS:memory
 LIBS:xilinx
@@ -18,11 +22,14 @@ LIBS:audio
 LIBS:interface
 LIBS:digital-audio
 LIBS:philips
+LIBS:display
 LIBS:cypress
 LIBS:siliconi
 LIBS:opto
 LIBS:atmel
 LIBS:contrib
+LIBS:valves
+LIBS:stm32
 LIBS:Power_Management
 LIBS:motor_drivers
 LIBS:drv8305
@@ -31,7 +38,7 @@ LIBS:dc-dc
 LIBS:IFX91041EJV33
 LIBS:MIC2009A-1YM6TR
 LIBS:BMC2-cache
-EELAYER 26 0
+EELAYER 25 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
@@ -1581,4 +1588,8 @@ $EndComp
 Wire Wire Line
 	6300 4900 6300 5000
 Connection ~ 6300 5000
+Text Notes 3350 7650 0    60   ~ 0
+TH1 is placed near the drive transistors. 
+Text Notes 1350 6050 0    60   ~ 0
+The filters on the current sense lines \nwere added in a hope to reduce noise \nin the current readings, but have had \nlittle impact.
 $EndSCHEMATC

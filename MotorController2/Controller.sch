@@ -1,9 +1,13 @@
-EESchema Schematic File Version 3
+EESchema Schematic File Version 2
 LIBS:BMC2-rescue
 LIBS:power
 LIBS:device
+LIBS:transistors
+LIBS:conn
 LIBS:linear
 LIBS:regul
+LIBS:74xx
+LIBS:cmos4000
 LIBS:adc-dac
 LIBS:memory
 LIBS:xilinx
@@ -18,11 +22,14 @@ LIBS:audio
 LIBS:interface
 LIBS:digital-audio
 LIBS:philips
+LIBS:display
 LIBS:cypress
 LIBS:siliconi
 LIBS:opto
 LIBS:atmel
 LIBS:contrib
+LIBS:valves
+LIBS:stm32
 LIBS:Power_Management
 LIBS:motor_drivers
 LIBS:drv8305
@@ -31,7 +38,7 @@ LIBS:dc-dc
 LIBS:IFX91041EJV33
 LIBS:MIC2009A-1YM6TR
 LIBS:BMC2-cache
-EELAYER 26 0
+EELAYER 25 0
 EELAYER END
 $Descr A3 16535 11693
 encoding utf-8
@@ -1132,4 +1139,6 @@ Text HLabel 13100 7150 2    60   Output ~ 0
 SensorPwrCtrl
 Wire Wire Line
 	12800 7150 13100 7150
+Text Notes 8400 2250 0    60   ~ 0
+L1 and R13 are intended to help keep some \nnoise out of the Analog supply.  It isn't clear \nthey are needed.
 $EndSCHEMATC

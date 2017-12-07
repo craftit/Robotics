@@ -1,9 +1,13 @@
-EESchema Schematic File Version 3
+EESchema Schematic File Version 2
 LIBS:BMC2-rescue
 LIBS:power
 LIBS:device
+LIBS:transistors
+LIBS:conn
 LIBS:linear
 LIBS:regul
+LIBS:74xx
+LIBS:cmos4000
 LIBS:adc-dac
 LIBS:memory
 LIBS:xilinx
@@ -18,11 +22,14 @@ LIBS:audio
 LIBS:interface
 LIBS:digital-audio
 LIBS:philips
+LIBS:display
 LIBS:cypress
 LIBS:siliconi
 LIBS:opto
 LIBS:atmel
 LIBS:contrib
+LIBS:valves
+LIBS:stm32
 LIBS:Power_Management
 LIBS:motor_drivers
 LIBS:drv8305
@@ -31,7 +38,7 @@ LIBS:dc-dc
 LIBS:IFX91041EJV33
 LIBS:MIC2009A-1YM6TR
 LIBS:BMC2-cache
-EELAYER 26 0
+EELAYER 25 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
@@ -667,12 +674,11 @@ L C C51
 U 1 1 59C4B98C
 P 2600 1200
 F 0 "C51" H 2625 1300 50  0000 L CNN
-F 1 "0.1uF 100V" H 2350 1100 50  0000 L CNN
+F 1 "0.1uF 50V" H 2350 1100 50  0000 L CNN
 F 2 "Capacitors_SMD:C_0805_HandSoldering" H 2638 1050 50  0001 C CNN
 F 3 "" H 2600 1200 50  0000 C CNN
-F 4 "1650862" H 2600 1200 60  0001 C CNN "Farnell"
-F 5 "+- 10%" H 2600 1200 60  0001 C CNN "Notes"
-F 6 "0.116" H 2600 1200 60  0001 C CNN "Price"
+F 4 "+- 10%" H 2600 1200 60  0001 C CNN "Notes"
+F 5 "0.116" H 2600 1200 60  0001 C CNN "Price"
 	1    2600 1200
 	1    0    0    -1  
 $EndComp

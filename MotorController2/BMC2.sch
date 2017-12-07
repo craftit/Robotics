@@ -1,9 +1,13 @@
-EESchema Schematic File Version 3
+EESchema Schematic File Version 2
 LIBS:BMC2-rescue
 LIBS:power
 LIBS:device
+LIBS:transistors
+LIBS:conn
 LIBS:linear
 LIBS:regul
+LIBS:74xx
+LIBS:cmos4000
 LIBS:adc-dac
 LIBS:memory
 LIBS:xilinx
@@ -18,11 +22,14 @@ LIBS:audio
 LIBS:interface
 LIBS:digital-audio
 LIBS:philips
+LIBS:display
 LIBS:cypress
 LIBS:siliconi
 LIBS:opto
 LIBS:atmel
 LIBS:contrib
+LIBS:valves
+LIBS:stm32
 LIBS:Power_Management
 LIBS:motor_drivers
 LIBS:drv8305
@@ -31,7 +38,7 @@ LIBS:dc-dc
 LIBS:IFX91041EJV33
 LIBS:MIC2009A-1YM6TR
 LIBS:BMC2-cache
-EELAYER 26 0
+EELAYER 25 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
@@ -1227,4 +1234,10 @@ Wire Wire Line
 	5000 1350 4750 1350
 Text Notes 4700 1750 2    60   ~ 0
 Current limit to 700mA\n
+Text Notes 3550 800  0    60   ~ 0
+Power to external sensors or fan
+Text Notes 700  6400 0    60   ~ 0
+The CAN bus connections also provide an external supply \nto the board for powering the controller when the main \nmotor supply is disconnected.  
+Text Notes 1100 700  0    60   ~ 0
+The 'Data' connector and be used to interface to \nexternal sensors, and/or power a cooling fan. \n
 $EndSCHEMATC

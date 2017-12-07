@@ -1,4 +1,4 @@
-update=Thu 21 Sep 2017 14:27:10 BST
+update=Tuesday, 28 November 2017 'pmt' 22:03:18
 version=1
 last_client=kicad
 [pcbnew]
@@ -67,3 +67,13 @@ LibName35=bsc016n06ns
 LibName36=dc-dc
 LibName37=IFX91041EJV33
 LibName38=MIC2009A-1YM6TR
+[schematic_editor]
+version=1
+PageLayoutDescrFile=
+PlotDirectoryName=
+SubpartIdSeparator=0
+SubpartFirstId=65
+NetFmtName=
+SpiceForceRefPrefix=0
+SpiceUseNetNumbers=0
+LabSize=60
